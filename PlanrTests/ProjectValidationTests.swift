@@ -1,5 +1,5 @@
 //
-//  PlanrTests.swift
+//  ProjectValidationTests.swift
 //  PlanrTests
 //
 //  Created by Blakeman, Mike on 8/25/21.
@@ -8,28 +8,42 @@
 import XCTest
 @testable import Planr
 
-class ValidateEngineer: XCTestCase {
+class ValidateProject: XCTestCase {
 
     // Test first name validation
-    func testEngineerInvalidFirstNameLength() throws {
-        let engineer = Engineer(firstName: "12345678901234567890123456789012345678900",
-                                lastName: "Smith",
-                                platform: [Platform.ios],
-                                unavailableDates: [])
+    func testProjectFeatureNameEmptyLength() throws {
+        let feature = Feature(name: "", nil, platform: [Platform.ios], effortEstimate: 26)
 
         var thrownError: Error?
-        XCTAssertThrowsError(try engineer.validate()) { thrownError = $0 }
+        XCTAssertThrowsError(try feature.validate()) { thrownError = $0 }
 
         XCTAssertTrue(
-            thrownError is EngineerValidationError,
+            thrownError is ProjectValidationError,
             "Unexpected Error Type: \(type(of: thrownError))"
         )
 
-        XCTAssertEqual(thrownError as? EngineerValidationError, .invalidFirstNameLength)
+        XCTAssertEqual(thrownError as? ProjectValidationError, .invalidFeatureNameLengthError)
+    }
+
+    func testProjectFeatureNameTooLong() throws {
+        let feature = Feature(name: "12345678901234567890123456789012345678901",
+                              nil,
+                              platform: [Platform.ios],
+                              effortEstimate: 26)
+
+        var thrownError: Error?
+        XCTAssertThrowsError(try feature.validate()) { thrownError = $0 }
+
+        XCTAssertTrue(
+            thrownError is ProjectValidationError,
+            "Unexpected Error Type: \(type(of: thrownError))"
+        )
+
+        XCTAssertEqual(thrownError as? ProjectValidationError, .invalidFeatureNameLengthError)
     }
 
     // Test last name validation
-    func testEngineerInvalidLastNameLength() throws {
+    func testProjectFeatureSummaryLength() throws {
         let engineer = Engineer(firstName: "Derek",
                                 lastName: "12345678901234567890123456789012345678900",
                                 platform: [Platform.ios],
@@ -47,7 +61,7 @@ class ValidateEngineer: XCTestCase {
     }
 
     // Test platform validation
-    func testEngineerInvalidPlatformLength() throws {
+    func testProjectFeaturePlatformEmptyCollection() throws {
         let engineer = Engineer(firstName: "Derek",
                                 lastName: "Smith",
                                 platform: [],
@@ -65,7 +79,24 @@ class ValidateEngineer: XCTestCase {
     }
 
     // Test platform duplicate validation
-    func testEngineerInvalidDuplicatePlatform() throws {
+    func testProjectFeaturePlatformDuplicate() throws {
+        let engineer = Engineer(firstName: "Derek",
+                                lastName: "Smith",
+                                platform: [Platform.ios, Platform.ios],
+                                unavailableDates: [])
+
+        var thrownError: Error?
+        XCTAssertThrowsError(try engineer.validate()) { thrownError = $0 }
+
+        XCTAssertTrue(
+            thrownError is EngineerValidationError,
+            "Unexpected Error Type: \(type(of: thrownError))"
+        )
+
+        XCTAssertEqual(thrownError as? EngineerValidationError, .invalidPlatformDuplicates)
+    }
+
+    func testProjectEffortSizeTooBig() throws {
         let engineer = Engineer(firstName: "Derek",
                                 lastName: "Smith",
                                 platform: [Platform.ios, Platform.ios],

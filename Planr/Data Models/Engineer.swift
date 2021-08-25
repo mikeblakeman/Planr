@@ -7,17 +7,12 @@
 
 import Foundation
 
-enum Platform {
-    case ios
-    case android
-    case cocoas2dx
-}
-
-enum EngineerValidationError: Swift.Error {
+enum EngineerValidationError: Error {
     case invalidFirstNameLength
     case invalidLastNameLength
     case invalidPlatformLength
     case invalidPlatformDuplicates
+    case invalidUnavailableDate
 }
 
 struct Engineer {
@@ -34,14 +29,33 @@ struct Engineer {
     }
 
     public func validate() throws -> Bool {
+        try validateFirstName(firstName)
+        try validateLastName(lastName)
+        try validatePlatform(platform)
+        try validateUnavailableDates(unavailableDates)
+        return true
+    }
+
+    private func validateFirstName(_ name: String) throws {
         if firstName.isEmpty || firstName.count > Constants.engineerNameMaxLength {
             throw EngineerValidationError.invalidFirstNameLength
         }
+    }
+
+    private func validateLastName(_ name: String) throws {
         if lastName.isEmpty || lastName.count > Constants.engineerNameMaxLength {
             throw EngineerValidationError.invalidLastNameLength
         }
+    }
+
+    private func validatePlatform(_ platform: [Platform]) throws {
         if platform.isEmpty { throw EngineerValidationError.invalidPlatformLength }
         if platform.count != Set(platform).count { throw EngineerValidationError.invalidPlatformDuplicates }
-        return true
+    }
+
+    private func validateUnavailableDates(_ dates: [Date]) throws {
+        if !(dates.allSatisfy { Calendar.current.isDateInToday($0) || $0.timeIntervalSinceNow.sign == .plus }) {
+            throw EngineerValidationError.invalidUnavailableDate
+        }
     }
 }

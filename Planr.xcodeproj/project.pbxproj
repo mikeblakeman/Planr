@@ -20,11 +20,12 @@
 		5598B42326D6A5B300FF7A50 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5598B42226D6A5B300FF7A50 /* RealmSwift */; };
 		5598B42526D6A5B300FF7A50 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5598B42426D6A5B300FF7A50 /* Realm */; };
 		5598B42C26D6AB0600FF7A50 /* SwiftLintFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 5598B42B26D6AB0600FF7A50 /* SwiftLintFramework */; };
+		5598B43326D6C4F800FF7A50 /* ProjectValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B43126D6C4F800FF7A50 /* ProjectValidationTests.swift */; };
 		55ED4FC826D6852E004A21AD /* PlanrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED4FC726D6852E004A21AD /* PlanrApp.swift */; };
 		55ED4FCA26D6852E004A21AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED4FC926D6852E004A21AD /* ContentView.swift */; };
 		55ED4FCC26D6852F004A21AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55ED4FCB26D6852F004A21AD /* Assets.xcassets */; };
 		55ED4FCF26D6852F004A21AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55ED4FCE26D6852F004A21AD /* Preview Assets.xcassets */; };
-		55ED4FDB26D68530004A21AD /* PlanrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED4FDA26D68530004A21AD /* PlanrTests.swift */; };
+		55ED4FDB26D68530004A21AD /* EngineerVlidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED4FDA26D68530004A21AD /* EngineerVlidationTests.swift */; };
 		55ED4FE626D68530004A21AD /* PlanrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED4FE526D68530004A21AD /* PlanrUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		5598B40E26D6895600FF7A50 /* Engineer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engineer.swift; sourceTree = "<group>"; };
 		5598B41126D6898000FF7A50 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		5598B41526D6944600FF7A50 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5598B43126D6C4F800FF7A50 /* ProjectValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectValidationTests.swift; sourceTree = "<group>"; };
 		55ED4FC426D6852E004A21AD /* Planr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55ED4FC726D6852E004A21AD /* PlanrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanrApp.swift; sourceTree = "<group>"; };
 		55ED4FC926D6852E004A21AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,7 +59,7 @@
 		55ED4FD026D6852F004A21AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55ED4FD126D6852F004A21AD /* Planr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Planr.entitlements; sourceTree = "<group>"; };
 		55ED4FD626D68530004A21AD /* PlanrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		55ED4FDA26D68530004A21AD /* PlanrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanrTests.swift; sourceTree = "<group>"; };
+		55ED4FDA26D68530004A21AD /* EngineerVlidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineerVlidationTests.swift; sourceTree = "<group>"; };
 		55ED4FDC26D68530004A21AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55ED4FE126D68530004A21AD /* PlanrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55ED4FE526D68530004A21AD /* PlanrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanrUITests.swift; sourceTree = "<group>"; };
@@ -159,8 +161,9 @@
 		55ED4FD926D68530004A21AD /* PlanrTests */ = {
 			isa = PBXGroup;
 			children = (
-				55ED4FDA26D68530004A21AD /* PlanrTests.swift */,
+				55ED4FDA26D68530004A21AD /* EngineerVlidationTests.swift */,
 				55ED4FDC26D68530004A21AD /* Info.plist */,
+				5598B43126D6C4F800FF7A50 /* ProjectValidationTests.swift */,
 			);
 			path = PlanrTests;
 			sourceTree = "<group>";
@@ -351,8 +354,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5598B41026D6895600FF7A50 /* Engineer.swift in Sources */,
-				55ED4FDB26D68530004A21AD /* PlanrTests.swift in Sources */,
+				55ED4FDB26D68530004A21AD /* EngineerVlidationTests.swift in Sources */,
 				5598B41326D6898000FF7A50 /* Project.swift in Sources */,
+				5598B43326D6C4F800FF7A50 /* ProjectValidationTests.swift in Sources */,
 				5598B41726D6944600FF7A50 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
