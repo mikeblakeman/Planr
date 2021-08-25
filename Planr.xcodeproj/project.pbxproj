@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55ED4FC826D6852E004A21AD /* PlanrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED4FC726D6852E004A21AD /* PlanrApp.swift */; };
+		55ED4FCA26D6852E004A21AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED4FC926D6852E004A21AD /* ContentView.swift */; };
+		55ED4FCC26D6852F004A21AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55ED4FCB26D6852F004A21AD /* Assets.xcassets */; };
+		55ED4FCF26D6852F004A21AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55ED4FCE26D6852F004A21AD /* Preview Assets.xcassets */; };
+		55ED4FDB26D68530004A21AD /* PlanrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED4FDA26D68530004A21AD /* PlanrTests.swift */; };
+		55ED4FE626D68530004A21AD /* PlanrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED4FE526D68530004A21AD /* PlanrUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		55ED4FD726D68530004A21AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55ED4FBC26D6852E004A21AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55ED4FC326D6852E004A21AD;
+			remoteInfo = Planr;
+		};
+		55ED4FE226D68530004A21AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55ED4FBC26D6852E004A21AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55ED4FC326D6852E004A21AD;
+			remoteInfo = Planr;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		55ED4FC426D6852E004A21AD /* Planr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55ED4FC726D6852E004A21AD /* PlanrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanrApp.swift; sourceTree = "<group>"; };
+		55ED4FC926D6852E004A21AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		55ED4FCB26D6852F004A21AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55ED4FCE26D6852F004A21AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		55ED4FD026D6852F004A21AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55ED4FD126D6852F004A21AD /* Planr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Planr.entitlements; sourceTree = "<group>"; };
+		55ED4FD626D68530004A21AD /* PlanrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55ED4FDA26D68530004A21AD /* PlanrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanrTests.swift; sourceTree = "<group>"; };
+		55ED4FDC26D68530004A21AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55ED4FE126D68530004A21AD /* PlanrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55ED4FE526D68530004A21AD /* PlanrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanrUITests.swift; sourceTree = "<group>"; };
+		55ED4FE726D68530004A21AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55ED4FC126D6852E004A21AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55ED4FD326D68530004A21AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55ED4FDE26D68530004A21AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		55ED4FBB26D6852E004A21AD = {
+			isa = PBXGroup;
+			children = (
+				55ED4FC626D6852E004A21AD /* Planr */,
+				55ED4FD926D68530004A21AD /* PlanrTests */,
+				55ED4FE426D68530004A21AD /* PlanrUITests */,
+				55ED4FC526D6852E004A21AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		55ED4FC526D6852E004A21AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55ED4FC426D6852E004A21AD /* Planr.app */,
+				55ED4FD626D68530004A21AD /* PlanrTests.xctest */,
+				55ED4FE126D68530004A21AD /* PlanrUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55ED4FC626D6852E004A21AD /* Planr */ = {
+			isa = PBXGroup;
+			children = (
+				55ED4FC726D6852E004A21AD /* PlanrApp.swift */,
+				55ED4FC926D6852E004A21AD /* ContentView.swift */,
+				55ED4FCB26D6852F004A21AD /* Assets.xcassets */,
+				55ED4FD026D6852F004A21AD /* Info.plist */,
+				55ED4FD126D6852F004A21AD /* Planr.entitlements */,
+				55ED4FCD26D6852F004A21AD /* Preview Content */,
+			);
+			path = Planr;
+			sourceTree = "<group>";
+		};
+		55ED4FCD26D6852F004A21AD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				55ED4FCE26D6852F004A21AD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		55ED4FD926D68530004A21AD /* PlanrTests */ = {
+			isa = PBXGroup;
+			children = (
+				55ED4FDA26D68530004A21AD /* PlanrTests.swift */,
+				55ED4FDC26D68530004A21AD /* Info.plist */,
+			);
+			path = PlanrTests;
+			sourceTree = "<group>";
+		};
+		55ED4FE426D68530004A21AD /* PlanrUITests */ = {
+			isa = PBXGroup;
+			children = (
+				55ED4FE526D68530004A21AD /* PlanrUITests.swift */,
+				55ED4FE726D68530004A21AD /* Info.plist */,
+			);
+			path = PlanrUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55ED4FC326D6852E004A21AD /* Planr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55ED4FEA26D68530004A21AD /* Build configuration list for PBXNativeTarget "Planr" */;
+			buildPhases = (
+				55ED4FC026D6852E004A21AD /* Sources */,
+				55ED4FC126D6852E004A21AD /* Frameworks */,
+				55ED4FC226D6852E004A21AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Planr;
+			productName = Planr;
+			productReference = 55ED4FC426D6852E004A21AD /* Planr.app */;
+			productType = "com.apple.product-type.application";
+		};
+		55ED4FD526D68530004A21AD /* PlanrTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55ED4FED26D68530004A21AD /* Build configuration list for PBXNativeTarget "PlanrTests" */;
+			buildPhases = (
+				55ED4FD226D68530004A21AD /* Sources */,
+				55ED4FD326D68530004A21AD /* Frameworks */,
+				55ED4FD426D68530004A21AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55ED4FD826D68530004A21AD /* PBXTargetDependency */,
+			);
+			name = PlanrTests;
+			productName = PlanrTests;
+			productReference = 55ED4FD626D68530004A21AD /* PlanrTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		55ED4FE026D68530004A21AD /* PlanrUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55ED4FF026D68530004A21AD /* Build configuration list for PBXNativeTarget "PlanrUITests" */;
+			buildPhases = (
+				55ED4FDD26D68530004A21AD /* Sources */,
+				55ED4FDE26D68530004A21AD /* Frameworks */,
+				55ED4FDF26D68530004A21AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55ED4FE326D68530004A21AD /* PBXTargetDependency */,
+			);
+			name = PlanrUITests;
+			productName = PlanrUITests;
+			productReference = 55ED4FE126D68530004A21AD /* PlanrUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55ED4FBC26D6852E004A21AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					55ED4FC326D6852E004A21AD = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					55ED4FD526D68530004A21AD = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 55ED4FC326D6852E004A21AD;
+					};
+					55ED4FE026D68530004A21AD = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 55ED4FC326D6852E004A21AD;
+					};
+				};
+			};
+			buildConfigurationList = 55ED4FBF26D6852E004A21AD /* Build configuration list for PBXProject "Planr" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55ED4FBB26D6852E004A21AD;
+			productRefGroup = 55ED4FC526D6852E004A21AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55ED4FC326D6852E004A21AD /* Planr */,
+				55ED4FD526D68530004A21AD /* PlanrTests */,
+				55ED4FE026D68530004A21AD /* PlanrUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55ED4FC226D6852E004A21AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55ED4FCF26D6852F004A21AD /* Preview Assets.xcassets in Resources */,
+				55ED4FCC26D6852F004A21AD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55ED4FD426D68530004A21AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55ED4FDF26D68530004A21AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55ED4FC026D6852E004A21AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55ED4FCA26D6852E004A21AD /* ContentView.swift in Sources */,
+				55ED4FC826D6852E004A21AD /* PlanrApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55ED4FD226D68530004A21AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55ED4FDB26D68530004A21AD /* PlanrTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55ED4FDD26D68530004A21AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55ED4FE626D68530004A21AD /* PlanrUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		55ED4FD826D68530004A21AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55ED4FC326D6852E004A21AD /* Planr */;
+			targetProxy = 55ED4FD726D68530004A21AD /* PBXContainerItemProxy */;
+		};
+		55ED4FE326D68530004A21AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55ED4FC326D6852E004A21AD /* Planr */;
+			targetProxy = 55ED4FE226D68530004A21AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		55ED4FE826D68530004A21AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		55ED4FE926D68530004A21AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		55ED4FEB26D68530004A21AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Planr/Planr.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Planr/Preview Content\"";
+				DEVELOPMENT_TEAM = 7LB4JQ462B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Planr/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blakeman.Planr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		55ED4FEC26D68530004A21AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Planr/Planr.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Planr/Preview Content\"";
+				DEVELOPMENT_TEAM = 7LB4JQ462B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Planr/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blakeman.Planr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		55ED4FEE26D68530004A21AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7LB4JQ462B;
+				INFOPLIST_FILE = PlanrTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blakeman.PlanrTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Planr.app/Contents/MacOS/Planr";
+			};
+			name = Debug;
+		};
+		55ED4FEF26D68530004A21AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7LB4JQ462B;
+				INFOPLIST_FILE = PlanrTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blakeman.PlanrTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Planr.app/Contents/MacOS/Planr";
+			};
+			name = Release;
+		};
+		55ED4FF126D68530004A21AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7LB4JQ462B;
+				INFOPLIST_FILE = PlanrUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.blakeman.PlanrUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Planr;
+			};
+			name = Debug;
+		};
+		55ED4FF226D68530004A21AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7LB4JQ462B;
+				INFOPLIST_FILE = PlanrUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.blakeman.PlanrUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Planr;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55ED4FBF26D6852E004A21AD /* Build configuration list for PBXProject "Planr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55ED4FE826D68530004A21AD /* Debug */,
+				55ED4FE926D68530004A21AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55ED4FEA26D68530004A21AD /* Build configuration list for PBXNativeTarget "Planr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55ED4FEB26D68530004A21AD /* Debug */,
+				55ED4FEC26D68530004A21AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55ED4FED26D68530004A21AD /* Build configuration list for PBXNativeTarget "PlanrTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55ED4FEE26D68530004A21AD /* Debug */,
+				55ED4FEF26D68530004A21AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55ED4FF026D68530004A21AD /* Build configuration list for PBXNativeTarget "PlanrUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55ED4FF126D68530004A21AD /* Debug */,
+				55ED4FF226D68530004A21AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 55ED4FBC26D6852E004A21AD /* Project object */;
+}
