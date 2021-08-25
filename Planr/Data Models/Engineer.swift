@@ -34,8 +34,12 @@ struct Engineer {
     }
 
     public func validate() throws -> Bool {
-        if firstName.isEmpty || firstName.count > Constants.engineerNameMaxLength { throw EngineerValidationError.invalidFirstNameLength }
-        if lastName.isEmpty || lastName.count > Constants.engineerNameMaxLength { throw EngineerValidationError.invalidLastNameLength }
+        if firstName.isEmpty || firstName.count > Constants.engineerNameMaxLength {
+            throw EngineerValidationError.invalidFirstNameLength
+        }
+        if lastName.isEmpty || lastName.count > Constants.engineerNameMaxLength {
+            throw EngineerValidationError.invalidLastNameLength
+        }
         if platform.isEmpty { throw EngineerValidationError.invalidPlatformLength }
         if platform.count != Set(platform).count { throw EngineerValidationError.invalidPlatformDuplicates }
         return true
