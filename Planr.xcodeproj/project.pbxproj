@@ -11,6 +11,8 @@
 		5598B41026D6895600FF7A50 /* Engineer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B40E26D6895600FF7A50 /* Engineer.swift */; };
 		5598B41226D6898000FF7A50 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B41126D6898000FF7A50 /* Project.swift */; };
 		5598B41326D6898000FF7A50 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B41126D6898000FF7A50 /* Project.swift */; };
+		5598B41626D6944600FF7A50 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B41526D6944600FF7A50 /* Constants.swift */; };
+		5598B41726D6944600FF7A50 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B41526D6944600FF7A50 /* Constants.swift */; };
 		55ED4FC826D6852E004A21AD /* PlanrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED4FC726D6852E004A21AD /* PlanrApp.swift */; };
 		55ED4FCA26D6852E004A21AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED4FC926D6852E004A21AD /* ContentView.swift */; };
 		55ED4FCC26D6852F004A21AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55ED4FCB26D6852F004A21AD /* Assets.xcassets */; };
@@ -39,6 +41,7 @@
 /* Begin PBXFileReference section */
 		5598B40E26D6895600FF7A50 /* Engineer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engineer.swift; sourceTree = "<group>"; };
 		5598B41126D6898000FF7A50 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		5598B41526D6944600FF7A50 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		55ED4FC426D6852E004A21AD /* Planr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55ED4FC726D6852E004A21AD /* PlanrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanrApp.swift; sourceTree = "<group>"; };
 		55ED4FC926D6852E004A21AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,6 +91,14 @@
 			path = "Data Models";
 			sourceTree = "<group>";
 		};
+		5598B41426D6943800FF7A50 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				5598B41526D6944600FF7A50 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		55ED4FBB26D6852E004A21AD = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +122,7 @@
 		55ED4FC626D6852E004A21AD /* Planr */ = {
 			isa = PBXGroup;
 			children = (
+				5598B41426D6943800FF7A50 /* Constants */,
 				5598B40D26D6890B00FF7A50 /* Data Models */,
 				55ED4FC726D6852E004A21AD /* PlanrApp.swift */,
 				55ED4FC926D6852E004A21AD /* ContentView.swift */,
@@ -277,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5598B41626D6944600FF7A50 /* Constants.swift in Sources */,
 				5598B40F26D6895600FF7A50 /* Engineer.swift in Sources */,
 				55ED4FCA26D6852E004A21AD /* ContentView.swift in Sources */,
 				55ED4FC826D6852E004A21AD /* PlanrApp.swift in Sources */,
@@ -291,6 +304,7 @@
 				5598B41026D6895600FF7A50 /* Engineer.swift in Sources */,
 				55ED4FDB26D68530004A21AD /* PlanrTests.swift in Sources */,
 				5598B41326D6898000FF7A50 /* Project.swift in Sources */,
+				5598B41726D6944600FF7A50 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

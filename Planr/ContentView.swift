@@ -12,10 +12,6 @@ struct ContentView: View {
         Text("Hello, world!")
             .padding()
     }
-
-    var engineer = Engineer(name: "Derek", platform: [Platform.ios, Platform.android], unavailableDates: [Date().addingTimeInterval(86400)])
-
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

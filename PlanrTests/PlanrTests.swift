@@ -8,26 +8,77 @@
 import XCTest
 @testable import Planr
 
-class PlanrTests: XCTestCase {
+class ValidateEngineer: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    // Test first name validation
+    func testEngineerInvalidFirstNameLength() throws {
+        let engineer = Engineer(firstName: "12345678901234567890123456789012345678900",
+                                lastName: "Smith",
+                                platform: [Platform.ios],
+                                unavailableDates: [])
+
+        var thrownError: Error?
+        XCTAssertThrowsError(try engineer.validate()) { thrownError = $0 }
+
+        XCTAssertTrue(
+            thrownError is EngineerValidationError,
+            "Unexpected Error Type: \(type(of: thrownError))"
+        )
+
+        XCTAssertEqual(thrownError as? EngineerValidationError, .invalidFirstNameLength)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    // Test last name validation
+    func testEngineerInvalidLastNameLength() throws {
+        let engineer = Engineer(firstName: "Derek",
+                                lastName: "12345678901234567890123456789012345678900",
+                                platform: [Platform.ios],
+                                unavailableDates: [])
+
+        var thrownError: Error?
+        XCTAssertThrowsError(try engineer.validate()) { thrownError = $0 }
+
+        XCTAssertTrue(
+            thrownError is EngineerValidationError,
+            "Unexpected Error Type: \(type(of: thrownError))"
+        )
+
+        XCTAssertEqual(thrownError as? EngineerValidationError, .invalidLastNameLength)
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    // Test platform validation
+    func testEngineerInvalidPlatformLength() throws {
+        let engineer = Engineer(firstName: "Derek",
+                                lastName: "Smith",
+                                platform: [],
+                                unavailableDates: [])
+
+        var thrownError: Error?
+        XCTAssertThrowsError(try engineer.validate()) { thrownError = $0 }
+
+        XCTAssertTrue(
+            thrownError is EngineerValidationError,
+            "Unexpected Error Type: \(type(of: thrownError))"
+        )
+
+        XCTAssertEqual(thrownError as? EngineerValidationError, .invalidPlatformLength)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    // Test platform duplicate validation
+    func testEngineerInvalidDuplicatePlatform() throws {
+        let engineer = Engineer(firstName: "Derek",
+                                lastName: "Smith",
+                                platform: [Platform.ios, Platform.ios],
+                                unavailableDates: [])
 
+        var thrownError: Error?
+        XCTAssertThrowsError(try engineer.validate()) { thrownError = $0 }
+
+        XCTAssertTrue(
+            thrownError is EngineerValidationError,
+            "Unexpected Error Type: \(type(of: thrownError))"
+        )
+
+        XCTAssertEqual(thrownError as? EngineerValidationError, .invalidPlatformDuplicates)
+    }
 }
