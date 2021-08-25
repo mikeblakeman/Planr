@@ -13,7 +13,7 @@ enum Platform {
     case cocoas2dx
 }
 
-enum EngineerValidationError: Swift.Error, Equatable, Hashable {
+enum EngineerValidationError: Swift.Error {
     case invalidFirstNameLength
     case invalidLastNameLength
     case invalidPlatformLength

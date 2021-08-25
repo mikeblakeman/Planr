@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,13 @@
 		5598B41326D6898000FF7A50 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B41126D6898000FF7A50 /* Project.swift */; };
 		5598B41626D6944600FF7A50 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B41526D6944600FF7A50 /* Constants.swift */; };
 		5598B41726D6944600FF7A50 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B41526D6944600FF7A50 /* Constants.swift */; };
+		5598B41A26D6A42800FF7A50 /* PromisesTestHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = 5598B41926D6A42800FF7A50 /* PromisesTestHelpers */; };
+		5598B41C26D6A42800FF7A50 /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = 5598B41B26D6A42800FF7A50 /* Promises */; };
+		5598B41E26D6A42800FF7A50 /* FBLPromises in Frameworks */ = {isa = PBXBuildFile; productRef = 5598B41D26D6A42800FF7A50 /* FBLPromises */; };
+		5598B42026D6A42800FF7A50 /* FBLPromisesTestHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = 5598B41F26D6A42800FF7A50 /* FBLPromisesTestHelpers */; };
+		5598B42326D6A5B300FF7A50 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5598B42226D6A5B300FF7A50 /* RealmSwift */; };
+		5598B42526D6A5B300FF7A50 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5598B42426D6A5B300FF7A50 /* Realm */; };
+		5598B42C26D6AB0600FF7A50 /* SwiftLintFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 5598B42B26D6AB0600FF7A50 /* SwiftLintFramework */; };
 		55ED4FC826D6852E004A21AD /* PlanrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED4FC726D6852E004A21AD /* PlanrApp.swift */; };
 		55ED4FCA26D6852E004A21AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED4FC926D6852E004A21AD /* ContentView.swift */; };
 		55ED4FCC26D6852F004A21AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55ED4FCB26D6852F004A21AD /* Assets.xcassets */; };
@@ -62,6 +69,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5598B42526D6A5B300FF7A50 /* Realm in Frameworks */,
+				5598B42C26D6AB0600FF7A50 /* SwiftLintFramework in Frameworks */,
+				5598B41E26D6A42800FF7A50 /* FBLPromises in Frameworks */,
+				5598B41C26D6A42800FF7A50 /* Promises in Frameworks */,
+				5598B41A26D6A42800FF7A50 /* PromisesTestHelpers in Frameworks */,
+				5598B42326D6A5B300FF7A50 /* RealmSwift in Frameworks */,
+				5598B42026D6A42800FF7A50 /* FBLPromisesTestHelpers in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +190,15 @@
 			dependencies = (
 			);
 			name = Planr;
+			packageProductDependencies = (
+				5598B41926D6A42800FF7A50 /* PromisesTestHelpers */,
+				5598B41B26D6A42800FF7A50 /* Promises */,
+				5598B41D26D6A42800FF7A50 /* FBLPromises */,
+				5598B41F26D6A42800FF7A50 /* FBLPromisesTestHelpers */,
+				5598B42226D6A5B300FF7A50 /* RealmSwift */,
+				5598B42426D6A5B300FF7A50 /* Realm */,
+				5598B42B26D6AB0600FF7A50 /* SwiftLintFramework */,
+			);
 			productName = Planr;
 			productReference = 55ED4FC426D6852E004A21AD /* Planr.app */;
 			productType = "com.apple.product-type.application";
@@ -247,6 +270,11 @@
 				Base,
 			);
 			mainGroup = 55ED4FBB26D6852E004A21AD;
+			packageReferences = (
+				5598B41826D6A42800FF7A50 /* XCRemoteSwiftPackageReference "promises" */,
+				5598B42126D6A5B300FF7A50 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				5598B42A26D6AB0600FF7A50 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+			);
 			productRefGroup = 55ED4FC526D6852E004A21AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -619,6 +647,71 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5598B41826D6A42800FF7A50 /* XCRemoteSwiftPackageReference "promises" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/promises";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		5598B42126D6A5B300FF7A50 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.12.0;
+			};
+		};
+		5598B42A26D6AB0600FF7A50 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.43.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5598B41926D6A42800FF7A50 /* PromisesTestHelpers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5598B41826D6A42800FF7A50 /* XCRemoteSwiftPackageReference "promises" */;
+			productName = PromisesTestHelpers;
+		};
+		5598B41B26D6A42800FF7A50 /* Promises */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5598B41826D6A42800FF7A50 /* XCRemoteSwiftPackageReference "promises" */;
+			productName = Promises;
+		};
+		5598B41D26D6A42800FF7A50 /* FBLPromises */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5598B41826D6A42800FF7A50 /* XCRemoteSwiftPackageReference "promises" */;
+			productName = FBLPromises;
+		};
+		5598B41F26D6A42800FF7A50 /* FBLPromisesTestHelpers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5598B41826D6A42800FF7A50 /* XCRemoteSwiftPackageReference "promises" */;
+			productName = FBLPromisesTestHelpers;
+		};
+		5598B42226D6A5B300FF7A50 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5598B42126D6A5B300FF7A50 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		5598B42426D6A5B300FF7A50 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5598B42126D6A5B300FF7A50 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		5598B42B26D6AB0600FF7A50 /* SwiftLintFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5598B42A26D6AB0600FF7A50 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = SwiftLintFramework;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 55ED4FBC26D6852E004A21AD /* Project object */;
 }
