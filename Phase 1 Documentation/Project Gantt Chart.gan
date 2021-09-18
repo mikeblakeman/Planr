@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2021-08-22" view-index="0" gantt-divider-location="433" resource-divider-location="300" version="2.8.11" locale="en_US">
+    <description/>
+    <view zooming-state="default:6" id="gantt-chart">
+        <field id="tpd3" name="Name" width="255" order="0"/>
+        <field id="tpd4" name="Begin date" width="92" order="1"/>
+        <field id="tpd5" name="End date" width="82" order="2"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="210" order="0"/>
+        <field id="1" name="Default role" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="7" name="Phase 1 - Requirements" color="#8cb6ce" meeting="false" start="2021-08-30" duration="21" complete="83" thirdDate="2021-09-17" thirdDate-constraint="0" expand="true">
+            <task id="8" name="Develop Vision Document" color="#8cb6ce" meeting="false" start="2021-08-30" duration="5" complete="91" thirdDate="2021-09-17" thirdDate-constraint="0" expand="true">
+                <depend id="12" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="10" name="Develop SQA Plan" meeting="false" start="2021-09-06" duration="5" complete="94" expand="true">
+                <depend id="12" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="9" name="Develop Project Plan" color="#8cb6ce" meeting="false" start="2021-09-13" duration="5" complete="83" thirdDate="2021-09-17" thirdDate-constraint="0" expand="true">
+                <depend id="12" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="11" name="Develop Initial Prototype" meeting="false" start="2021-09-20" duration="5" complete="84" expand="true">
+                <depend id="12" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="12" name="Phase 1 Presentation" meeting="false" start="2021-09-27" duration="1" complete="0" expand="true"/>
+        </task>
+        <task id="13" name="Phase 2 - Architecture" color="#8cb6ce" meeting="false" start="2021-09-29" duration="19" complete="0" thirdDate="2021-09-17" thirdDate-constraint="0" expand="true">
+            <task id="28" name="Revise Vision Document" meeting="false" start="2021-09-29" duration="2" complete="0" expand="true"/>
+            <task id="29" name="Formal Requirement Specification" meeting="false" start="2021-10-04" duration="3" complete="0" expand="true"/>
+            <task id="30" name="Develop Architectural Design" meeting="false" start="2021-10-04" duration="4" complete="0" expand="true"/>
+            <task id="31" name="Develop Test Plan" meeting="false" start="2021-10-08" duration="2" complete="0" expand="true"/>
+            <task id="32" name="Technical Inspection" meeting="false" start="2021-10-11" duration="2" complete="0" expand="true"/>
+            <task id="33" name="Revise Project Plan" meeting="false" start="2021-10-12" duration="3" complete="0" expand="true"/>
+            <task id="34" name="Develop Executable Protoype" meeting="false" start="2021-10-13" duration="8" complete="0" expand="true"/>
+            <task id="45" name="Presentation 2" meeting="false" start="2021-10-25" duration="1" complete="0" expand="true"/>
+        </task>
+        <task id="35" name="Phase 3 - Implementation" meeting="false" start="2021-10-26" duration="16" complete="0" expand="true">
+            <task id="46" name="Develop Component Design" meeting="false" start="2021-10-26" duration="3" complete="0" expand="true"/>
+            <task id="47" name="Develop Code" meeting="false" start="2021-10-27" duration="8" complete="0" expand="true"/>
+            <task id="48" name="Testing" meeting="false" start="2021-11-08" duration="1" complete="0" expand="true"/>
+            <task id="49" name="Assessment Evaluation" meeting="false" start="2021-11-09" duration="1" complete="0" expand="true"/>
+            <task id="50" name="Technical Inspection" meeting="false" start="2021-11-10" duration="1" complete="0" expand="true"/>
+            <task id="51" name="Develop User Manual" meeting="false" start="2021-11-10" duration="3" complete="0" expand="true"/>
+            <task id="52" name="Project Evaluation" meeting="false" start="2021-11-15" duration="1" complete="0" expand="true"/>
+            <task id="53" name="Presentation 3" meeting="false" start="2021-11-16" duration="1" complete="0" expand="true"/>
+        </task>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>
