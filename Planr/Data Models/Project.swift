@@ -19,6 +19,7 @@ enum ProjectValidationError: Error {
     case featurePlatformEmptyError
     case duplicatePlatformError
     case effortEstimateTooHighError
+    case priorityValueTooHighError
 }
 
 struct Project {
@@ -40,12 +41,14 @@ struct Feature {
     private(set) var summary: String?
     private(set) var platform: [Platform]
     private(set) var effortEstimate: Int
+    private(set) var priority: Int
 
-    init(name: String, _ summary: String?, platform: [Platform], effortEstimate estimate: Int) {
+    init(name: String, _ summary: String?, platform: [Platform], effortEstimate estimate: Int, priority: Int) {
         self.name = name
         self.summary = summary
         self.platform = platform
         self.effortEstimate = estimate
+        self.priority = priority
     }
 
     public func updateName(_ name: String) throws {
@@ -54,11 +57,16 @@ struct Feature {
         }
     }
 
+    public func updatePriority(_ priority: Int) throws {
+        try validatePriority(priority)
+    }
+
     public func validate() throws -> Bool {
         try validateName(name)
         try validateSummary(summary)
         try validatePlatform(platform)
         try validateEstimate(effortEstimate)
+        try validatePriority(priority)
         return true
     }
 
@@ -82,6 +90,12 @@ struct Feature {
     private func validateEstimate(_ estimate: Int) throws {
         if effortEstimate > Constants.effortEstimateMaxPointValue {
             throw ProjectValidationError.effortEstimateTooHighError
+        }
+    }
+
+    private func validatePriority(_ priority: Int) throws {
+        if priority > 1000 {
+            throw ProjectValidationError.priorityValueTooHighError
         }
     }
 }

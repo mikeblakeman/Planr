@@ -12,7 +12,7 @@ class ValidateProject: XCTestCase {
 
     // Test first name validation
     func testProjectFeatureNameEmptyLength() throws {
-        let feature = Feature(name: "", nil, platform: [Platform.ios], effortEstimate: 26)
+        let feature = Feature(name: "", nil, platform: [Platform.ios], effortEstimate: 26, priority: 100)
 
         var thrownError: Error?
         XCTAssertThrowsError(try feature.validate()) { thrownError = $0 }
@@ -29,7 +29,8 @@ class ValidateProject: XCTestCase {
         let feature = Feature(name: "12345678901234567890123456789012345678901",
                               nil,
                               platform: [Platform.ios],
-                              effortEstimate: 26)
+                              effortEstimate: 26,
+                              priority: 100)
 
         var thrownError: Error?
         XCTAssertThrowsError(try feature.validate()) { thrownError = $0 }
@@ -44,20 +45,24 @@ class ValidateProject: XCTestCase {
 
     // Test last name validation
     func testProjectFeatureSummaryLength() throws {
-        let engineer = Engineer(firstName: "Derek",
-                                lastName: "12345678901234567890123456789012345678900",
-                                platform: [Platform.ios],
-                                unavailableDates: [])
+        let feature = Feature(name: "feature",
+                              "12345678901234567890123456789012345678901234567890123456789012345678901234567890123456" +
+                              "12345678901234567890123456789012345678901234567890123456789012345678901234567890123456" +
+                              "12345678901234567890123456789012345678901234567890123456789012345678901234567890123456" +
+                              "12345678901234567890123456789012345678901234567890123456789012345678901234567890123456",
+                              platform: [Platform.ios],
+                              effortEstimate: 26,
+                              priority: 100)
 
         var thrownError: Error?
-        XCTAssertThrowsError(try engineer.validate()) { thrownError = $0 }
+        XCTAssertThrowsError(try feature.validate()) { thrownError = $0 }
 
         XCTAssertTrue(
-            thrownError is EngineerValidationError,
+            thrownError is ProjectValidationError,
             "Unexpected Error Type: \(type(of: thrownError))"
         )
 
-        XCTAssertEqual(thrownError as? EngineerValidationError, .invalidLastNameLength)
+        XCTAssertEqual(thrownError as? ProjectValidationError, .invalidFeatureSummaryLengthError)
     }
 
     // Test platform validation
@@ -112,4 +117,14 @@ class ValidateProject: XCTestCase {
 
         XCTAssertEqual(thrownError as? EngineerValidationError, .invalidPlatformDuplicates)
     }
+
+//    func testProjectPrioritySizeTooBig() throws {
+//        let engineer = Engineer(firstName: "Derek",
+//                                lastName: "Smith",
+//                                platform: [Platform.ios, Platform.ios],
+//                                unavailableDates: [])
+//
+//        var thrownError: Error?
+//        XCTAssertThrowsError()
+//    }
 }
