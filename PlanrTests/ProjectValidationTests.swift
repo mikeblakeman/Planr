@@ -12,21 +12,21 @@ class ValidateProject: XCTestCase {
 
     // Test first name validation
     func testProjectFeatureNameEmptyLength() throws {
-        let feature = Feature(name: "", nil, platform: [Platform.ios], effortEstimate: 26, priority: 100)
+        let feature = UnplannedFeature(name: "", nil, platform: [Platform.ios], effortEstimate: 26, priority: 100)
 
         var thrownError: Error?
         XCTAssertThrowsError(try feature.validate()) { thrownError = $0 }
 
         XCTAssertTrue(
-            thrownError is ProjectValidationError,
+            thrownError is FeatureValidationError,
             "Unexpected Error Type: \(type(of: thrownError))"
         )
 
-        XCTAssertEqual(thrownError as? ProjectValidationError, .invalidFeatureNameLengthError)
+        XCTAssertEqual(thrownError as? FeatureValidationError, .invalidFeatureNameLengthError)
     }
 
     func testProjectFeatureNameTooLong() throws {
-        let feature = Feature(name: "12345678901234567890123456789012345678901",
+        let feature = UnplannedFeature(name: "12345678901234567890123456789012345678901",
                               nil,
                               platform: [Platform.ios],
                               effortEstimate: 26,
@@ -36,16 +36,16 @@ class ValidateProject: XCTestCase {
         XCTAssertThrowsError(try feature.validate()) { thrownError = $0 }
 
         XCTAssertTrue(
-            thrownError is ProjectValidationError,
+            thrownError is FeatureValidationError,
             "Unexpected Error Type: \(type(of: thrownError))"
         )
 
-        XCTAssertEqual(thrownError as? ProjectValidationError, .invalidFeatureNameLengthError)
+        XCTAssertEqual(thrownError as? FeatureValidationError, .invalidFeatureNameLengthError)
     }
 
     // Test last name validation
     func testProjectFeatureSummaryLength() throws {
-        let feature = Feature(name: "feature",
+        let feature = UnplannedFeature(name: "feature",
                               "12345678901234567890123456789012345678901234567890123456789012345678901234567890123456" +
                               "12345678901234567890123456789012345678901234567890123456789012345678901234567890123456" +
                               "12345678901234567890123456789012345678901234567890123456789012345678901234567890123456" +
@@ -58,11 +58,11 @@ class ValidateProject: XCTestCase {
         XCTAssertThrowsError(try feature.validate()) { thrownError = $0 }
 
         XCTAssertTrue(
-            thrownError is ProjectValidationError,
+            thrownError is FeatureValidationError,
             "Unexpected Error Type: \(type(of: thrownError))"
         )
 
-        XCTAssertEqual(thrownError as? ProjectValidationError, .invalidFeatureSummaryLengthError)
+        XCTAssertEqual(thrownError as? FeatureValidationError, .invalidFeatureSummaryLengthError)
     }
 
     // Test platform validation

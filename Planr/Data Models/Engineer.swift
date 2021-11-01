@@ -15,11 +15,11 @@ enum EngineerValidationError: Error {
     case invalidUnavailableDate
 }
 
-struct Engineer {
-    private var firstName: String
-    private var lastName: String
-    private var platform: [Platform]
-    private var unavailableDates: [Date]
+struct Engineer: Hashable {
+    public private(set) var firstName: String
+    public private(set) var lastName: String
+    public private(set) var platform: [Platform]
+    public private(set) var unavailableDates: [Date]
 
     init(firstName: String, lastName: String, platform: [Platform], unavailableDates: [Date]) {
         self.firstName = firstName
@@ -57,5 +57,12 @@ struct Engineer {
         if !(dates.allSatisfy { Calendar.current.isDateInToday($0) || $0.timeIntervalSinceNow.sign == .plus }) {
             throw EngineerValidationError.invalidUnavailableDate
         }
+    }
+
+    static func == (lhs: Engineer, rhs: Engineer) -> Bool {
+        return lhs.firstName == rhs.firstName
+            && lhs.lastName == rhs.lastName
+            && lhs.platform == rhs.platform
+            && lhs.unavailableDates == rhs.unavailableDates
     }
 }

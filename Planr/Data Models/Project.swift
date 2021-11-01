@@ -7,31 +7,34 @@
 
 import Foundation
 
-enum Platform {
-    case ios
-    case android
-    case cocoas2dx
-}
-
-enum ProjectValidationError: Error {
-    case invalidFeatureNameLengthError
-    case invalidFeatureSummaryLengthError
-    case featurePlatformEmptyError
-    case duplicatePlatformError
-    case effortEstimateTooHighError
-    case priorityValueTooHighError
-}
-
 struct Project {
-    private var name: String
-    private(set) var features: [Feature]
+    public private(set) var name: String
+    public private(set) var features: [UnplannedFeature]
+    public private(set) var engineers: [Engineer]
 
-    init(name: String, features: [Feature]) {
+    init(name: String, _ features: [UnplannedFeature] = [], _ engineers: [Engineer] = []) {
         self.name = name
         self.features = features
+        self.engineers = engineers
     }
 
-    public mutating func addFeature(_ feature: Feature) {
+    public mutating func addFeature(_ feature: UnplannedFeature) {
         features.append(feature)
+    }
+
+    public mutating func addFeatures(_ features: [UnplannedFeature]) {
+        for feature in features {
+            self.features.append(feature)
+        }
+    }
+
+    public mutating func addEngineer(_ engineer: Engineer) {
+        engineers.append(engineer)
+    }
+
+    public mutating func addEngineers(_ engineers: [Engineer]) {
+        for engineer in engineers {
+            self.engineers.append(engineer)
+        }
     }
 }
