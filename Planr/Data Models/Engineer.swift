@@ -15,12 +15,19 @@ enum EngineerValidationError: Error {
     case invalidUnavailableDate
 }
 
+/// A representation of an Engineer for planning purposes.
 struct Engineer: Hashable {
     public private(set) var firstName: String
     public private(set) var lastName: String
     public private(set) var platform: [Platform]
     public private(set) var unavailableDates: [Date]
 
+    /// Initializer
+    ///
+    /// - Parameter firstName: The engineer's first name.
+    /// - Parameter lastName: The engineer's last name.
+    /// - Parameter platform: A collection of `Platform` in which the engineer is proficient.
+    /// - Parameter unavailableDates: A collection of `Date` in which the engineer is unavailable to work.
     init(firstName: String, lastName: String, platform: [Platform], unavailableDates: [Date]) {
         self.firstName = firstName
         self.lastName = lastName
@@ -28,6 +35,9 @@ struct Engineer: Hashable {
         self.unavailableDates = unavailableDates
     }
 
+    /// A helper functiont to validate the data that was input.
+    ///
+    /// - Returns: A `Bool` indicating the validation either did or did not pass.
     public func validate() throws -> Bool {
         try validateFirstName(firstName)
         try validateLastName(lastName)
@@ -59,6 +69,7 @@ struct Engineer: Hashable {
         }
     }
 
+    // Hashable protocol conforming method.
     static func == (lhs: Engineer, rhs: Engineer) -> Bool {
         return lhs.firstName == rhs.firstName
             && lhs.lastName == rhs.lastName

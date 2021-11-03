@@ -47,7 +47,7 @@ class UnplannedFeature: PlanrFeature {
     /// - Parameter platform: A collection of `Platform`s which the feature is to be developed for.
     /// - Parameter effortEstimate: An `Int` of the estimated points for the feature per platform.
     /// - Parameter priority: An `Int` representation of the prioritiy of the feature on a scale from 0 to 1000.
-    /// - Parameter concurrencyAllowed: A `Bool` to determine if the feature can be worked on concurrently by two developers.
+    /// - Parameter concurrencyAllowed: A `Bool` to determine if the feature can be worked on concurrently.
     init(name: String,
          _ summary: String?,
          platform: [Platform],
@@ -196,7 +196,11 @@ class PlannedFeature: PlanrFeature, Hashable {
         }
     }
 
+    /// A method to assign work blocks to the given feature.
+    ///
+    /// - Parameter workBlock: The `WorkBlock` to assign to a planned feature.
     public func assignWorkBlock(_ workBlock: WorkBlock) {
+        // Get the index of the first unassigned work block with the same point value and platform.
         guard let index = workBlocks.firstIndex(where: { $0.pointValue == workBlock.pointValue
                                                     && $0.platform == workBlock.platform
                                                     && $0.sprintId == nil }) else {
@@ -206,10 +210,14 @@ class PlannedFeature: PlanrFeature, Hashable {
         workBlocks[index] = workBlock
     }
 
+    /// A method to get the next unassigned work block.
+    ///
+    /// - Parameter platform: The `Platform` to match the unassigned work block.
     public func nextUnassignedWorkBlockForPlatform(platform: Platform) -> WorkBlock? {
         return self.workBlocks.first(where: { $0.sprintId == nil && $0.platform == platform })
     }
 
+    // Hashable protocol conforming methods.
     static func == (lhs: PlannedFeature, rhs: PlannedFeature) -> Bool {
         return lhs.name == rhs.name
             && lhs.summary == rhs.summary

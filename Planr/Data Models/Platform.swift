@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// An enumeration of platforms to be assigned to work on.
 enum Platform: String, CaseIterable {
     case ios = "iOS"
     case android = "Android"
