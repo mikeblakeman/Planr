@@ -166,8 +166,6 @@ class PlannedFeature: PlanrFeature, Hashable {
 
     public private(set) var workBlocks: [WorkBlock] = []
 
-    public var isFinalSprint: Bool = false
-
     init (withUnplannedFeature feature: UnplannedFeature, averageVelocity: Int) {
         self.name = feature.name
         self.summary = feature.summary
@@ -236,7 +234,6 @@ class PlannedFeature: PlanrFeature, Hashable {
             && lhs.color == rhs.color
             && lhs.featureId == rhs.featureId
             && lhs.workBlocks == rhs.workBlocks
-            && lhs.isFinalSprint == rhs.isFinalSprint
     }
 
     func hash(into hasher: inout Hasher) {
@@ -249,6 +246,5 @@ class PlannedFeature: PlanrFeature, Hashable {
         hasher.combine(color)
         hasher.combine(featureId)
         hasher.combine(workBlocks)
-        hasher.combine(isFinalSprint)
     }
 }
