@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+/// Common interface for `UnplannedFeature` and `PlannedFeature` classes
 protocol PlanrFeature: Hashable {
     var name: String { get }
     var summary: String? { get }
@@ -28,6 +29,7 @@ enum FeatureValidationError: Error {
     case engineerAlreadyAssignedError
 }
 
+/// A class that conforms to the `PlanrFeature` protocol that represents an unplanned feature.
 class UnplannedFeature: PlanrFeature {
 
     public private(set) var name: String
@@ -38,6 +40,14 @@ class UnplannedFeature: PlanrFeature {
     public private(set) var concurrencyAllowed: Bool
     public private(set) var color: Color
 
+    /// Initializer
+    ///
+    /// - Parameter name: A `String` representing the name of the feature to be worked on.
+    /// - Parameter summary: An optional `String` to provide more context about the feature.
+    /// - Parameter platform: A collection of `Platform`s which the feature is to be developed for.
+    /// - Parameter effortEstimate: An `Int` of the estimated points for the feature per platform.
+    /// - Parameter priority: An `Int` representation of the prioritiy of the feature on a scale from 0 to 1000.
+    /// - Parameter concurrencyAllowed: A `Bool` to determine if the feature can be worked on concurrently by two developers.
     init(name: String,
          _ summary: String?,
          platform: [Platform],
@@ -57,16 +67,25 @@ class UnplannedFeature: PlanrFeature {
                            blue: .random(in: 0...1))
     }
 
+    /// Function to update the name of the feature.
+    ///
+    /// - Parameter name: A passed in `String` that updates the name of the `UnplannedFeature`.
     public func updateName(_ name: String) throws {
         if name.isEmpty || name.count > Constants.featureNameMaxLength {
             throw FeatureValidationError.invalidFeatureNameLengthError
         }
     }
 
+    /// Function to update the priority of the feature.
+    ///
+    /// - Parameter priority: An integer value that updates the priority of the `UnplannedFeature`.
     public func updatePriority(_ priority: Int) throws {
         try validatePriority(priority)
     }
 
+    /// Function to validae the current state of the `UnplannedFeature`.
+    ///
+    /// - Note: This helps in unit testing.
     public func validate() throws -> Bool {
         try validateName(name)
         try validateSummary(summary)
@@ -105,6 +124,7 @@ class UnplannedFeature: PlanrFeature {
         }
     }
 
+    // Hashable protocol method
     static func == (lhs: UnplannedFeature, rhs: UnplannedFeature) -> Bool {
         return lhs.name == rhs.name
             && lhs.summary == rhs.summary
@@ -115,6 +135,7 @@ class UnplannedFeature: PlanrFeature {
             && lhs.color == rhs.color
     }
 
+    // Hashable protocol method
     func hash(into hasher: inout Hasher) {
         hasher.combine(name)
         hasher.combine(summary)
@@ -126,6 +147,7 @@ class UnplannedFeature: PlanrFeature {
     }
 }
 
+/// A class that conforms to the `PlanrFeature` protocol that represents a planned feature.
 class PlannedFeature: PlanrFeature, Hashable {
     public private(set) var name: String
     public private(set) var summary: String?
