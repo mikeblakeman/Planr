@@ -40,6 +40,13 @@ struct Project {
         }
     }
 
+    /// A method to remove a single `UnplanedFeature` from the `Project`
+    ///
+    /// - Parameter feature: The `UnplannedFeature` to remove from the project.
+    public mutating func removeFeature(byId featureId: NSUUID) {
+        self.features.removeAll { $0.featureId == featureId }
+    }
+
     /// A method to add a single `Engineer` to the `Project`
     ///
     /// - Parameter engineer: The `Engineer` to add to the project.
@@ -54,5 +61,12 @@ struct Project {
         for engineer in engineers {
             self.engineers.append(engineer)
         }
+    }
+
+    /// A method to remove a single `Engineer` from the `Project`
+    ///
+    /// - Parameter engineerId: The unique identifier for the `Engineer`
+    public mutating func removeEngineer(byId engineerId: NSUUID) {
+        self.engineers.removeAll { $0.engineerId == engineerId }
     }
 }

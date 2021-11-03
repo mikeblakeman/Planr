@@ -17,6 +17,7 @@ protocol PlanrFeature: Hashable {
     var priority: Int { get }
     var concurrencyAllowed: Bool { get }
     var color: Color { get }
+    var featureId: NSUUID { get }
 }
 
 enum FeatureValidationError: Error {
@@ -39,6 +40,7 @@ class UnplannedFeature: PlanrFeature {
     public private(set) var priority: Int
     public private(set) var concurrencyAllowed: Bool
     public private(set) var color: Color
+    public private(set) var featureId: NSUUID
 
     /// Initializer
     ///
@@ -65,6 +67,8 @@ class UnplannedFeature: PlanrFeature {
                            red: .random(in: 0...1),
                            green: .random(in: 0...1),
                            blue: .random(in: 0...1))
+
+        self.featureId = NSUUID()
     }
 
     /// Function to update the name of the feature.
@@ -133,6 +137,7 @@ class UnplannedFeature: PlanrFeature {
             && lhs.priority == rhs.priority
             && lhs.concurrencyAllowed == rhs.concurrencyAllowed
             && lhs.color == rhs.color
+            && lhs.featureId == rhs.featureId
     }
 
     // Hashable protocol method
@@ -144,6 +149,7 @@ class UnplannedFeature: PlanrFeature {
         hasher.combine(priority)
         hasher.combine(concurrencyAllowed)
         hasher.combine(color)
+        hasher.combine(featureId)
     }
 }
 
@@ -156,6 +162,7 @@ class PlannedFeature: PlanrFeature, Hashable {
     public private(set) var priority: Int
     public private(set) var concurrencyAllowed: Bool
     public private(set) var color: Color
+    public private(set) var featureId: NSUUID
 
     public private(set) var workBlocks: [WorkBlock] = []
 
@@ -169,6 +176,7 @@ class PlannedFeature: PlanrFeature, Hashable {
         self.priority = feature.priority
         self.concurrencyAllowed = feature.concurrencyAllowed
         self.color = feature.color
+        self.featureId = feature.featureId
 
         // Generate WorkBlocks per platform
         for platform in feature.platform {
@@ -226,6 +234,7 @@ class PlannedFeature: PlanrFeature, Hashable {
             && lhs.priority == rhs.priority
             && lhs.concurrencyAllowed == rhs.concurrencyAllowed
             && lhs.color == rhs.color
+            && lhs.featureId == rhs.featureId
             && lhs.workBlocks == rhs.workBlocks
             && lhs.isFinalSprint == rhs.isFinalSprint
     }
@@ -238,6 +247,7 @@ class PlannedFeature: PlanrFeature, Hashable {
         hasher.combine(priority)
         hasher.combine(concurrencyAllowed)
         hasher.combine(color)
+        hasher.combine(featureId)
         hasher.combine(workBlocks)
         hasher.combine(isFinalSprint)
     }

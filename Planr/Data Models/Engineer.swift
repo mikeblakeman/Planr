@@ -21,6 +21,7 @@ struct Engineer: Hashable {
     public private(set) var lastName: String
     public private(set) var platform: [Platform]
     public private(set) var unavailableDates: [Date]
+    public private(set) var engineerId: NSUUID
 
     /// Initializer
     ///
@@ -33,6 +34,7 @@ struct Engineer: Hashable {
         self.lastName = lastName
         self.platform = platform
         self.unavailableDates = unavailableDates
+        self.engineerId = NSUUID()
     }
 
     /// A helper functiont to validate the data that was input.

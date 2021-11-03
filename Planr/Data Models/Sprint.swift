@@ -46,18 +46,6 @@ struct Sprint {
         self.workBlocks.append(mutableWorkBlock)
     }
 
-    /// Decrease points remaining in current `Sprint`
-    ///
-    /// - Parameter points: Points in `Int` to decrease the remaining
-    private mutating func decrementPointsRemaining (by points: Int) {
-        guard points < self.pointsRemaining else {
-            assertionFailure("Cannot decrease points by greater than points remaining")
-            return
-        }
-
-        pointsRemaining -= points
-    }
-
     /// Debug print function
     ///
     /// Use this method to print information about the sprint in question.
@@ -72,5 +60,17 @@ struct Sprint {
                   " - Points: \(workBlock.pointValue)")
         }
         print("Total Sprint Points Remaining: \(self.pointsRemaining)")
+    }
+
+    /// Decrease points remaining in current `Sprint`
+    ///
+    /// - Parameter points: Points in `Int` to decrease the remaining
+    private mutating func decrementPointsRemaining (by points: Int) {
+        guard points < self.pointsRemaining else {
+            assertionFailure("Cannot decrease points by greater than points remaining")
+            return
+        }
+
+        pointsRemaining -= points
     }
 }
