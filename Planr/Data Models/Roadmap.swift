@@ -22,8 +22,10 @@ struct Roadmap {
     ///
     /// - Note: This is used to help visualize information about a planned `Roadmap`
     public func printRoadmap() {
-        for sprint in self.sprints {
-            sprint.printSprintInfo()
+        for index in self.sprints.indices {
+            print("------------------------------------------------------------")
+            print("| Sprint \(index + 1)")
+            self.sprints[index].printSprintInfo()
         }
     }
 }

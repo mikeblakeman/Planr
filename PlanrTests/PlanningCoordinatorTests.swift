@@ -44,8 +44,8 @@ class ValidatePlanningCoordinator: XCTestCase {
 
         let planningCoordinator = PlanningCoordinator(project: project,
                                                       sprintStartDate: date,
-                                                      averageVelocity: 8,
-                                                      sprintLength: 2,
+                                                      averageVelocity: 10,
+                                                      sprintLength: 3,
                                                       estimatePadding: 0.0)
 
         let roadmap = planningCoordinator.plan()

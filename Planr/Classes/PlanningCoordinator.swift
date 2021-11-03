@@ -49,6 +49,8 @@ struct PlanningCoordinator {
             plannedFeatureList.append(plannedFeature)
         }
 
+        // TODO: Utilize estimate padding.
+
         // Get total capacity per sprint
         let totalCapacityPerSprint = averageVelocity * project.engineers.count
 
@@ -106,7 +108,7 @@ struct PlanningCoordinator {
                 engineerAssignments[engineer] = averageVelocity
             }
 
-            // Iterate through planned features and plan WorkBlocks
+            // Iterate through planned features and 
             for featureIndex in plannedFeatureList.indices {
                 for platform in plannedFeatureList[featureIndex].platform {
                     if var unassignedWorkBlock =
