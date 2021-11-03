@@ -31,7 +31,7 @@ class ValidatePlanningCoordinator: XCTestCase {
         let feature6 = UnplannedFeature(name: "GDPR", nil, platform: [.ios, .android], effortEstimate: 6, priority: 200)
         let feature7 = UnplannedFeature(name: "Graphics Updates", nil, platform: [.ios, .android], effortEstimate: 3, priority: 200)
         let feature8 = UnplannedFeature(name: "Emojis", nil, platform: [.ios, .android], effortEstimate: 14, priority: 200)
-        let feature9 = UnplannedFeature(name: "WiFi Improvments", nil, platform: [.ios, .android], effortEstimate: 7, priority: 200)
+        let feature9 = UnplannedFeature(name: "WiFi Improvments", nil, platform: [.ios, .android], effortEstimate: 7, priority: 1000)
 
         project.addFeatures([feature1, feature2, feature3, feature4, feature5, feature6, feature7, feature8, feature9])
         // swiftlint:enable line_length

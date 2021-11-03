@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct Roadmap {
     public private(set) var sprints: [Sprint]
 
