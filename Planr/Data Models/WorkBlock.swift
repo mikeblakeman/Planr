@@ -47,7 +47,7 @@ struct WorkBlock: Hashable {
         }
         self.sprintId = sprintId
     }
-    
+
     static func == (lhs: WorkBlock, rhs: WorkBlock) -> Bool {
         return lhs.name == rhs.name
             && lhs.summary == rhs.summary

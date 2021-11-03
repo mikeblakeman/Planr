@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Use this struct to plan a `Roadmap`
 struct PlanningCoordinator {
 
     private var project: Project
@@ -16,6 +17,13 @@ struct PlanningCoordinator {
     private var estimatePadding: Double
     private var sprintTimeInterval = TimeInterval()
 
+    /// Initializer
+    ///
+    /// - Parameter project: `Project` of which to plan
+    /// - Parameter sprintStartDate: First date to start the planning
+    /// - Parameter averageVelocity: The average velocity of of each engineer
+    /// - Parameter sprintLength: An `Int` count of weeks in a sprint
+    /// - Parameter estimatePadding: A percent to pad given estimates to account for inaccuracy
     init(project: Project, sprintStartDate: Date, averageVelocity: Int, sprintLength: Int, estimatePadding: Double) {
         self.project = project
         self.sprintStartDate = sprintStartDate
@@ -25,8 +33,10 @@ struct PlanningCoordinator {
         self.sprintTimeInterval = (Double(sprintLength) * Constants.week) - (3 * Constants.day)
     }
 
+    /// Function to plan an initialized `PlanningCoordinator`
+    ///
+    /// - Returns: A generated `Roadmap` with planned `Sprint`s
     func plan() -> Roadmap {
-
         // Arrange features by priority first
         let prioritizedFeatures = project.features.sorted {
             $0.priority > $1.priority
@@ -35,8 +45,7 @@ struct PlanningCoordinator {
         // Init planned features
         var plannedFeatureList = [PlannedFeature]()
         for feature in prioritizedFeatures {
-            let plannedFeature = PlannedFeature(withUnplannedFeature: feature,
-                                                averageVelocity: self.averageVelocity)
+            let plannedFeature = PlannedFeature(withUnplannedFeature: feature, averageVelocity: self.averageVelocity)
             plannedFeatureList.append(plannedFeature)
         }
 
@@ -55,14 +64,15 @@ struct PlanningCoordinator {
             totalSprintCount += 1
         }
 
-        // TODO: Get capacity per platform
-//        var platformCapacity: [String: Int] = [:]
-//
-//        for feature in prioritizedFeatures {
-//            for platform in feature.platform where platformCapacity[platform.rawValue] == nil {
-//                    platformCapacity[platform.rawValue] = 0
-//            }
-//        }
+        /* TODO: Get capacity per platform
+        var platformCapacity: [String: Int] = [:]
+
+        for feature in prioritizedFeatures {
+            for platform in feature.platform where platformCapacity[platform.rawValue] == nil {
+                    platformCapacity[platform.rawValue] = 0
+            }
+        }
+        */
 
         // Init first sprint
         let initialSprintDateRange = DateInterval(start: sprintStartDate,
@@ -84,6 +94,8 @@ struct PlanningCoordinator {
             sprintList.append(sprint)
         }
 
+        // TODO: Don't calculate total sprints, keep creating sprints until plannedFeatureList is fully planned.
+
         // Plan resources
         for index in sprintList.indices {
             var sprint = sprintList[index]
@@ -94,11 +106,12 @@ struct PlanningCoordinator {
                 engineerAssignments[engineer] = averageVelocity
             }
 
+            // Iterate through planned features and plan WorkBlocks
             for featureIndex in plannedFeatureList.indices {
                 for platform in plannedFeatureList[featureIndex].platform {
-                    if var unassignedWorkBlock = plannedFeatureList[featureIndex].nextUnassignedWorkBlockForPlatform(platform: platform) {
+                    if var unassignedWorkBlock =
+                        plannedFeatureList[featureIndex].nextUnassignedWorkBlockForPlatform(platform: platform) {
                         try? unassignedWorkBlock.assignSprint(sprint.sprintId)
-
                         if sprint.pointsRemaining > unassignedWorkBlock.pointValue {
                             sprint.addWorkBlock(unassignedWorkBlock)
                             plannedFeatureList[featureIndex].assignWorkBlock(unassignedWorkBlock)
