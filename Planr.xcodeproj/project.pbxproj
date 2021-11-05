@@ -17,6 +17,10 @@
 		556F307B2729ABCA00CBF42E /* Roadmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F30792729ABCA00CBF42E /* Roadmap.swift */; };
 		556F307D2729ABE000CBF42E /* Sprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F307C2729ABE000CBF42E /* Sprint.swift */; };
 		556F307E2729ABE000CBF42E /* Sprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F307C2729ABE000CBF42E /* Sprint.swift */; };
+		55914E002734AD5B001B1E9A /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55914DFF2734AD5B001B1E9A /* ViewExtensions.swift */; };
+		55914E012734AD5B001B1E9A /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55914DFF2734AD5B001B1E9A /* ViewExtensions.swift */; };
+		55914E042734B829001B1E9A /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55914E032734B829001B1E9A /* Util.swift */; };
+		55914E052734B829001B1E9A /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55914E032734B829001B1E9A /* Util.swift */; };
 		5598B40F26D6895600FF7A50 /* Engineer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B40E26D6895600FF7A50 /* Engineer.swift */; };
 		5598B41026D6895600FF7A50 /* Engineer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B40E26D6895600FF7A50 /* Engineer.swift */; };
 		5598B41226D6898000FF7A50 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B41126D6898000FF7A50 /* Project.swift */; };
@@ -35,7 +39,7 @@
 		55AB6C36272C5E23008AD85B /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB6C34272C5E23008AD85B /* Platform.swift */; };
 		55AB6C39272C9F22008AD85B /* PlanningCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB6C37272C9F22008AD85B /* PlanningCoordinatorTests.swift */; };
 		55ED4FC826D6852E004A21AD /* PlanrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED4FC726D6852E004A21AD /* PlanrApp.swift */; };
-		55ED4FCA26D6852E004A21AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED4FC926D6852E004A21AD /* ContentView.swift */; };
+		55ED4FCA26D6852E004A21AD /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED4FC926D6852E004A21AD /* WelcomeView.swift */; };
 		55ED4FCC26D6852F004A21AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55ED4FCB26D6852F004A21AD /* Assets.xcassets */; };
 		55ED4FCF26D6852F004A21AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55ED4FCE26D6852F004A21AD /* Preview Assets.xcassets */; };
 		55ED4FDB26D68530004A21AD /* EngineerVlidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED4FDA26D68530004A21AD /* EngineerVlidationTests.swift */; };
@@ -65,6 +69,8 @@
 		556F30762729AACE00CBF42E /* PlanningCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningCoordinator.swift; sourceTree = "<group>"; };
 		556F30792729ABCA00CBF42E /* Roadmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roadmap.swift; sourceTree = "<group>"; };
 		556F307C2729ABE000CBF42E /* Sprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sprint.swift; sourceTree = "<group>"; };
+		55914DFF2734AD5B001B1E9A /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		55914E032734B829001B1E9A /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		5598B40E26D6895600FF7A50 /* Engineer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engineer.swift; sourceTree = "<group>"; };
 		5598B41126D6898000FF7A50 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		5598B41526D6944600FF7A50 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -73,7 +79,7 @@
 		55AB6C37272C9F22008AD85B /* PlanningCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningCoordinatorTests.swift; sourceTree = "<group>"; };
 		55ED4FC426D6852E004A21AD /* Planr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55ED4FC726D6852E004A21AD /* PlanrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanrApp.swift; sourceTree = "<group>"; };
-		55ED4FC926D6852E004A21AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		55ED4FC926D6852E004A21AD /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		55ED4FCB26D6852F004A21AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55ED4FCE26D6852F004A21AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		55ED4FD026D6852F004A21AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,6 +132,22 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		55914DFE2734AD46001B1E9A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				55914DFF2734AD5B001B1E9A /* ViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		55914E022734B816001B1E9A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				55914E032734B829001B1E9A /* Util.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		5598B40D26D6890B00FF7A50 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,11 +193,13 @@
 		55ED4FC626D6852E004A21AD /* Planr */ = {
 			isa = PBXGroup;
 			children = (
+				55914E022734B816001B1E9A /* Util */,
+				55914DFE2734AD46001B1E9A /* Extensions */,
 				556F30752729AA9200CBF42E /* Classes */,
 				5598B41426D6943800FF7A50 /* Constants */,
 				5598B40D26D6890B00FF7A50 /* Data Models */,
 				55ED4FC726D6852E004A21AD /* PlanrApp.swift */,
-				55ED4FC926D6852E004A21AD /* ContentView.swift */,
+				55ED4FC926D6852E004A21AD /* WelcomeView.swift */,
 				55ED4FCB26D6852F004A21AD /* Assets.xcassets */,
 				55ED4FD026D6852F004A21AD /* Info.plist */,
 				55ED4FD126D6852F004A21AD /* Planr.entitlements */,
@@ -377,13 +401,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				55AB6C35272C5E23008AD85B /* Platform.swift in Sources */,
+				55914E002734AD5B001B1E9A /* ViewExtensions.swift in Sources */,
 				556F30772729AACE00CBF42E /* PlanningCoordinator.swift in Sources */,
 				556F30732728EE9F00CBF42E /* Feature.swift in Sources */,
 				551B6CCE27304F68007B21F4 /* WorkBlock.swift in Sources */,
 				5598B41626D6944600FF7A50 /* Constants.swift in Sources */,
 				5598B40F26D6895600FF7A50 /* Engineer.swift in Sources */,
+				55914E042734B829001B1E9A /* Util.swift in Sources */,
 				556F307A2729ABCA00CBF42E /* Roadmap.swift in Sources */,
-				55ED4FCA26D6852E004A21AD /* ContentView.swift in Sources */,
+				55ED4FCA26D6852E004A21AD /* WelcomeView.swift in Sources */,
 				55ED4FC826D6852E004A21AD /* PlanrApp.swift in Sources */,
 				5598B41226D6898000FF7A50 /* Project.swift in Sources */,
 				556F307D2729ABE000CBF42E /* Sprint.swift in Sources */,
@@ -404,6 +430,8 @@
 				55AB6C39272C9F22008AD85B /* PlanningCoordinatorTests.swift in Sources */,
 				5598B41326D6898000FF7A50 /* Project.swift in Sources */,
 				5598B43326D6C4F800FF7A50 /* ProjectValidationTests.swift in Sources */,
+				55914E012734AD5B001B1E9A /* ViewExtensions.swift in Sources */,
+				55914E052734B829001B1E9A /* Util.swift in Sources */,
 				5598B41726D6944600FF7A50 /* Constants.swift in Sources */,
 				556F307E2729ABE000CBF42E /* Sprint.swift in Sources */,
 			);
