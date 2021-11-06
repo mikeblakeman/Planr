@@ -21,6 +21,10 @@
 		55914E012734AD5B001B1E9A /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55914DFF2734AD5B001B1E9A /* ViewExtensions.swift */; };
 		55914E042734B829001B1E9A /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55914E032734B829001B1E9A /* Util.swift */; };
 		55914E052734B829001B1E9A /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55914E032734B829001B1E9A /* Util.swift */; };
+		55914E0827356B9A001B1E9A /* NewProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55914E0727356B9A001B1E9A /* NewProjectView.swift */; };
+		55914E0927356B9A001B1E9A /* NewProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55914E0727356B9A001B1E9A /* NewProjectView.swift */; };
+		55914E0C27361B29001B1E9A /* ReusableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55914E0B27361B29001B1E9A /* ReusableButton.swift */; };
+		55914E0D27361B29001B1E9A /* ReusableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55914E0B27361B29001B1E9A /* ReusableButton.swift */; };
 		5598B40F26D6895600FF7A50 /* Engineer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B40E26D6895600FF7A50 /* Engineer.swift */; };
 		5598B41026D6895600FF7A50 /* Engineer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B40E26D6895600FF7A50 /* Engineer.swift */; };
 		5598B41226D6898000FF7A50 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B41126D6898000FF7A50 /* Project.swift */; };
@@ -71,6 +75,8 @@
 		556F307C2729ABE000CBF42E /* Sprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sprint.swift; sourceTree = "<group>"; };
 		55914DFF2734AD5B001B1E9A /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		55914E032734B829001B1E9A /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		55914E0727356B9A001B1E9A /* NewProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectView.swift; sourceTree = "<group>"; };
+		55914E0B27361B29001B1E9A /* ReusableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableButton.swift; sourceTree = "<group>"; };
 		5598B40E26D6895600FF7A50 /* Engineer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engineer.swift; sourceTree = "<group>"; };
 		5598B41126D6898000FF7A50 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		5598B41526D6944600FF7A50 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -148,6 +154,24 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		55914E0627356B6A001B1E9A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				55914E0A27361B09001B1E9A /* Reusable */,
+				55ED4FC926D6852E004A21AD /* WelcomeView.swift */,
+				55914E0727356B9A001B1E9A /* NewProjectView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		55914E0A27361B09001B1E9A /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				55914E0B27361B29001B1E9A /* ReusableButton.swift */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
 		5598B40D26D6890B00FF7A50 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,13 +217,13 @@
 		55ED4FC626D6852E004A21AD /* Planr */ = {
 			isa = PBXGroup;
 			children = (
+				55914E0627356B6A001B1E9A /* Views */,
 				55914E022734B816001B1E9A /* Util */,
 				55914DFE2734AD46001B1E9A /* Extensions */,
 				556F30752729AA9200CBF42E /* Classes */,
 				5598B41426D6943800FF7A50 /* Constants */,
 				5598B40D26D6890B00FF7A50 /* Data Models */,
 				55ED4FC726D6852E004A21AD /* PlanrApp.swift */,
-				55ED4FC926D6852E004A21AD /* WelcomeView.swift */,
 				55ED4FCB26D6852F004A21AD /* Assets.xcassets */,
 				55ED4FD026D6852F004A21AD /* Info.plist */,
 				55ED4FD126D6852F004A21AD /* Planr.entitlements */,
@@ -401,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55AB6C35272C5E23008AD85B /* Platform.swift in Sources */,
+				55914E0827356B9A001B1E9A /* NewProjectView.swift in Sources */,
 				55914E002734AD5B001B1E9A /* ViewExtensions.swift in Sources */,
 				556F30772729AACE00CBF42E /* PlanningCoordinator.swift in Sources */,
 				556F30732728EE9F00CBF42E /* Feature.swift in Sources */,
@@ -410,6 +435,7 @@
 				55914E042734B829001B1E9A /* Util.swift in Sources */,
 				556F307A2729ABCA00CBF42E /* Roadmap.swift in Sources */,
 				55ED4FCA26D6852E004A21AD /* WelcomeView.swift in Sources */,
+				55914E0C27361B29001B1E9A /* ReusableButton.swift in Sources */,
 				55ED4FC826D6852E004A21AD /* PlanrApp.swift in Sources */,
 				5598B41226D6898000FF7A50 /* Project.swift in Sources */,
 				556F307D2729ABE000CBF42E /* Sprint.swift in Sources */,
@@ -431,8 +457,10 @@
 				5598B41326D6898000FF7A50 /* Project.swift in Sources */,
 				5598B43326D6C4F800FF7A50 /* ProjectValidationTests.swift in Sources */,
 				55914E012734AD5B001B1E9A /* ViewExtensions.swift in Sources */,
+				55914E0927356B9A001B1E9A /* NewProjectView.swift in Sources */,
 				55914E052734B829001B1E9A /* Util.swift in Sources */,
 				5598B41726D6944600FF7A50 /* Constants.swift in Sources */,
+				55914E0D27361B29001B1E9A /* ReusableButton.swift in Sources */,
 				556F307E2729ABE000CBF42E /* Sprint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

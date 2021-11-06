@@ -31,12 +31,19 @@ class Constants {
     // Colors
     static let firstGradientColor = Color(hue: (207/360), saturation: 0.88, brightness: 0.99)
     static let lastGradientColor = Color(hue: (302/360), saturation: 1, brightness: 1)
-    
+    static let lightGrayColor = Color(hue: 0, saturation: 0.06, brightness: 0.73)
+
     // LinearGradient
-    static let unselectedButtonGradient = LinearGradient(gradient: Gradient(colors: [Constants.firstGradientColor, Constants.lastGradientColor]),
+    static let unselectedButtonGradient = LinearGradient(gradient: Gradient(colors: [Constants.firstGradientColor,
+                                                                                     Constants.lastGradientColor]),
                                                          startPoint: .topLeading,
                                                          endPoint: .bottomTrailing)
-    static let selectedButtonGradient = LinearGradient(gradient: Gradient(colors: [Constants.lastGradientColor, Constants.firstGradientColor]),
+    static let selectedButtonGradient = LinearGradient(gradient: Gradient(colors: [Constants.lastGradientColor,
+                                                                                   Constants.firstGradientColor]),
+                                                       startPoint: .topLeading,
+                                                       endPoint: .bottomTrailing)
+    static let disabledButtonGradient = LinearGradient(gradient: Gradient(colors: [Color.gray,
+                                                                                   Constants.lightGrayColor]),
                                                        startPoint: .topLeading,
                                                        endPoint: .bottomTrailing)
 }

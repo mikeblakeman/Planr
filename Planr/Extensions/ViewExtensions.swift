@@ -16,3 +16,18 @@ extension View {
             .mask(self)
     }
 }
+
+extension View {
+    func underlineTextField() -> some View {
+        self.overlay(Rectangle().frame(height: 2).padding(.top, 35))
+            .padding(.vertical, 10)
+            .foregroundColor(Constants.firstGradientColor)
+    }
+}
+
+extension NSTextField {
+    open override var focusRingType: NSFocusRingType {
+        get { .none }
+        set {}
+    }
+}
