@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import NavigationStack
 
 struct WelcomeView: View {
 
     @State private var showContinue = false
+//    @ObservedObject var viewModel: WelcomeViewModel
+    @EnvironmentObject private var navigationStack: NavigationStack
 
     var body: some View {
         VStack(alignment: .center, spacing: 40, content: {
@@ -20,7 +23,9 @@ struct WelcomeView: View {
                 .padding(.vertical, 150)
                 .font(.system(size: 224, weight: .semibold))
             Button(action: {
-                print("Button action")
+                DispatchQueue.main.async {
+                    self.navigationStack.push(NewProjectView())
+                }
             }, label: {
                 HStack {
                     Image(systemName: "pencil.circle.fill")

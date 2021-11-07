@@ -25,6 +25,8 @@
 		55914E0927356B9A001B1E9A /* NewProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55914E0727356B9A001B1E9A /* NewProjectView.swift */; };
 		55914E0C27361B29001B1E9A /* ReusableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55914E0B27361B29001B1E9A /* ReusableButton.swift */; };
 		55914E0D27361B29001B1E9A /* ReusableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55914E0B27361B29001B1E9A /* ReusableButton.swift */; };
+		55914E102736E4CF001B1E9A /* Steps in Frameworks */ = {isa = PBXBuildFile; productRef = 55914E0F2736E4CF001B1E9A /* Steps */; };
+		559238732736F6C500630726 /* ProjectValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559238722736F6C500630726 /* ProjectValidationTests.swift */; };
 		5598B40F26D6895600FF7A50 /* Engineer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B40E26D6895600FF7A50 /* Engineer.swift */; };
 		5598B41026D6895600FF7A50 /* Engineer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B40E26D6895600FF7A50 /* Engineer.swift */; };
 		5598B41226D6898000FF7A50 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B41126D6898000FF7A50 /* Project.swift */; };
@@ -38,7 +40,10 @@
 		5598B42326D6A5B300FF7A50 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5598B42226D6A5B300FF7A50 /* RealmSwift */; };
 		5598B42526D6A5B300FF7A50 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5598B42426D6A5B300FF7A50 /* Realm */; };
 		5598B42C26D6AB0600FF7A50 /* SwiftLintFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 5598B42B26D6AB0600FF7A50 /* SwiftLintFramework */; };
-		5598B43326D6C4F800FF7A50 /* ProjectValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B43126D6C4F800FF7A50 /* ProjectValidationTests.swift */; };
+		559C745327374A8200F55C36 /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = 559C745227374A8200F55C36 /* NavigationStack */; };
+		559C745527374DB300F55C36 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C745427374DB300F55C36 /* RootView.swift */; };
+		559C745727382DAA00F55C36 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C745627382DAA00F55C36 /* ColorExtensions.swift */; };
+		559C745B27384CE400F55C36 /* WorkBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C745A27384CE400F55C36 /* WorkBlockView.swift */; };
 		55AB6C35272C5E23008AD85B /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB6C34272C5E23008AD85B /* Platform.swift */; };
 		55AB6C36272C5E23008AD85B /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB6C34272C5E23008AD85B /* Platform.swift */; };
 		55AB6C39272C9F22008AD85B /* PlanningCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB6C37272C9F22008AD85B /* PlanningCoordinatorTests.swift */; };
@@ -77,10 +82,13 @@
 		55914E032734B829001B1E9A /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		55914E0727356B9A001B1E9A /* NewProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectView.swift; sourceTree = "<group>"; };
 		55914E0B27361B29001B1E9A /* ReusableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableButton.swift; sourceTree = "<group>"; };
+		559238722736F6C500630726 /* ProjectValidationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectValidationTests.swift; sourceTree = "<group>"; };
 		5598B40E26D6895600FF7A50 /* Engineer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engineer.swift; sourceTree = "<group>"; };
 		5598B41126D6898000FF7A50 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		5598B41526D6944600FF7A50 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		5598B43126D6C4F800FF7A50 /* ProjectValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectValidationTests.swift; sourceTree = "<group>"; };
+		559C745427374DB300F55C36 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		559C745627382DAA00F55C36 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		559C745A27384CE400F55C36 /* WorkBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkBlockView.swift; sourceTree = "<group>"; };
 		55AB6C34272C5E23008AD85B /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		55AB6C37272C9F22008AD85B /* PlanningCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningCoordinatorTests.swift; sourceTree = "<group>"; };
 		55ED4FC426D6852E004A21AD /* Planr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,9 +112,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5598B42526D6A5B300FF7A50 /* Realm in Frameworks */,
+				559C745327374A8200F55C36 /* NavigationStack in Frameworks */,
 				5598B42C26D6AB0600FF7A50 /* SwiftLintFramework in Frameworks */,
 				5598B41E26D6A42800FF7A50 /* FBLPromises in Frameworks */,
 				5598B41C26D6A42800FF7A50 /* Promises in Frameworks */,
+				55914E102736E4CF001B1E9A /* Steps in Frameworks */,
 				5598B41A26D6A42800FF7A50 /* PromisesTestHelpers in Frameworks */,
 				5598B42326D6A5B300FF7A50 /* RealmSwift in Frameworks */,
 				5598B42026D6A42800FF7A50 /* FBLPromisesTestHelpers in Frameworks */,
@@ -142,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				55914DFF2734AD5B001B1E9A /* ViewExtensions.swift */,
+				559C745627382DAA00F55C36 /* ColorExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -160,6 +171,7 @@
 				55914E0A27361B09001B1E9A /* Reusable */,
 				55ED4FC926D6852E004A21AD /* WelcomeView.swift */,
 				55914E0727356B9A001B1E9A /* NewProjectView.swift */,
+				559C745427374DB300F55C36 /* RootView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				55914E0B27361B29001B1E9A /* ReusableButton.swift */,
+				559C745A27384CE400F55C36 /* WorkBlockView.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -243,9 +256,9 @@
 		55ED4FD926D68530004A21AD /* PlanrTests */ = {
 			isa = PBXGroup;
 			children = (
+				559238722736F6C500630726 /* ProjectValidationTests.swift */,
 				55ED4FDA26D68530004A21AD /* EngineerVlidationTests.swift */,
 				55ED4FDC26D68530004A21AD /* Info.plist */,
-				5598B43126D6C4F800FF7A50 /* ProjectValidationTests.swift */,
 				55AB6C37272C9F22008AD85B /* PlanningCoordinatorTests.swift */,
 			);
 			path = PlanrTests;
@@ -285,6 +298,8 @@
 				5598B42226D6A5B300FF7A50 /* RealmSwift */,
 				5598B42426D6A5B300FF7A50 /* Realm */,
 				5598B42B26D6AB0600FF7A50 /* SwiftLintFramework */,
+				55914E0F2736E4CF001B1E9A /* Steps */,
+				559C745227374A8200F55C36 /* NavigationStack */,
 			);
 			productName = Planr;
 			productReference = 55ED4FC426D6852E004A21AD /* Planr.app */;
@@ -361,6 +376,8 @@
 				5598B41826D6A42800FF7A50 /* XCRemoteSwiftPackageReference "promises" */,
 				5598B42126D6A5B300FF7A50 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				5598B42A26D6AB0600FF7A50 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+				55914E0E2736E4CF001B1E9A /* XCRemoteSwiftPackageReference "Steps" */,
+				559C745127374A8200F55C36 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
 			);
 			productRefGroup = 55ED4FC526D6852E004A21AD /* Products */;
 			projectDirPath = "";
@@ -427,6 +444,8 @@
 				55AB6C35272C5E23008AD85B /* Platform.swift in Sources */,
 				55914E0827356B9A001B1E9A /* NewProjectView.swift in Sources */,
 				55914E002734AD5B001B1E9A /* ViewExtensions.swift in Sources */,
+				559C745B27384CE400F55C36 /* WorkBlockView.swift in Sources */,
+				559C745527374DB300F55C36 /* RootView.swift in Sources */,
 				556F30772729AACE00CBF42E /* PlanningCoordinator.swift in Sources */,
 				556F30732728EE9F00CBF42E /* Feature.swift in Sources */,
 				551B6CCE27304F68007B21F4 /* WorkBlock.swift in Sources */,
@@ -439,6 +458,7 @@
 				55ED4FC826D6852E004A21AD /* PlanrApp.swift in Sources */,
 				5598B41226D6898000FF7A50 /* Project.swift in Sources */,
 				556F307D2729ABE000CBF42E /* Sprint.swift in Sources */,
+				559C745727382DAA00F55C36 /* ColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,10 +475,10 @@
 				556F307B2729ABCA00CBF42E /* Roadmap.swift in Sources */,
 				55AB6C39272C9F22008AD85B /* PlanningCoordinatorTests.swift in Sources */,
 				5598B41326D6898000FF7A50 /* Project.swift in Sources */,
-				5598B43326D6C4F800FF7A50 /* ProjectValidationTests.swift in Sources */,
 				55914E012734AD5B001B1E9A /* ViewExtensions.swift in Sources */,
 				55914E0927356B9A001B1E9A /* NewProjectView.swift in Sources */,
 				55914E052734B829001B1E9A /* Util.swift in Sources */,
+				559238732736F6C500630726 /* ProjectValidationTests.swift in Sources */,
 				5598B41726D6944600FF7A50 /* Constants.swift in Sources */,
 				55914E0D27361B29001B1E9A /* ReusableButton.swift in Sources */,
 				556F307E2729ABE000CBF42E /* Sprint.swift in Sources */,
@@ -778,6 +798,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		55914E0E2736E4CF001B1E9A /* XCRemoteSwiftPackageReference "Steps" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/asam139/Steps";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.7;
+			};
+		};
 		5598B41826D6A42800FF7A50 /* XCRemoteSwiftPackageReference "promises" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/promises";
@@ -802,9 +830,22 @@
 				minimumVersion = 0.43.1;
 			};
 		};
+		559C745127374A8200F55C36 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/matteopuc/swiftui-navigation-stack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		55914E0F2736E4CF001B1E9A /* Steps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55914E0E2736E4CF001B1E9A /* XCRemoteSwiftPackageReference "Steps" */;
+			productName = Steps;
+		};
 		5598B41926D6A42800FF7A50 /* PromisesTestHelpers */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5598B41826D6A42800FF7A50 /* XCRemoteSwiftPackageReference "promises" */;
@@ -839,6 +880,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5598B42A26D6AB0600FF7A50 /* XCRemoteSwiftPackageReference "SwiftLint" */;
 			productName = SwiftLintFramework;
+		};
+		559C745227374A8200F55C36 /* NavigationStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 559C745127374A8200F55C36 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */;
+			productName = NavigationStack;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

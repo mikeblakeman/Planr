@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GradientButtonStyle: ButtonStyle {
+struct BooleanGradientButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         GradientButton(configuration: configuration)
     }
@@ -24,6 +24,25 @@ struct GradientButtonStyle: ButtonStyle {
                                 : (configuration.isPressed
                                     ? Constants.selectedButtonGradient
                                     : Constants.unselectedButtonGradient))
+                .cornerRadius(15.0)
+        }
+    }
+}
+
+struct GradientButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        GradientButton(configuration: configuration)
+    }
+
+    struct GradientButton: View {
+        let configuration: ButtonStyle.Configuration
+        var body: some View {
+            configuration.label
+                .foregroundColor(.white)
+                .padding()
+                .background(configuration.isPressed
+                                ? Constants.selectedButtonGradient
+                                : Constants.unselectedButtonGradient)
                 .cornerRadius(15.0)
         }
     }
