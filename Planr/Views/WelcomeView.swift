@@ -16,12 +16,16 @@ struct WelcomeView: View {
 
     var body: some View {
         VStack(alignment: .center, spacing: 40, content: {
-            Text("Planr")
-                .gradientForeground(colors: [Constants.firstGradientColor,
-                                             Constants.lastGradientColor])
-                .padding(.horizontal, 150)
-                .padding(.vertical, 150)
-                .font(.system(size: 224, weight: .semibold))
+            LinearGradient(gradient: Gradient(colors: [Constants.firstGradientColor,
+                                                       Constants.lastGradientColor]),
+                           startPoint: .topLeading,
+                           endPoint: .bottomTrailing)
+                .mask(
+                    Text("Planr")
+                        .padding(.horizontal, 150)
+                        .padding(.vertical, 150)
+                        .font(.system(size: 224, weight: .semibold))
+                )
             Button(action: {
                 DispatchQueue.main.async {
                     self.navigationStack.push(NewProjectView())

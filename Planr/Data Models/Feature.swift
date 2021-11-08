@@ -209,7 +209,7 @@ class PlannedFeature: PlanrFeature, Hashable {
         // Get the index of the first unassigned work block with the same point value and platform.
         guard let index = workBlocks.firstIndex(where: { $0.pointValue == workBlock.pointValue
                                                     && $0.platform == workBlock.platform
-                                                    && $0.sprintId == nil }) else {
+                                                    && $0.id == nil }) else {
             return
         }
 
@@ -220,7 +220,7 @@ class PlannedFeature: PlanrFeature, Hashable {
     ///
     /// - Parameter platform: The `Platform` to match the unassigned work block.
     public func nextUnassignedWorkBlockForPlatform(platform: Platform) -> WorkBlock? {
-        return self.workBlocks.first(where: { $0.sprintId == nil && $0.platform == platform })
+        return self.workBlocks.first(where: { $0.id == nil && $0.platform == platform })
     }
 
     // Hashable protocol conforming methods.

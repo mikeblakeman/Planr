@@ -9,8 +9,8 @@ import Foundation
 
 /// A structure that represents an Agile Sprint
 struct Sprint {
-    public private(set) var sprintId: NSUUID
-    public private(set) var workBlocks: [WorkBlock]
+    public private(set) var sprintId: UUID
+    public private(set) var workBlockDictionary: [Platform: [WorkBlock]]
     public private(set) var pointsRemaining: Int
     public private(set) var dateRange: DateInterval
     private var initialSprintPoints: Int
@@ -21,11 +21,20 @@ struct Sprint {
     /// - Parameter pointsRemaining: The number of points remaining to plan in a given `Sprint`
     /// - Parameter dateRange: A `DateInterval` for the given `Sprint`
     init(workBlocks: [WorkBlock], pointsRemaining: Int, dateRange: DateInterval) {
-        self.sprintId = NSUUID()
-        self.workBlocks = workBlocks
+        self.sprintId = UUID()
+        self.workBlockDictionary = [:]
         self.pointsRemaining = pointsRemaining
         self.dateRange = dateRange
         self.initialSprintPoints = pointsRemaining
+
+        for block in workBlocks {
+            if var collection = workBlockDictionary[block.platform] {
+                collection.append(block)
+                workBlockDictionary[block.platform] = collection
+            } else {
+                workBlockDictionary[block.platform] = [block]
+            }
+        }
     }
 
     /// Use this method to add planned `WorkBlock`s to the current `Sprint`
@@ -43,7 +52,19 @@ struct Sprint {
         try? mutableWorkBlock.assignSprint(self.sprintId)
 
         self.decrementPointsRemaining(by: mutableWorkBlock.pointValue)
-        self.workBlocks.append(mutableWorkBlock)
+        if var collection = workBlockDictionary[workBlock.platform] {
+            collection.append(mutableWorkBlock)
+            workBlockDictionary[workBlock.platform] = collection
+        } else {
+            workBlockDictionary[workBlock.platform] = [workBlock]
+        }
+    }
+
+    /// User this method to get all `WorkBlock`s for a given platform
+    ///
+    /// - Parameter platform: A `Platform`.
+    public func workBlocksForPlatform(_ platform: Platform) -> [WorkBlock] {
+        return self.workBlockDictionary[platform] ?? []
     }
 
     /// Debug print function
@@ -53,11 +74,17 @@ struct Sprint {
         print("------------------------------------------------------------")
         print("Sprint Start Date: \(self.dateRange.start)\nSprint End Date:   \(self.dateRange.end)\n")
         print("\nTotal Sprint Points: \(self.initialSprintPoints)")
-        print(" List of features in sprint:")
-        for workBlock in self.workBlocks {
-            print("    Title: \(workBlock.name)" +
-                  " - Platform: \(workBlock.platform.rawValue)" +
-                  " - Points: \(workBlock.pointValue)")
+        for key in self.workBlockDictionary.keys {
+            print(" List of \(key.rawValue) features in sprint:")
+            guard let collection = self.workBlockDictionary[key] else {
+                return
+            }
+
+            for workBlock in collection {
+                print("    Title: \(workBlock.name)" +
+                      " - Platform: \(workBlock.platform.rawValue)" +
+                      " - Points: \(workBlock.pointValue)")
+            }
         }
         print("Total Sprint Points Remaining: \(self.pointsRemaining)")
     }

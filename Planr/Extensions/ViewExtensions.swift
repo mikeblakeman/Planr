@@ -9,15 +9,6 @@ import Foundation
 import SwiftUI
 
 extension View {
-    public func gradientForeground(colors: [Color]) -> some View {
-        self.overlay(LinearGradient(gradient: .init(colors: colors),
-                                    startPoint: .topLeading,
-                                    endPoint: .bottomTrailing))
-            .mask(self)
-    }
-}
-
-extension View {
     func underlineTextField() -> some View {
         self.overlay(Rectangle().frame(height: 2).padding(.top, 35))
             .padding(.vertical, 10)

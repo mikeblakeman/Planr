@@ -45,12 +45,16 @@ struct NewProjectView: View {
 
     var body: some View {
         VStack(alignment: .center, spacing: 40, content: {
-            Text("New Project")
-                .gradientForeground(colors: [Constants.firstGradientColor,
-                                             Constants.lastGradientColor])
-                .padding(.horizontal, 10)
-                .padding(.vertical, 50)
-                .font(.system(size: 37, weight: .semibold))
+            LinearGradient(gradient: Gradient(colors: [Constants.firstGradientColor,
+                                                       Constants.lastGradientColor]),
+                           startPoint: .topLeading,
+                           endPoint: .bottomTrailing)
+                .mask(
+                    Text("New Project")
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 50)
+                        .font(.system(size: 37, weight: .semibold))
+                )
 
             VStack(alignment: .leading, spacing: 5, content: {
                 ProjectNameView(textBindingManager: textBindingManager)

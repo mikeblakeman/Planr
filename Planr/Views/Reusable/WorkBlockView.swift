@@ -9,49 +9,55 @@ import SwiftUI
 
 struct WorkBlockView: View {
 
-    private var name: String
-    private var points: Int
-    private var color: Color
-    private var isFinalSprint: Bool
+    private var workBlock: WorkBlock
 
-    init(name: String, points: Int, color: Color, isFinalSprint: Bool) {
-        self.name = name
-        self.points = points
-        self.color = color
-        self.isFinalSprint = isFinalSprint
+    init(workBlock: WorkBlock) {
+        self.workBlock = workBlock
     }
 
     var body: some View {
         HStack {
-            Text(self.name).padding()
-                .font(.system(size: 22))
+            Text(self.workBlock.name).padding()
+                .font(.system(size: 14))
                 .foregroundColor(.white)
             Spacer()
             HStack {
-                if isFinalSprint {
-                    Image(systemName: "calendar.badge.plus")
-                        .font(.system(size: 22))
+                if self.workBlock.isFinalSprint {
+                    Image("Task")
+                        .resizable()
+                        .renderingMode(.template)
                         .foregroundColor(.white)
+                        .frame(width: 22, height: 22)
                 }
-                Text("\(points)").padding(.leading, 10)
-                    .font(.system(size: 22))
+                Text("\(self.workBlock.pointValue)")
+                    .font(.system(size: 24))
                     .foregroundColor(.white)
-            }.padding()
-        }.frame(minHeight: 50)
-        .background(self.color)
+            }.padding(.trailing, 10)
+        }.background(self.workBlock.color)
+        .cornerRadius(10)
     }
 }
 
 struct WorkBlockView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkBlockView(name: "Family Accounts",
-                      points: 8,
-                      color: .red,
-                      isFinalSprint: true)
-
-        WorkBlockView(name: "Device Setup",
-                      points: 16,
-                      color: .purple,
-                      isFinalSprint: false)
+        ForEach(getDemoWorkBlocks(), id: \.self) { workBlock in
+            WorkBlockView(workBlock: workBlock)
+        }
     }
+}
+
+private func getDemoWorkBlocks() -> [WorkBlock] {
+    let workBlock1 = WorkBlock(name: "Family Accounts",
+                               summary: "Cool family feature.",
+                               platform: .ios,
+                               pointValue: 8,
+                               color: randomColor())
+
+    var workBlock2 = WorkBlock(name: "Device Setup",
+                               summary: "Device setup feature.",
+                               platform: .ios,
+                               pointValue: 4,
+                               color: randomColor())
+    workBlock2.isFinalSprint = true
+    return [workBlock1, workBlock2]
 }

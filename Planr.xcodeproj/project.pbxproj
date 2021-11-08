@@ -44,6 +44,16 @@
 		559C745527374DB300F55C36 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C745427374DB300F55C36 /* RootView.swift */; };
 		559C745727382DAA00F55C36 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C745627382DAA00F55C36 /* ColorExtensions.swift */; };
 		559C745B27384CE400F55C36 /* WorkBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C745A27384CE400F55C36 /* WorkBlockView.swift */; };
+		559C745D2738528E00F55C36 /* PlannedSprintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C745C2738528E00F55C36 /* PlannedSprintView.swift */; };
+		559C745F2738673A00F55C36 /* PlatformSprintBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C745E2738673A00F55C36 /* PlatformSprintBlockView.swift */; };
+		559C74612738711200F55C36 /* ProjectRoadmapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C74602738711200F55C36 /* ProjectRoadmapView.swift */; };
+		559C746227387A3400F55C36 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C745627382DAA00F55C36 /* ColorExtensions.swift */; };
+		559C746327387A3A00F55C36 /* WorkBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C745A27384CE400F55C36 /* WorkBlockView.swift */; };
+		559C746427387A3C00F55C36 /* PlannedSprintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C745C2738528E00F55C36 /* PlannedSprintView.swift */; };
+		559C746527387A3F00F55C36 /* PlatformSprintBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C745E2738673A00F55C36 /* PlatformSprintBlockView.swift */; };
+		559C746627387A4200F55C36 /* ProjectRoadmapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C74602738711200F55C36 /* ProjectRoadmapView.swift */; };
+		559C746727387A4400F55C36 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED4FC926D6852E004A21AD /* WelcomeView.swift */; };
+		559C746827387A4900F55C36 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C745427374DB300F55C36 /* RootView.swift */; };
 		55AB6C35272C5E23008AD85B /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB6C34272C5E23008AD85B /* Platform.swift */; };
 		55AB6C36272C5E23008AD85B /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB6C34272C5E23008AD85B /* Platform.swift */; };
 		55AB6C39272C9F22008AD85B /* PlanningCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB6C37272C9F22008AD85B /* PlanningCoordinatorTests.swift */; };
@@ -89,6 +99,9 @@
 		559C745427374DB300F55C36 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		559C745627382DAA00F55C36 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		559C745A27384CE400F55C36 /* WorkBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkBlockView.swift; sourceTree = "<group>"; };
+		559C745C2738528E00F55C36 /* PlannedSprintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedSprintView.swift; sourceTree = "<group>"; };
+		559C745E2738673A00F55C36 /* PlatformSprintBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformSprintBlockView.swift; sourceTree = "<group>"; };
+		559C74602738711200F55C36 /* ProjectRoadmapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRoadmapView.swift; sourceTree = "<group>"; };
 		55AB6C34272C5E23008AD85B /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		55AB6C37272C9F22008AD85B /* PlanningCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningCoordinatorTests.swift; sourceTree = "<group>"; };
 		55ED4FC426D6852E004A21AD /* Planr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +194,9 @@
 			children = (
 				55914E0B27361B29001B1E9A /* ReusableButton.swift */,
 				559C745A27384CE400F55C36 /* WorkBlockView.swift */,
+				559C745C2738528E00F55C36 /* PlannedSprintView.swift */,
+				559C745E2738673A00F55C36 /* PlatformSprintBlockView.swift */,
+				559C74602738711200F55C36 /* ProjectRoadmapView.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -446,7 +462,9 @@
 				55914E002734AD5B001B1E9A /* ViewExtensions.swift in Sources */,
 				559C745B27384CE400F55C36 /* WorkBlockView.swift in Sources */,
 				559C745527374DB300F55C36 /* RootView.swift in Sources */,
+				559C745D2738528E00F55C36 /* PlannedSprintView.swift in Sources */,
 				556F30772729AACE00CBF42E /* PlanningCoordinator.swift in Sources */,
+				559C745F2738673A00F55C36 /* PlatformSprintBlockView.swift in Sources */,
 				556F30732728EE9F00CBF42E /* Feature.swift in Sources */,
 				551B6CCE27304F68007B21F4 /* WorkBlock.swift in Sources */,
 				5598B41626D6944600FF7A50 /* Constants.swift in Sources */,
@@ -456,6 +474,7 @@
 				55ED4FCA26D6852E004A21AD /* WelcomeView.swift in Sources */,
 				55914E0C27361B29001B1E9A /* ReusableButton.swift in Sources */,
 				55ED4FC826D6852E004A21AD /* PlanrApp.swift in Sources */,
+				559C74612738711200F55C36 /* ProjectRoadmapView.swift in Sources */,
 				5598B41226D6898000FF7A50 /* Project.swift in Sources */,
 				556F307D2729ABE000CBF42E /* Sprint.swift in Sources */,
 				559C745727382DAA00F55C36 /* ColorExtensions.swift in Sources */,
@@ -467,10 +486,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				55AB6C36272C5E23008AD85B /* Platform.swift in Sources */,
+				559C746827387A4900F55C36 /* RootView.swift in Sources */,
 				556F30782729AACE00CBF42E /* PlanningCoordinator.swift in Sources */,
 				556F30742728EE9F00CBF42E /* Feature.swift in Sources */,
+				559C746327387A3A00F55C36 /* WorkBlockView.swift in Sources */,
 				5598B41026D6895600FF7A50 /* Engineer.swift in Sources */,
+				559C746427387A3C00F55C36 /* PlannedSprintView.swift in Sources */,
 				551B6CCF27304F68007B21F4 /* WorkBlock.swift in Sources */,
+				559C746527387A3F00F55C36 /* PlatformSprintBlockView.swift in Sources */,
 				55ED4FDB26D68530004A21AD /* EngineerVlidationTests.swift in Sources */,
 				556F307B2729ABCA00CBF42E /* Roadmap.swift in Sources */,
 				55AB6C39272C9F22008AD85B /* PlanningCoordinatorTests.swift in Sources */,
@@ -480,8 +503,11 @@
 				55914E052734B829001B1E9A /* Util.swift in Sources */,
 				559238732736F6C500630726 /* ProjectValidationTests.swift in Sources */,
 				5598B41726D6944600FF7A50 /* Constants.swift in Sources */,
+				559C746727387A4400F55C36 /* WelcomeView.swift in Sources */,
+				559C746627387A4200F55C36 /* ProjectRoadmapView.swift in Sources */,
 				55914E0D27361B29001B1E9A /* ReusableButton.swift in Sources */,
 				556F307E2729ABE000CBF42E /* Sprint.swift in Sources */,
+				559C746227387A3400F55C36 /* ColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
