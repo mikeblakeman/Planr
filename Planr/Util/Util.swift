@@ -15,7 +15,7 @@ func randomColor() -> Color {
 }
 
 func getDemoRoadmap() -> Roadmap {
-    var project = Project(name: "Test Project 1")
+    var project = Project(name: "Test Project 1", startDate: Date())
 
     // swiftlint:disable line_length
     let collin = Engineer(firstName: "Collin", lastName: "Engineer", platform: [.android], unavailableDates: [])

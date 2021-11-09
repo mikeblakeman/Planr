@@ -10,16 +10,19 @@ import Foundation
 /// A representation of an unplanned body of work containing engineers and unplanned features.
 struct Project {
     public private(set) var name: String
+    public private(set) var projectStartDate: Date
     public private(set) var features: [UnplannedFeature]
     public private(set) var engineers: [Engineer]
 
     /// Initializer
     ///
     /// - Parameter name: The name of the project.
+    /// - Parameter startDate: The starting date of the project.
     /// - Parameter features: A collection of `UnplannedFeature`s to plan.
     /// - Parameter engineers: A collection of `Engineer` to assign work to.
-    init(name: String, _ features: [UnplannedFeature] = [], _ engineers: [Engineer] = []) {
+    init(name: String, startDate: Date, _ features: [UnplannedFeature] = [], _ engineers: [Engineer] = []) {
         self.name = name
+        self.projectStartDate = startDate
         self.features = features
         self.engineers = engineers
     }

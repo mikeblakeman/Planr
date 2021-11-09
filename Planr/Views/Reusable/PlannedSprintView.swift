@@ -44,36 +44,6 @@ struct PlannedSprintView: View {
 
 struct PlannedSprintView_Previews: PreviewProvider {
     static var previews: some View {
-        let data = getDemoData()
-        PlannedSprintView(platform: data.0, sprints: data.1)
+        PlannedSprintView(platform: .ios, sprints: getDemoRoadmap().sprints)
     }
-}
-
-private func getDemoData() -> (Platform, [Sprint]) {
-    return (.ios, [getDemoSprint(), getDemoSprint(), getDemoSprint(), getDemoSprint()])
-}
-
-private func getDemoSprint() -> Sprint {
-    var workBlock1 = WorkBlock(name: "Family Account",
-                               summary: "This is a cool family account features.",
-                               platform: .ios,
-                               pointValue: 8,
-                               color: randomColor())
-
-    workBlock1.isFinalSprint = true
-
-    let workBlock2 = WorkBlock(name: "Device Setup",
-                               summary: "A feature that covers setting up a device.",
-                               platform: .android,
-                               pointValue: 3,
-                               color: randomColor())
-
-    let now = Date()
-    let nextWeek = now.addingTimeInterval(7.0 * 24.0 * 3600.0)
-    let dateInterval = DateInterval(start: now, end: nextWeek)
-
-    let sprint = Sprint(workBlocks: [workBlock1, workBlock2],
-                        pointsRemaining: 8,
-                        dateRange: dateInterval)
-    return sprint
 }

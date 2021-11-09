@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55116E8C273A112E00ED01E1 /* PlanrApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55116E8B273A112E00ED01E1 /* PlanrApplicationSettings.swift */; };
+		55116E8E273A12A000ED01E1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55116E8D273A12A000ED01E1 /* AppState.swift */; };
+		55116E93273A1B4A00ED01E1 /* PlanrSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55116E92273A1B4A00ED01E1 /* PlanrSettingsView.swift */; };
+		55116E97273A1CD600ED01E1 /* AppSettingsGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55116E96273A1CD600ED01E1 /* AppSettingsGroupView.swift */; };
+		55116E99273A284A00ED01E1 /* AppSettingsGroupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55116E98273A284A00ED01E1 /* AppSettingsGroupVM.swift */; };
 		551B6CCE27304F68007B21F4 /* WorkBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551B6CCD27304F68007B21F4 /* WorkBlock.swift */; };
 		551B6CCF27304F68007B21F4 /* WorkBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551B6CCD27304F68007B21F4 /* WorkBlock.swift */; };
 		556F30732728EE9F00CBF42E /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F30722728EE9F00CBF42E /* Feature.swift */; };
@@ -83,6 +88,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		55116E8B273A112E00ED01E1 /* PlanrApplicationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanrApplicationSettings.swift; sourceTree = "<group>"; };
+		55116E8D273A12A000ED01E1 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		55116E92273A1B4A00ED01E1 /* PlanrSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanrSettingsView.swift; sourceTree = "<group>"; };
+		55116E96273A1CD600ED01E1 /* AppSettingsGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsGroupView.swift; sourceTree = "<group>"; };
+		55116E98273A284A00ED01E1 /* AppSettingsGroupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsGroupVM.swift; sourceTree = "<group>"; };
 		551B6CCD27304F68007B21F4 /* WorkBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkBlock.swift; sourceTree = "<group>"; };
 		556F30722728EE9F00CBF42E /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		556F30762729AACE00CBF42E /* PlanningCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningCoordinator.swift; sourceTree = "<group>"; };
@@ -185,6 +195,7 @@
 				55ED4FC926D6852E004A21AD /* WelcomeView.swift */,
 				55914E0727356B9A001B1E9A /* NewProjectView.swift */,
 				559C745427374DB300F55C36 /* RootView.swift */,
+				55116E92273A1B4A00ED01E1 /* PlanrSettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,6 +208,8 @@
 				559C745C2738528E00F55C36 /* PlannedSprintView.swift */,
 				559C745E2738673A00F55C36 /* PlatformSprintBlockView.swift */,
 				559C74602738711200F55C36 /* ProjectRoadmapView.swift */,
+				55116E96273A1CD600ED01E1 /* AppSettingsGroupView.swift */,
+				55116E98273A284A00ED01E1 /* AppSettingsGroupVM.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -211,6 +224,8 @@
 				556F30792729ABCA00CBF42E /* Roadmap.swift */,
 				556F307C2729ABE000CBF42E /* Sprint.swift */,
 				551B6CCD27304F68007B21F4 /* WorkBlock.swift */,
+				55116E8B273A112E00ED01E1 /* PlanrApplicationSettings.swift */,
+				55116E8D273A12A000ED01E1 /* AppState.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -460,9 +475,12 @@
 				55AB6C35272C5E23008AD85B /* Platform.swift in Sources */,
 				55914E0827356B9A001B1E9A /* NewProjectView.swift in Sources */,
 				55914E002734AD5B001B1E9A /* ViewExtensions.swift in Sources */,
+				55116E93273A1B4A00ED01E1 /* PlanrSettingsView.swift in Sources */,
+				55116E8E273A12A000ED01E1 /* AppState.swift in Sources */,
 				559C745B27384CE400F55C36 /* WorkBlockView.swift in Sources */,
 				559C745527374DB300F55C36 /* RootView.swift in Sources */,
 				559C745D2738528E00F55C36 /* PlannedSprintView.swift in Sources */,
+				55116E97273A1CD600ED01E1 /* AppSettingsGroupView.swift in Sources */,
 				556F30772729AACE00CBF42E /* PlanningCoordinator.swift in Sources */,
 				559C745F2738673A00F55C36 /* PlatformSprintBlockView.swift in Sources */,
 				556F30732728EE9F00CBF42E /* Feature.swift in Sources */,
@@ -470,12 +488,14 @@
 				5598B41626D6944600FF7A50 /* Constants.swift in Sources */,
 				5598B40F26D6895600FF7A50 /* Engineer.swift in Sources */,
 				55914E042734B829001B1E9A /* Util.swift in Sources */,
+				55116E8C273A112E00ED01E1 /* PlanrApplicationSettings.swift in Sources */,
 				556F307A2729ABCA00CBF42E /* Roadmap.swift in Sources */,
 				55ED4FCA26D6852E004A21AD /* WelcomeView.swift in Sources */,
 				55914E0C27361B29001B1E9A /* ReusableButton.swift in Sources */,
 				55ED4FC826D6852E004A21AD /* PlanrApp.swift in Sources */,
 				559C74612738711200F55C36 /* ProjectRoadmapView.swift in Sources */,
 				5598B41226D6898000FF7A50 /* Project.swift in Sources */,
+				55116E99273A284A00ED01E1 /* AppSettingsGroupVM.swift in Sources */,
 				556F307D2729ABE000CBF42E /* Sprint.swift in Sources */,
 				559C745727382DAA00F55C36 /* ColorExtensions.swift in Sources */,
 			);

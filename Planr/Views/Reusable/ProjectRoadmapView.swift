@@ -40,7 +40,9 @@ struct ProjectRoadmapView: View {
 
 struct ProjectRoadmapView_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectRoadmapView(projectName: "Demo Project", roadmap: getDemoRoadmap())
+        ProjectRoadmapView(projectName: "Demo Project",
+                           roadmap: getDemoRoadmap())
+            .frame(width: 1400, height: 1000, alignment: .center)
     }
 }
 

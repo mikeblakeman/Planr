@@ -42,6 +42,7 @@ struct NewProjectView: View {
     @ObservedObject var textBindingManager = TextBindingManager()
     @State var projectNameFieldValue = ""
     @State var projectEstimatePaddingValue = 0.0
+    @State var settingsView = AppSettingsGroupView()
 
     var body: some View {
         VStack(alignment: .center, spacing: 40, content: {
@@ -65,19 +66,11 @@ struct NewProjectView: View {
 
                 Spacer()
 
-                ProjectVelocityView()
-
-                Spacer()
-
-                SprintLengthView()
-
-                Spacer()
-
-                EstimatePaddingView()
+                settingsView
             }).padding(.horizontal, 25)
             Spacer()
             Button(action: {
-                saveNewProjectToRealm()
+                createNewProject()
             }, label: {
                 HStack {
                     Text("Continue")
@@ -98,8 +91,10 @@ struct NewProjectView: View {
         .background(Color(white: 1)).edgesIgnoringSafeArea(.all)
     }
 
-    func saveNewProjectToRealm() {
-        // TODO: Save project details to RealmDB
+    private func createNewProject() {
+        let project = Project(name: $projectNameFieldValue.wrappedValue,
+                              startDate: Date()) // TODO Fix DAte
+        settingsView.save()
     }
 }
 
@@ -133,51 +128,6 @@ struct ProjectDateView: View {
                 selection: $sprintStartDate,
                 displayedComponents: [.date]
             ).underlineTextField()
-        }).padding(.horizontal, 25)
-    }
-}
-
-struct ProjectVelocityView: View {
-    @State private var averageVelocity = 8
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 5, content: {
-            Text("Pick your team's average velocity:").font(.system(size: 22))
-            Picker("", selection: $averageVelocity) {
-                ForEach(2 ..< 21) { Text("\($0)") }
-            }.underlineTextField()
-            .onAppear {
-                averageVelocity = 8
-            }
-        }).padding(.horizontal, 25)
-    }
-}
-
-struct SprintLengthView: View {
-    @State private var sprintLength = 2
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 5, content: {
-            Text("Pick your sprint lengths in weeks:").font(.system(size: 22))
-            Picker("", selection: $sprintLength) {
-                ForEach(2 ..< 7) {
-                    Text("\($0)")
-                }
-            }.underlineTextField()
-            .pickerStyle(SegmentedPickerStyle())
-        }).padding(.horizontal, 25)
-    }
-}
-
-struct EstimatePaddingView: View {
-    @ObservedObject var textBindingManager = TextBindingManager()
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 5, content: {
-            Text("Enter the percent to pad given estimates:").font(.system(size: 22))
-            TextField("0", text: $textBindingManager.projectEstimatePadding)
-                .textFieldStyle(PlainTextFieldStyle())
-                .underlineTextField()
         }).padding(.horizontal, 25)
     }
 }

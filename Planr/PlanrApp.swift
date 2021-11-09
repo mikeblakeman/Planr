@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 @main
-struct PlanrApp: App {
+struct PlanrApp: SwiftUI.App {
+    @StateObject var state = AppState()
+    
     var body: some Scene {
         WindowGroup {
             RootView()
+                .environmentObject(state)
         }
     }
 }

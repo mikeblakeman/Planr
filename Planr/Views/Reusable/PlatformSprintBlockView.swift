@@ -36,7 +36,7 @@ struct PlatformSprintBlockView: View, Identifiable {
         .background(Color.white)
     }
 
-    func getDateView(dateRange: DateInterval) -> some View {
+    private func getDateView(dateRange: DateInterval) -> some View {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd"
 
@@ -44,6 +44,15 @@ struct PlatformSprintBlockView: View, Identifiable {
                         "\(dateFormatter.string(from: dateRange.end))")
             .font(.system(size: 14))
             .padding(.vertical, 5)
+    }
+
+    func getEmptySprintBlockView() -> some View {
+        return VStack(alignment: .leading, spacing: 5) {
+            // Intentionally empty
+        }.frame(minWidth: 300, maxWidth: .infinity, minHeight: 260, maxHeight: .infinity)
+        .padding(5)
+        .border(Color.black)
+        .background(Color.white)
     }
 }
 
