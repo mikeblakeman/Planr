@@ -24,18 +24,6 @@ struct PlanrSettingsView: View {
             VStack(alignment: .leading, spacing: 5, content: {
                 self.appSettingsGroupView
             }).padding(.horizontal, 25)
-            Spacer()
-            Button(action: {
-                saveApplicationSettings()
-            }, label: {
-                HStack {
-                    Text("Save")
-                        .font(.system(size: 18.0))
-                        .frame(width: 200)
-                }
-            }).buttonStyle(BooleanGradientButtonStyle())
-            .padding(.vertical, 25)
-            
         })
         .frame(minWidth: 1000,
                idealWidth: 1200,
@@ -45,10 +33,6 @@ struct PlanrSettingsView: View {
                maxHeight: .infinity,
                alignment: .top)
         .background(Color(white: 1)).edgesIgnoringSafeArea(.all)
-    }
-
-    private func saveApplicationSettings() {
-        self.appSettingsGroupView.save()
     }
 }
 

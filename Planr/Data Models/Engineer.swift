@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 enum EngineerValidationError: Error {
     case invalidFirstNameLength
@@ -16,12 +17,12 @@ enum EngineerValidationError: Error {
 }
 
 /// A representation of an Engineer for planning purposes.
-struct Engineer: Hashable {
-    public private(set) var firstName: String
-    public private(set) var lastName: String
-    public private(set) var platform: [Platform]
-    public private(set) var unavailableDates: [Date]
-    public private(set) var engineerId: NSUUID
+class Engineer: Object {
+    @Persisted(primaryKey: true) var engineerId: ObjectId
+    @Persisted var firstName: String = ""
+    @Persisted var lastName: String = ""
+    @Persisted var platform: RealmSwift.List<Platform> = RealmSwift.List<Platform>()
+    @Persisted var unavailableDates: RealmSwift.List<Date> = RealmSwift.List<Date>()
 
     /// Initializer
     ///
@@ -29,53 +30,20 @@ struct Engineer: Hashable {
     /// - Parameter lastName: The engineer's last name.
     /// - Parameter platform: A collection of `Platform` in which the engineer is proficient.
     /// - Parameter unavailableDates: A collection of `Date` in which the engineer is unavailable to work.
-    init(firstName: String, lastName: String, platform: [Platform], unavailableDates: [Date]) {
+    init(firstName: String, lastName: String, platform: [PlatformType], unavailableDates: [Date]) {
         self.firstName = firstName
         self.lastName = lastName
-        self.platform = platform
-        self.unavailableDates = unavailableDates
-        self.engineerId = NSUUID()
-    }
 
-    /// A helper functiont to validate the data that was input.
-    ///
-    /// - Returns: A `Bool` indicating the validation either did or did not pass.
-    public func validate() throws -> Bool {
-        try validateFirstName(firstName)
-        try validateLastName(lastName)
-        try validatePlatform(platform)
-        try validateUnavailableDates(unavailableDates)
-        return true
-    }
-
-    private func validateFirstName(_ name: String) throws {
-        if firstName.isEmpty || firstName.count > Constants.engineerNameMaxLength {
-            throw EngineerValidationError.invalidFirstNameLength
+        let platformList = List<Platform>()
+        for iterator in platform {
+            platformList.append(Platform(value: iterator))
         }
-    }
+        self.platform = platformList
 
-    private func validateLastName(_ name: String) throws {
-        if lastName.isEmpty || lastName.count > Constants.engineerNameMaxLength {
-            throw EngineerValidationError.invalidLastNameLength
+        let unavailableDateList = List<Date>()
+        for date in unavailableDates {
+            unavailableDateList.append(date)
         }
-    }
-
-    private func validatePlatform(_ platform: [Platform]) throws {
-        if platform.isEmpty { throw EngineerValidationError.invalidPlatformLength }
-        if platform.count != Set(platform).count { throw EngineerValidationError.invalidPlatformDuplicates }
-    }
-
-    private func validateUnavailableDates(_ dates: [Date]) throws {
-        if !(dates.allSatisfy { Calendar.current.isDateInToday($0) || $0.timeIntervalSinceNow.sign == .plus }) {
-            throw EngineerValidationError.invalidUnavailableDate
-        }
-    }
-
-    // Hashable protocol conforming method.
-    static func == (lhs: Engineer, rhs: Engineer) -> Bool {
-        return lhs.firstName == rhs.firstName
-            && lhs.lastName == rhs.lastName
-            && lhs.platform == rhs.platform
-            && lhs.unavailableDates == rhs.unavailableDates
+        self.unavailableDates = unavailableDateList
     }
 }

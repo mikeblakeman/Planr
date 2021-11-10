@@ -33,7 +33,7 @@ struct WorkBlockView: View {
                     .font(.system(size: 24))
                     .foregroundColor(.white)
             }.padding(.trailing, 10)
-        }.background(self.workBlock.color)
+        }.background(self.workBlock.color.toColor())
         .cornerRadius(10)
     }
 }
@@ -44,20 +44,4 @@ struct WorkBlockView_Previews: PreviewProvider {
             WorkBlockView(workBlock: workBlock)
         }
     }
-}
-
-private func getDemoWorkBlocks() -> [WorkBlock] {
-    let workBlock1 = WorkBlock(name: "Family Accounts",
-                               summary: "Cool family feature.",
-                               platform: .ios,
-                               pointValue: 8,
-                               color: randomColor())
-
-    var workBlock2 = WorkBlock(name: "Device Setup",
-                               summary: "Device setup feature.",
-                               platform: .ios,
-                               pointValue: 4,
-                               color: randomColor())
-    workBlock2.isFinalSprint = true
-    return [workBlock1, workBlock2]
 }

@@ -12,7 +12,10 @@ struct RootView: View {
     var body: some View {
         NavigationStackView {
             WelcomeView()
-        }
+        }.frame(minWidth: 1200,
+                maxWidth: .infinity,
+                minHeight: 1000,
+                maxHeight: .infinity)
     }
 }
 

@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import RealmSwift
 
 /// A structure that represents an Agile Sprint
-struct Sprint {
-    public private(set) var sprintId: UUID
+class Sprint: Object {
+    @Persisted(primaryKey: true) var sprintId: ObjectId
     public private(set) var workBlockDictionary: [Platform: [WorkBlock]]
     public private(set) var pointsRemaining: Int
     public private(set) var dateRange: DateInterval
@@ -21,7 +22,6 @@ struct Sprint {
     /// - Parameter pointsRemaining: The number of points remaining to plan in a given `Sprint`
     /// - Parameter dateRange: A `DateInterval` for the given `Sprint`
     init(workBlocks: [WorkBlock], pointsRemaining: Int, dateRange: DateInterval) {
-        self.sprintId = UUID()
         self.workBlockDictionary = [:]
         self.pointsRemaining = pointsRemaining
         self.dateRange = dateRange
@@ -41,19 +41,18 @@ struct Sprint {
     ///
     /// - Parameter workBlock: A  planned `WorkBlock`
     /// - Note: This will mutate the collection of `WorkBlock`
-    public mutating func addWorkBlock (_ workBlock: WorkBlock) {
+    public func addWorkBlock (_ workBlock: WorkBlock) {
         // If there aren't enough sprint points remaining do not add feature.
         guard workBlock.pointValue < pointsRemaining else {
             assertionFailure("Cannot add work block to sprint without enough remaining points.")
             return
         }
 
-        var mutableWorkBlock = workBlock
-        try? mutableWorkBlock.assignSprint(self.sprintId)
+        workBlock.sprintId = self.sprintId
 
-        self.decrementPointsRemaining(by: mutableWorkBlock.pointValue)
+        self.decrementPointsRemaining(by: workBlock.pointValue)
         if var collection = workBlockDictionary[workBlock.platform] {
-            collection.append(mutableWorkBlock)
+            collection.append(workBlock)
             workBlockDictionary[workBlock.platform] = collection
         } else {
             workBlockDictionary[workBlock.platform] = [workBlock]
@@ -75,15 +74,15 @@ struct Sprint {
         print("Sprint Start Date: \(self.dateRange.start)\nSprint End Date:   \(self.dateRange.end)\n")
         print("\nTotal Sprint Points: \(self.initialSprintPoints)")
         for key in self.workBlockDictionary.keys {
-            print(" List of \(key.rawValue) features in sprint:")
+            print(" List of \(key.type.rawValue) features in sprint:")
             guard let collection = self.workBlockDictionary[key] else {
                 return
             }
 
             for workBlock in collection {
                 print("    Title: \(workBlock.name)" +
-                      " - Platform: \(workBlock.platform.rawValue)" +
-                      " - Points: \(workBlock.pointValue)")
+                        " - Platform: \(workBlock.platform.type.rawValue)" +
+                        " - Points: \(workBlock.pointValue)")
             }
         }
         print("Total Sprint Points Remaining: \(self.pointsRemaining)")
@@ -92,7 +91,7 @@ struct Sprint {
     /// Decrease points remaining in current `Sprint`
     ///
     /// - Parameter points: Points in `Int` to decrease the remaining
-    private mutating func decrementPointsRemaining (by points: Int) {
+    private func decrementPointsRemaining (by points: Int) {
         guard points < self.pointsRemaining else {
             assertionFailure("Cannot decrease points by greater than points remaining")
             return

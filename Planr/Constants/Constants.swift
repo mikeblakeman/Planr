@@ -46,4 +46,9 @@ class Constants {
                                                                                    Constants.lightGrayColor]),
                                                        startPoint: .topLeading,
                                                        endPoint: .bottomTrailing)
+
+    // AppStorage Keys
+    static let averageVelocityKey = "averageVelocityKey"
+    static let sprintLengthKey = "sprintLengthKey"
+    static let estimatePaddingKey = "estimatePaddingKey"
 }

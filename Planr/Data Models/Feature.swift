@@ -6,18 +6,18 @@
 //
 
 import Foundation
+import RealmSwift
 import SwiftUI
 
 /// Common interface for `UnplannedFeature` and `PlannedFeature` classes
-protocol PlanrFeature: Hashable {
+protocol PlanrFeature: Object {
     var name: String { get }
     var summary: String? { get }
-    var platform: [Platform] { get }
+    var platform: RealmSwift.List<Platform> { get }
     var effortEstimate: Int { get }
     var priority: Int { get }
     var concurrencyAllowed: Bool { get }
-    var color: Color { get }
-    var featureId: NSUUID { get }
+    var color: RealmColor { get }
 }
 
 enum FeatureValidationError: Error {
@@ -31,16 +31,16 @@ enum FeatureValidationError: Error {
 }
 
 /// A class that conforms to the `PlanrFeature` protocol that represents an unplanned feature.
-class UnplannedFeature: PlanrFeature {
+class UnplannedFeature: Object, PlanrFeature {
 
-    public private(set) var name: String
-    public private(set) var summary: String?
-    public private(set) var platform: [Platform]
-    public private(set) var effortEstimate: Int
-    public private(set) var priority: Int
-    public private(set) var concurrencyAllowed: Bool
-    public private(set) var color: Color
-    public private(set) var featureId: NSUUID
+    @Persisted(primaryKey: true) var featureId: ObjectId
+    @Persisted var name: String = ""
+    @Persisted var summary: String?
+    @Persisted var platform: RealmSwift.List<Platform> = RealmSwift.List<Platform>()
+    @Persisted var effortEstimate: Int = 0
+    @Persisted var priority: Int = 0
+    @Persisted var concurrencyAllowed: Bool = false
+    @Persisted var color: RealmColor
 
     /// Initializer
     ///
@@ -52,23 +52,26 @@ class UnplannedFeature: PlanrFeature {
     /// - Parameter concurrencyAllowed: A `Bool` to determine if the feature can be worked on concurrently.
     init(name: String,
          _ summary: String?,
-         platform: [Platform],
+         platform: [PlatformType],
          effortEstimate estimate: Int,
          priority: Int,
          concurrencyAllowed: Bool = false) {
+        super.init()
         self.name = name
         self.summary = summary
-        self.platform = platform
+
+        for type in platform {
+            self.platform.append(Platform(value: type))
+        }
+
         self.effortEstimate = estimate
         self.priority = priority
         self.concurrencyAllowed = concurrencyAllowed
 
-        self.color = Color(Color.RGBColorSpace.sRGB,
-                           red: .random(in: 0...1),
-                           green: .random(in: 0...1),
-                           blue: .random(in: 0...1))
-
-        self.featureId = NSUUID()
+        self.color = RealmColor(withColor: Color(Color.RGBColorSpace.sRGB,
+                                                 red: .random(in: 0...1),
+                                                 green: .random(in: 0...1),
+                                                 blue: .random(in: 0...1)))
     }
 
     /// Function to update the name of the feature.
@@ -84,89 +87,28 @@ class UnplannedFeature: PlanrFeature {
     ///
     /// - Parameter priority: An integer value that updates the priority of the `UnplannedFeature`.
     public func updatePriority(_ priority: Int) throws {
-        try validatePriority(priority)
-    }
-
-    /// Function to validae the current state of the `UnplannedFeature`.
-    ///
-    /// - Note: This helps in unit testing.
-    public func validate() throws -> Bool {
-        try validateName(name)
-        try validateSummary(summary)
-        try validatePlatform(platform)
-        try validateEstimate(effortEstimate)
-        try validatePriority(priority)
-        return true
-    }
-
-    private func validateName(_ name: String) throws {
-        if name.isEmpty || name.count > Constants.featureNameMaxLength {
-            throw FeatureValidationError.invalidFeatureNameLengthError
-        }
-    }
-
-    private func validateSummary(_ summary: String?) throws {
-        if summary?.count ?? 0 > Constants.summaryMaxCharacterLength {
-            throw FeatureValidationError.invalidFeatureSummaryLengthError
-        }
-    }
-
-    private func validatePlatform(_ platform: [Platform]) throws {
-        if platform.isEmpty { throw FeatureValidationError.featurePlatformEmptyError }
-        if platform.count != Set(platform).count { throw FeatureValidationError.duplicatePlatformError }
-    }
-
-    private func validateEstimate(_ estimate: Int) throws {
-        if effortEstimate > Constants.effortEstimateMaxPointValue {
-            throw FeatureValidationError.effortEstimateTooHighError
-        }
-    }
-
-    private func validatePriority(_ priority: Int) throws {
-        if priority > 1000 {
+        let numberRange = 0...1000
+        if !numberRange.contains(priority) {
             throw FeatureValidationError.priorityValueTooHighError
         }
-    }
-
-    // Hashable protocol method
-    static func == (lhs: UnplannedFeature, rhs: UnplannedFeature) -> Bool {
-        return lhs.name == rhs.name
-            && lhs.summary == rhs.summary
-            && lhs.platform == rhs.platform
-            && lhs.effortEstimate == rhs.effortEstimate
-            && lhs.priority == rhs.priority
-            && lhs.concurrencyAllowed == rhs.concurrencyAllowed
-            && lhs.color == rhs.color
-            && lhs.featureId == rhs.featureId
-    }
-
-    // Hashable protocol method
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
-        hasher.combine(summary)
-        hasher.combine(platform)
-        hasher.combine(effortEstimate)
-        hasher.combine(priority)
-        hasher.combine(concurrencyAllowed)
-        hasher.combine(color)
-        hasher.combine(featureId)
     }
 }
 
 /// A class that conforms to the `PlanrFeature` protocol that represents a planned feature.
-class PlannedFeature: PlanrFeature, Hashable {
-    public private(set) var name: String
-    public private(set) var summary: String?
-    public private(set) var platform: [Platform]
-    public private(set) var effortEstimate: Int
-    public private(set) var priority: Int
-    public private(set) var concurrencyAllowed: Bool
-    public private(set) var color: Color
-    public private(set) var featureId: NSUUID
+class PlannedFeature: Object, PlanrFeature {
+    @Persisted(primaryKey: true) var featureId: ObjectId
+    @Persisted var name: String = ""
+    @Persisted var summary: String?
+    @Persisted var platform: RealmSwift.List<Platform> = RealmSwift.List<Platform>()
+    @Persisted var effortEstimate: Int = 0
+    @Persisted var priority: Int = 0
+    @Persisted var concurrencyAllowed: Bool = false
+    @Persisted var color: RealmColor
 
     public private(set) var workBlocks: [WorkBlock] = []
 
     init (withUnplannedFeature feature: UnplannedFeature, averageVelocity: Int) {
+        super.init()
         self.name = feature.name
         self.summary = feature.summary
         self.platform = feature.platform
@@ -185,7 +127,8 @@ class PlannedFeature: PlanrFeature, Hashable {
                                               summary: feature.summary,
                                               platform: platform,
                                               pointValue: averageVelocity,
-                                              color: feature.color)
+                                              color: feature.color,
+                                              sprintId: nil)
                     self.workBlocks.append(workBlock)
                 }
             }
@@ -196,7 +139,8 @@ class PlannedFeature: PlanrFeature, Hashable {
                                           summary: feature.summary,
                                           platform: platform,
                                           pointValue: remainder,
-                                          color: feature.color)
+                                          color: feature.color,
+                                          sprintId: nil)
                 self.workBlocks.append(workBlock)
             }
         }
@@ -209,7 +153,7 @@ class PlannedFeature: PlanrFeature, Hashable {
         // Get the index of the first unassigned work block with the same point value and platform.
         guard let index = workBlocks.firstIndex(where: { $0.pointValue == workBlock.pointValue
                                                     && $0.platform == workBlock.platform
-                                                    && $0.id == nil }) else {
+                                                    && $0.sprintId == nil }) else {
             return
         }
 
@@ -220,31 +164,6 @@ class PlannedFeature: PlanrFeature, Hashable {
     ///
     /// - Parameter platform: The `Platform` to match the unassigned work block.
     public func nextUnassignedWorkBlockForPlatform(platform: Platform) -> WorkBlock? {
-        return self.workBlocks.first(where: { $0.id == nil && $0.platform == platform })
-    }
-
-    // Hashable protocol conforming methods.
-    static func == (lhs: PlannedFeature, rhs: PlannedFeature) -> Bool {
-        return lhs.name == rhs.name
-            && lhs.summary == rhs.summary
-            && lhs.platform == rhs.platform
-            && lhs.effortEstimate == rhs.effortEstimate
-            && lhs.priority == rhs.priority
-            && lhs.concurrencyAllowed == rhs.concurrencyAllowed
-            && lhs.color == rhs.color
-            && lhs.featureId == rhs.featureId
-            && lhs.workBlocks == rhs.workBlocks
-    }
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
-        hasher.combine(summary)
-        hasher.combine(platform)
-        hasher.combine(effortEstimate)
-        hasher.combine(priority)
-        hasher.combine(concurrencyAllowed)
-        hasher.combine(color)
-        hasher.combine(featureId)
-        hasher.combine(workBlocks)
+        return self.workBlocks.first(where: { $0.sprintId == nil && $0.platform == platform })
     }
 }

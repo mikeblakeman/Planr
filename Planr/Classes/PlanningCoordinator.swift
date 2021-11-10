@@ -6,12 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
 
 /// Use this struct to plan a `Roadmap`
 struct PlanningCoordinator {
 
     private var project: Project
-    private var sprintStartDate: Date
     private var averageVelocity: Int
     private var sprintLength: Int
     private var estimatePadding: Double
@@ -20,16 +20,15 @@ struct PlanningCoordinator {
     /// Initializer
     ///
     /// - Parameter project: `Project` of which to plan
-    /// - Parameter sprintStartDate: First date to start the planning
-    /// - Parameter averageVelocity: The average velocity of of each engineer
-    /// - Parameter sprintLength: An `Int` count of weeks in a sprint
-    /// - Parameter estimatePadding: A percent to pad given estimates to account for inaccuracy
-    init(project: Project, sprintStartDate: Date, averageVelocity: Int, sprintLength: Int, estimatePadding: Double) {
+    init(project: Project) {
         self.project = project
-        self.sprintStartDate = sprintStartDate
-        self.averageVelocity = averageVelocity
-        self.sprintLength = sprintLength
-        self.estimatePadding = estimatePadding
+        self.averageVelocity = AppStorage(Constants.averageVelocityKey).wrappedValue ?? 8
+        self.sprintLength = AppStorage(Constants.sprintLengthKey).wrappedValue ?? 2
+        if let padding: String = AppStorage(Constants.estimatePaddingKey).wrappedValue {
+            self.estimatePadding = (Double(padding) ?? 0) / 100
+        } else {
+            self.estimatePadding = 0.0
+        }
         self.sprintTimeInterval = (Double(sprintLength) * Constants.week) - (3 * Constants.day)
     }
 
@@ -77,8 +76,8 @@ struct PlanningCoordinator {
         */
 
         // Init first sprint
-        let initialSprintDateRange = DateInterval(start: sprintStartDate,
-                                                  end: sprintStartDate.advanced(by: self.sprintTimeInterval))
+        let endDate = self.project.projectStartDate.advanced(by: self.sprintTimeInterval)
+        let initialSprintDateRange = DateInterval(start: self.project.projectStartDate, end: endDate)
         let initialSprint = Sprint(workBlocks: [],
                                    pointsRemaining: totalCapacityPerSprint,
                                    dateRange: initialSprintDateRange)
@@ -100,7 +99,7 @@ struct PlanningCoordinator {
 
         // Plan resources
         for index in sprintList.indices {
-            var sprint = sprintList[index]
+            let sprint = sprintList[index]
 
             // TODO: Use engineer available dates
             var engineerAssignments: [Engineer: Int] = [:]
@@ -111,9 +110,9 @@ struct PlanningCoordinator {
             // Iterate through planned features and 
             for featureIndex in plannedFeatureList.indices {
                 for platform in plannedFeatureList[featureIndex].platform {
-                    if var unassignedWorkBlock =
+                    if let unassignedWorkBlock =
                         plannedFeatureList[featureIndex].nextUnassignedWorkBlockForPlatform(platform: platform) {
-                        try? unassignedWorkBlock.assignSprint(sprint.sprintId)
+                        unassignedWorkBlock.sprintId = sprint.sprintId
                         if sprint.pointsRemaining > unassignedWorkBlock.pointValue {
                             sprint.addWorkBlock(unassignedWorkBlock)
                             plannedFeatureList[featureIndex].assignWorkBlock(unassignedWorkBlock)

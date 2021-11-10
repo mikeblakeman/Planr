@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		55116E8C273A112E00ED01E1 /* PlanrApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55116E8B273A112E00ED01E1 /* PlanrApplicationSettings.swift */; };
+		5510025C273B656F006E6A94 /* NewProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510025B273B656F006E6A94 /* NewProjectViewModel.swift */; };
+		55100260273B6F33006E6A94 /* RealmColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510025F273B6F33006E6A94 /* RealmColor.swift */; };
 		55116E8E273A12A000ED01E1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55116E8D273A12A000ED01E1 /* AppState.swift */; };
 		55116E93273A1B4A00ED01E1 /* PlanrSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55116E92273A1B4A00ED01E1 /* PlanrSettingsView.swift */; };
 		55116E97273A1CD600ED01E1 /* AppSettingsGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55116E96273A1CD600ED01E1 /* AppSettingsGroupView.swift */; };
-		55116E99273A284A00ED01E1 /* AppSettingsGroupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55116E98273A284A00ED01E1 /* AppSettingsGroupVM.swift */; };
 		551B6CCE27304F68007B21F4 /* WorkBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551B6CCD27304F68007B21F4 /* WorkBlock.swift */; };
 		551B6CCF27304F68007B21F4 /* WorkBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551B6CCD27304F68007B21F4 /* WorkBlock.swift */; };
 		556F30732728EE9F00CBF42E /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F30722728EE9F00CBF42E /* Feature.swift */; };
@@ -62,6 +62,26 @@
 		55AB6C35272C5E23008AD85B /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB6C34272C5E23008AD85B /* Platform.swift */; };
 		55AB6C36272C5E23008AD85B /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB6C34272C5E23008AD85B /* Platform.swift */; };
 		55AB6C39272C9F22008AD85B /* PlanningCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB6C37272C9F22008AD85B /* PlanningCoordinatorTests.swift */; };
+		55DFD939273C1F1F00BB0599 /* RealmColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510025F273B6F33006E6A94 /* RealmColor.swift */; };
+		55DFD93A273C1F2A00BB0599 /* NewProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510025B273B656F006E6A94 /* NewProjectViewModel.swift */; };
+		55DFD93B273C23D900BB0599 /* NewProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55914E0727356B9A001B1E9A /* NewProjectView.swift */; };
+		55DFD93C273C243000BB0599 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B41526D6944600FF7A50 /* Constants.swift */; };
+		55EBD50C273C2713006DFE0D /* AddFeaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD50B273C2713006DFE0D /* AddFeaturesView.swift */; };
+		55EBD50E273C272E006DFE0D /* AddFeaturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD50D273C272E006DFE0D /* AddFeaturesViewModel.swift */; };
+		55EBD510273C2804006DFE0D /* AddEngineersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD50F273C2804006DFE0D /* AddEngineersViewModel.swift */; };
+		55EBD512273C2828006DFE0D /* AddEngineersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD511273C2828006DFE0D /* AddEngineersView.swift */; };
+		55EBD514273C2EDB006DFE0D /* PlatformSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD513273C2EDB006DFE0D /* PlatformSelectionView.swift */; };
+		55EBD516273C2EF5006DFE0D /* PlatformSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD515273C2EF5006DFE0D /* PlatformSelectionViewModel.swift */; };
+		55EBD518273C4248006DFE0D /* MultiDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD517273C4248006DFE0D /* MultiDatePickerView.swift */; };
+		55EBD523273C42A0006DFE0D /* MultiDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD51A273C42A0006DFE0D /* MultiDatePicker.swift */; };
+		55EBD524273C42A0006DFE0D /* MDPMonthYearPickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD51C273C42A0006DFE0D /* MDPMonthYearPickerButton.swift */; };
+		55EBD525273C42A0006DFE0D /* MDPDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD51D273C42A0006DFE0D /* MDPDayView.swift */; };
+		55EBD526273C42A0006DFE0D /* MDPMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD51E273C42A0006DFE0D /* MDPMonthView.swift */; };
+		55EBD527273C42A0006DFE0D /* MDPContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD51F273C42A0006DFE0D /* MDPContentView.swift */; };
+		55EBD528273C42A0006DFE0D /* MDPMonthYearPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD520273C42A0006DFE0D /* MDPMonthYearPicker.swift */; };
+		55EBD529273C42A0006DFE0D /* MDPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD521273C42A0006DFE0D /* MDPModel.swift */; };
+		55EBD52A273C42A0006DFE0D /* MDPDayOfMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD522273C42A0006DFE0D /* MDPDayOfMonth.swift */; };
+		55EBD52C273C4B49006DFE0D /* MultiDatePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD52B273C4B49006DFE0D /* MultiDatePickerViewModel.swift */; };
 		55ED4FC826D6852E004A21AD /* PlanrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED4FC726D6852E004A21AD /* PlanrApp.swift */; };
 		55ED4FCA26D6852E004A21AD /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED4FC926D6852E004A21AD /* WelcomeView.swift */; };
 		55ED4FCC26D6852F004A21AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55ED4FCB26D6852F004A21AD /* Assets.xcassets */; };
@@ -88,11 +108,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		55116E8B273A112E00ED01E1 /* PlanrApplicationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanrApplicationSettings.swift; sourceTree = "<group>"; };
+		5510025B273B656F006E6A94 /* NewProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectViewModel.swift; sourceTree = "<group>"; };
+		5510025F273B6F33006E6A94 /* RealmColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmColor.swift; sourceTree = "<group>"; };
 		55116E8D273A12A000ED01E1 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		55116E92273A1B4A00ED01E1 /* PlanrSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanrSettingsView.swift; sourceTree = "<group>"; };
 		55116E96273A1CD600ED01E1 /* AppSettingsGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsGroupView.swift; sourceTree = "<group>"; };
-		55116E98273A284A00ED01E1 /* AppSettingsGroupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsGroupVM.swift; sourceTree = "<group>"; };
 		551B6CCD27304F68007B21F4 /* WorkBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkBlock.swift; sourceTree = "<group>"; };
 		556F30722728EE9F00CBF42E /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		556F30762729AACE00CBF42E /* PlanningCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningCoordinator.swift; sourceTree = "<group>"; };
@@ -114,6 +134,22 @@
 		559C74602738711200F55C36 /* ProjectRoadmapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRoadmapView.swift; sourceTree = "<group>"; };
 		55AB6C34272C5E23008AD85B /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		55AB6C37272C9F22008AD85B /* PlanningCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningCoordinatorTests.swift; sourceTree = "<group>"; };
+		55EBD50B273C2713006DFE0D /* AddFeaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeaturesView.swift; sourceTree = "<group>"; };
+		55EBD50D273C272E006DFE0D /* AddFeaturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeaturesViewModel.swift; sourceTree = "<group>"; };
+		55EBD50F273C2804006DFE0D /* AddEngineersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEngineersViewModel.swift; sourceTree = "<group>"; };
+		55EBD511273C2828006DFE0D /* AddEngineersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEngineersView.swift; sourceTree = "<group>"; };
+		55EBD513273C2EDB006DFE0D /* PlatformSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformSelectionView.swift; sourceTree = "<group>"; };
+		55EBD515273C2EF5006DFE0D /* PlatformSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformSelectionViewModel.swift; sourceTree = "<group>"; };
+		55EBD517273C4248006DFE0D /* MultiDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiDatePickerView.swift; sourceTree = "<group>"; };
+		55EBD51A273C42A0006DFE0D /* MultiDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiDatePicker.swift; sourceTree = "<group>"; };
+		55EBD51C273C42A0006DFE0D /* MDPMonthYearPickerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDPMonthYearPickerButton.swift; sourceTree = "<group>"; };
+		55EBD51D273C42A0006DFE0D /* MDPDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDPDayView.swift; sourceTree = "<group>"; };
+		55EBD51E273C42A0006DFE0D /* MDPMonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDPMonthView.swift; sourceTree = "<group>"; };
+		55EBD51F273C42A0006DFE0D /* MDPContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDPContentView.swift; sourceTree = "<group>"; };
+		55EBD520273C42A0006DFE0D /* MDPMonthYearPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDPMonthYearPicker.swift; sourceTree = "<group>"; };
+		55EBD521273C42A0006DFE0D /* MDPModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDPModel.swift; sourceTree = "<group>"; };
+		55EBD522273C42A0006DFE0D /* MDPDayOfMonth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDPDayOfMonth.swift; sourceTree = "<group>"; };
+		55EBD52B273C4B49006DFE0D /* MultiDatePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiDatePickerViewModel.swift; sourceTree = "<group>"; };
 		55ED4FC426D6852E004A21AD /* Planr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55ED4FC726D6852E004A21AD /* PlanrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanrApp.swift; sourceTree = "<group>"; };
 		55ED4FC926D6852E004A21AD /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -163,10 +199,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5510025A273B655C006E6A94 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				5510025B273B656F006E6A94 /* NewProjectViewModel.swift */,
+				55EBD50D273C272E006DFE0D /* AddFeaturesViewModel.swift */,
+				55EBD50F273C2804006DFE0D /* AddEngineersViewModel.swift */,
+				55EBD515273C2EF5006DFE0D /* PlatformSelectionViewModel.swift */,
+				55EBD52B273C4B49006DFE0D /* MultiDatePickerViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 		556F30752729AA9200CBF42E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				556F30762729AACE00CBF42E /* PlanningCoordinator.swift */,
+				5510025F273B6F33006E6A94 /* RealmColor.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -184,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				55914E032734B829001B1E9A /* Util.swift */,
+				55EBD519273C42A0006DFE0D /* MultiDatePicker */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -196,6 +246,8 @@
 				55914E0727356B9A001B1E9A /* NewProjectView.swift */,
 				559C745427374DB300F55C36 /* RootView.swift */,
 				55116E92273A1B4A00ED01E1 /* PlanrSettingsView.swift */,
+				55EBD50B273C2713006DFE0D /* AddFeaturesView.swift */,
+				55EBD511273C2828006DFE0D /* AddEngineersView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,7 +261,8 @@
 				559C745E2738673A00F55C36 /* PlatformSprintBlockView.swift */,
 				559C74602738711200F55C36 /* ProjectRoadmapView.swift */,
 				55116E96273A1CD600ED01E1 /* AppSettingsGroupView.swift */,
-				55116E98273A284A00ED01E1 /* AppSettingsGroupVM.swift */,
+				55EBD513273C2EDB006DFE0D /* PlatformSelectionView.swift */,
+				55EBD517273C4248006DFE0D /* MultiDatePickerView.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -224,7 +277,6 @@
 				556F30792729ABCA00CBF42E /* Roadmap.swift */,
 				556F307C2729ABE000CBF42E /* Sprint.swift */,
 				551B6CCD27304F68007B21F4 /* WorkBlock.swift */,
-				55116E8B273A112E00ED01E1 /* PlanrApplicationSettings.swift */,
 				55116E8D273A12A000ED01E1 /* AppState.swift */,
 			);
 			path = "Data Models";
@@ -236,6 +288,29 @@
 				5598B41526D6944600FF7A50 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		55EBD519273C42A0006DFE0D /* MultiDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				55EBD51A273C42A0006DFE0D /* MultiDatePicker.swift */,
+				55EBD51B273C42A0006DFE0D /* Components */,
+			);
+			path = MultiDatePicker;
+			sourceTree = "<group>";
+		};
+		55EBD51B273C42A0006DFE0D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				55EBD51C273C42A0006DFE0D /* MDPMonthYearPickerButton.swift */,
+				55EBD51D273C42A0006DFE0D /* MDPDayView.swift */,
+				55EBD51E273C42A0006DFE0D /* MDPMonthView.swift */,
+				55EBD51F273C42A0006DFE0D /* MDPContentView.swift */,
+				55EBD520273C42A0006DFE0D /* MDPMonthYearPicker.swift */,
+				55EBD521273C42A0006DFE0D /* MDPModel.swift */,
+				55EBD522273C42A0006DFE0D /* MDPDayOfMonth.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		55ED4FBB26D6852E004A21AD = {
@@ -261,6 +336,7 @@
 		55ED4FC626D6852E004A21AD /* Planr */ = {
 			isa = PBXGroup;
 			children = (
+				5510025A273B655C006E6A94 /* View Models */,
 				55914E0627356B6A001B1E9A /* Views */,
 				55914E022734B816001B1E9A /* Util */,
 				55914DFE2734AD46001B1E9A /* Extensions */,
@@ -473,30 +549,46 @@
 			buildActionMask = 2147483647;
 			files = (
 				55AB6C35272C5E23008AD85B /* Platform.swift in Sources */,
+				55EBD526273C42A0006DFE0D /* MDPMonthView.swift in Sources */,
 				55914E0827356B9A001B1E9A /* NewProjectView.swift in Sources */,
 				55914E002734AD5B001B1E9A /* ViewExtensions.swift in Sources */,
 				55116E93273A1B4A00ED01E1 /* PlanrSettingsView.swift in Sources */,
+				55EBD516273C2EF5006DFE0D /* PlatformSelectionViewModel.swift in Sources */,
+				55EBD525273C42A0006DFE0D /* MDPDayView.swift in Sources */,
 				55116E8E273A12A000ED01E1 /* AppState.swift in Sources */,
+				55EBD52C273C4B49006DFE0D /* MultiDatePickerViewModel.swift in Sources */,
+				5510025C273B656F006E6A94 /* NewProjectViewModel.swift in Sources */,
 				559C745B27384CE400F55C36 /* WorkBlockView.swift in Sources */,
 				559C745527374DB300F55C36 /* RootView.swift in Sources */,
 				559C745D2738528E00F55C36 /* PlannedSprintView.swift in Sources */,
 				55116E97273A1CD600ED01E1 /* AppSettingsGroupView.swift in Sources */,
 				556F30772729AACE00CBF42E /* PlanningCoordinator.swift in Sources */,
+				55EBD512273C2828006DFE0D /* AddEngineersView.swift in Sources */,
+				55EBD524273C42A0006DFE0D /* MDPMonthYearPickerButton.swift in Sources */,
+				55EBD514273C2EDB006DFE0D /* PlatformSelectionView.swift in Sources */,
+				55EBD50C273C2713006DFE0D /* AddFeaturesView.swift in Sources */,
 				559C745F2738673A00F55C36 /* PlatformSprintBlockView.swift in Sources */,
+				55EBD50E273C272E006DFE0D /* AddFeaturesViewModel.swift in Sources */,
 				556F30732728EE9F00CBF42E /* Feature.swift in Sources */,
 				551B6CCE27304F68007B21F4 /* WorkBlock.swift in Sources */,
+				55EBD528273C42A0006DFE0D /* MDPMonthYearPicker.swift in Sources */,
 				5598B41626D6944600FF7A50 /* Constants.swift in Sources */,
+				55EBD518273C4248006DFE0D /* MultiDatePickerView.swift in Sources */,
 				5598B40F26D6895600FF7A50 /* Engineer.swift in Sources */,
 				55914E042734B829001B1E9A /* Util.swift in Sources */,
-				55116E8C273A112E00ED01E1 /* PlanrApplicationSettings.swift in Sources */,
 				556F307A2729ABCA00CBF42E /* Roadmap.swift in Sources */,
 				55ED4FCA26D6852E004A21AD /* WelcomeView.swift in Sources */,
+				55100260273B6F33006E6A94 /* RealmColor.swift in Sources */,
+				55EBD510273C2804006DFE0D /* AddEngineersViewModel.swift in Sources */,
 				55914E0C27361B29001B1E9A /* ReusableButton.swift in Sources */,
 				55ED4FC826D6852E004A21AD /* PlanrApp.swift in Sources */,
+				55EBD523273C42A0006DFE0D /* MultiDatePicker.swift in Sources */,
 				559C74612738711200F55C36 /* ProjectRoadmapView.swift in Sources */,
+				55EBD529273C42A0006DFE0D /* MDPModel.swift in Sources */,
 				5598B41226D6898000FF7A50 /* Project.swift in Sources */,
-				55116E99273A284A00ED01E1 /* AppSettingsGroupVM.swift in Sources */,
 				556F307D2729ABE000CBF42E /* Sprint.swift in Sources */,
+				55EBD52A273C42A0006DFE0D /* MDPDayOfMonth.swift in Sources */,
+				55EBD527273C42A0006DFE0D /* MDPContentView.swift in Sources */,
 				559C745727382DAA00F55C36 /* ColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,7 +600,9 @@
 				55AB6C36272C5E23008AD85B /* Platform.swift in Sources */,
 				559C746827387A4900F55C36 /* RootView.swift in Sources */,
 				556F30782729AACE00CBF42E /* PlanningCoordinator.swift in Sources */,
+				55DFD939273C1F1F00BB0599 /* RealmColor.swift in Sources */,
 				556F30742728EE9F00CBF42E /* Feature.swift in Sources */,
+				55DFD93A273C1F2A00BB0599 /* NewProjectViewModel.swift in Sources */,
 				559C746327387A3A00F55C36 /* WorkBlockView.swift in Sources */,
 				5598B41026D6895600FF7A50 /* Engineer.swift in Sources */,
 				559C746427387A3C00F55C36 /* PlannedSprintView.swift in Sources */,
@@ -536,6 +630,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				55ED4FE626D68530004A21AD /* PlanrUITests.swift in Sources */,
+				55DFD93B273C23D900BB0599 /* NewProjectView.swift in Sources */,
+				55DFD93C273C243000BB0599 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

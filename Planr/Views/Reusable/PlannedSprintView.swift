@@ -19,7 +19,7 @@ struct PlannedSprintView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            Text(platform.rawValue)
+            Text(platform.type.rawValue)
                 .font(.system(size: 24))
                 .foregroundColor(.white)
                 .padding(5)
@@ -44,6 +44,7 @@ struct PlannedSprintView: View {
 
 struct PlannedSprintView_Previews: PreviewProvider {
     static var previews: some View {
-        PlannedSprintView(platform: .ios, sprints: getDemoRoadmap().sprints)
+        PlannedSprintView(platform: Platform(value: PlatformType.ios),
+                          sprints: getDemoRoadmap().sprints)
     }
 }

@@ -12,6 +12,8 @@ struct PlatformSprintBlockView: View, Identifiable {
     private var dateRange: DateInterval
     private var workBlocks: [WorkBlock]
     private var sprintPointsRemaining: Int
+
+    // swiflint:disable:next identifier_name
     var id = UUID()
 
     init(dateRange: DateInterval,
@@ -59,7 +61,7 @@ struct PlatformSprintBlockView: View, Identifiable {
 struct PlatformSprintBlockView_Previews: PreviewProvider {
     static var previews: some View {
         let sprint = getDemoSprint()
-        let iosWorkBlocks = sprint.workBlocksForPlatform(.ios)
+        let iosWorkBlocks = sprint.workBlocksForPlatform(Platform(value: PlatformType.ios))
         PlatformSprintBlockView(dateRange: sprint.dateRange,
                                 workBlocks: iosWorkBlocks,
                                 sprintPointsRemaining: sprint.pointsRemaining)
@@ -69,33 +71,8 @@ struct PlatformSprintBlockView_Previews: PreviewProvider {
 private func getPointsRemainingView(sprintPointsRemaining: Int) -> some View {
     let workBlock = WorkBlock(name: "Points Remaining",
                               summary: nil,
-                              platform: .ios,
+                              platform: Platform(value: PlatformType.ios),
                               pointValue: sprintPointsRemaining,
-                              color: .gray)
+                              color: RealmColor(withColor: Color.gray))
     return WorkBlockView(workBlock: workBlock)
-}
-
-private func getDemoSprint() -> Sprint {
-    var workBlock1 = WorkBlock(name: "Family Account",
-                               summary: "This is a cool family account features.",
-                               platform: .ios,
-                               pointValue: 8,
-                               color: randomColor())
-
-    workBlock1.isFinalSprint = true
-
-    let workBlock2 = WorkBlock(name: "Device Setup",
-                               summary: "A feature that covers setting up a device.",
-                               platform: .ios,
-                               pointValue: 3,
-                               color: randomColor())
-
-    let now = Date()
-    let nextWeek = now.addingTimeInterval(7.0 * 24.0 * 3600.0)
-    let dateInterval = DateInterval(start: now, end: nextWeek)
-
-    let sprint = Sprint(workBlocks: [workBlock1, workBlock2],
-                        pointsRemaining: 8,
-                        dateRange: dateInterval)
-    return sprint
 }

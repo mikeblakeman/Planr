@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 func randomColor() -> Color {
     return Color(Color.RGBColorSpace.sRGB,
@@ -39,17 +40,35 @@ func getDemoRoadmap() -> Roadmap {
     project.addFeatures([feature1, feature2, feature3, feature4, feature5, feature6, feature7, feature8, feature9])
     // swiftlint:enable line_length
 
-    let formatter = DateFormatter()
-    formatter.dateFormat = "MM/dd/yyyy"
-    let date = formatter.date(from: "8/30/2021")!
-
-    let planningCoordinator = PlanningCoordinator(project: project,
-                                                  sprintStartDate: date,
-                                                  averageVelocity: 8,
-                                                  sprintLength: 2,
-                                                  estimatePadding: 0.0)
+    let planningCoordinator = PlanningCoordinator(project: project)
 
     let roadmap = planningCoordinator.plan()
     roadmap.printRoadmap()
     return roadmap
+}
+
+func getDemoSprint() -> Sprint {
+
+    let now = Date()
+    let nextWeek = now.addingTimeInterval(7.0 * 24.0 * 3600.0)
+    let dateInterval = DateInterval(start: now, end: nextWeek)
+
+    let sprint = Sprint(workBlocks: getDemoWorkBlocks(), pointsRemaining: 8, dateRange: dateInterval)
+    return sprint
+}
+
+func getDemoWorkBlocks() -> [WorkBlock] {
+    let workBlock1 = WorkBlock(name: "Family Accounts",
+                               summary: "Cool family feature.",
+                               platform: Platform(value: PlatformType.ios),
+                               pointValue: 8,
+                               color: RealmColor(withColor: randomColor()))
+
+    let workBlock2 = WorkBlock(name: "Device Setup",
+                               summary: "Device setup feature.",
+                               platform: Platform(value: PlatformType.android),
+                               pointValue: 4,
+                               color: RealmColor(withColor: randomColor()))
+    workBlock2.isFinalSprint = true
+    return [workBlock1, workBlock2]
 }
