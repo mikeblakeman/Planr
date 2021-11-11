@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct PlanrApp: App {
-    @StateObject var state = AppState()
     @AppStorage(Constants.averageVelocityKey) var velocity = 8
     @AppStorage(Constants.sprintLengthKey) var sprintLength = 2
     @AppStorage(Constants.estimatePaddingKey) var estimatePadding = "0"
@@ -17,7 +16,9 @@ struct PlanrApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
-                .environmentObject(state)
+        }
+        Settings {
+            PlanrSettingsView()
         }
     }
 }

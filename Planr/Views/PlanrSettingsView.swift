@@ -17,7 +17,7 @@ struct PlanrSettingsView: View {
                                                        Constants.lastGradientColor]),
                            startPoint: .topLeading,
                            endPoint: .bottomTrailing)
-                .mask(Text("Planr Settings").font(.system(size: 37, weight: .semibold)))
+                .mask(Text("Planr Preferences").font(.system(size: 37, weight: .semibold)))
                 .frame(maxHeight: 100)
             VStack(alignment: .leading, spacing: 5, content: {
                 self.appSettingsGroupView
@@ -30,7 +30,9 @@ struct PlanrSettingsView: View {
                idealHeight: 1000,
                maxHeight: .infinity,
                alignment: .top)
-        .background(Color(white: 1)).edgesIgnoringSafeArea(.all)
+        .padding(25)
+        .edgesIgnoringSafeArea(.all)
+        .background(Color.white)
     }
 }
 

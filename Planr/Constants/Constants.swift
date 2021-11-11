@@ -22,6 +22,9 @@ class Constants {
     // Effort estimate max point value
     static let effortEstimateMaxPointValue = 120
 
+    // Priority max point value
+    static let priorityMaxPointValue = 1000
+
     // TimeIntervals
     static let minute: TimeInterval = 60.0
     static let hour: TimeInterval = 60.0 * minute

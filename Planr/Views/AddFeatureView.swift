@@ -57,7 +57,7 @@ struct AddFeatureView: View {
 
                     // Engineer last name view
                     VStack(alignment: .leading, spacing: 5, content: {
-                        Text("Enter the priority of the feature from 1 to 1000" +
+                        Text("Enter the priority of the feature from 0 to 1000" +
                                 "(higher number is higher priority):")
                             .font(.system(size: 22))
                         TextField("1000", text: $addFeatureViewModel.priority)
@@ -116,8 +116,7 @@ struct AddFeatureView: View {
     }
 
     private func canProceed() -> Bool {
-        return self.addFeatureViewModel.inputIsValid() ||
-            $platformSelectionVM.anySelected.wrappedValue
+        return self.addFeatureViewModel.inputIsValid() && $platformSelectionVM.anySelected.wrappedValue
     }
 }
 

@@ -27,18 +27,18 @@ class AddFeatureViewModel: ObservableObject {
     }
 
     @Published var platform: [Platform] = []
-    
+
     @Published var effortEstimate = "0" {
         didSet {
             if effortEstimate.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) != nil {
                 effortEstimate = oldValue
             }
 
-            if effortEstimate.count > 3 {
-                effortEstimate = oldValue
+            if let integer = Int(effortEstimate), integer > Constants.effortEstimateMaxPointValue {
+                effortEstimate = "\(Constants.effortEstimateMaxPointValue)"
             }
 
-            if let integer = Int(effortEstimate), integer > 100 {
+            if effortEstimate.count > 3 {
                 effortEstimate = oldValue
             }
         }
@@ -50,11 +50,11 @@ class AddFeatureViewModel: ObservableObject {
                 priority = oldValue
             }
 
-            if priority.count > 4 {
-                priority = oldValue
+            if let integer = Int(priority), integer > Constants.priorityMaxPointValue {
+                priority = "\(Constants.priorityMaxPointValue)"
             }
 
-            if let integer = Int(effortEstimate), integer > 1000 {
+            if priority.count > 4 {
                 priority = oldValue
             }
         }
@@ -67,7 +67,11 @@ class AddFeatureViewModel: ObservableObject {
 
         if let effortInt = Int(effortEstimate) {
             if effortInt == 0 { return false }
+        } else {
+            return false
         }
+
+        if self.priority.isEmpty { return false }
 
         return true
     }
