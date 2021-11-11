@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5510025C273B656F006E6A94 /* NewProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510025B273B656F006E6A94 /* NewProjectViewModel.swift */; };
 		55100260273B6F33006E6A94 /* RealmColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510025F273B6F33006E6A94 /* RealmColor.swift */; };
-		55116E8E273A12A000ED01E1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55116E8D273A12A000ED01E1 /* AppState.swift */; };
 		55116E93273A1B4A00ED01E1 /* PlanrSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55116E92273A1B4A00ED01E1 /* PlanrSettingsView.swift */; };
 		55116E97273A1CD600ED01E1 /* AppSettingsGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55116E96273A1CD600ED01E1 /* AppSettingsGroupView.swift */; };
 		551B6CCE27304F68007B21F4 /* WorkBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551B6CCD27304F68007B21F4 /* WorkBlock.swift */; };
@@ -112,7 +111,6 @@
 /* Begin PBXFileReference section */
 		5510025B273B656F006E6A94 /* NewProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectViewModel.swift; sourceTree = "<group>"; };
 		5510025F273B6F33006E6A94 /* RealmColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmColor.swift; sourceTree = "<group>"; };
-		55116E8D273A12A000ED01E1 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		55116E92273A1B4A00ED01E1 /* PlanrSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanrSettingsView.swift; sourceTree = "<group>"; };
 		55116E96273A1CD600ED01E1 /* AppSettingsGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsGroupView.swift; sourceTree = "<group>"; };
 		551B6CCD27304F68007B21F4 /* WorkBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkBlock.swift; sourceTree = "<group>"; };
@@ -281,7 +279,6 @@
 				556F30792729ABCA00CBF42E /* Roadmap.swift */,
 				556F307C2729ABE000CBF42E /* Sprint.swift */,
 				551B6CCD27304F68007B21F4 /* WorkBlock.swift */,
-				55116E8D273A12A000ED01E1 /* AppState.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -563,7 +560,6 @@
 				55116E93273A1B4A00ED01E1 /* PlanrSettingsView.swift in Sources */,
 				55EBD516273C2EF5006DFE0D /* PlatformSelectionViewModel.swift in Sources */,
 				55EBD525273C42A0006DFE0D /* MDPDayView.swift in Sources */,
-				55116E8E273A12A000ED01E1 /* AppState.swift in Sources */,
 				55EBD52C273C4B49006DFE0D /* MultiDatePickerViewModel.swift in Sources */,
 				5510025C273B656F006E6A94 /* NewProjectViewModel.swift in Sources */,
 				559C745B27384CE400F55C36 /* WorkBlockView.swift in Sources */,
