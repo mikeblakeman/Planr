@@ -84,25 +84,34 @@ struct AddFeatureView: View {
                                       displayText: "Choose platforms for this feature:")
             }
             Spacer()
-            Button(action: {
-                if canProceed() {
-                    self.addFeatureViewModel.platform = platformSelectionVM.platforms
-                        .filter { $0.isActive }
-                        .map { $0.platformType }
-                    guard let feature = self.addFeatureViewModel.createFeature() else {
-                        return
-                    }
+            HStack(alignment: .center, spacing: 50, content: {
+                Button(action: { self.navigationStack.pop() },
+                       label: {
+                        HStack { Text("Cancel")
+                            .font(.system(size: 18.0))
+                            .frame(width: 200)
+                        }
+                }).buttonStyle(BooleanGradientButtonStyle()).padding(.vertical, 25)
+                Button(action: {
+                    if canProceed() {
+                        self.addFeatureViewModel.platform = platformSelectionVM.platforms
+                            .filter { $0.isActive }
+                            .map { $0.platformType }
+                        guard let feature = self.addFeatureViewModel.createFeature() else {
+                            return
+                        }
 
-                    self.projectInProgress.addFeature(feature)
-                    self.navigationStack.pop()
-                }
-            }, label: {
-                HStack {
-                    Text("Save").font(.system(size: 18.0)).frame(width: 200)
-                }
-            }).buttonStyle(BooleanGradientButtonStyle())
-            .padding(.vertical, 25)
-            .disabled(!canProceed())
+                        self.projectInProgress.addFeature(feature)
+                        self.navigationStack.pop()
+                    }
+                }, label: {
+                    HStack {
+                        Text("Save").font(.system(size: 18.0)).frame(width: 200)
+                    }
+                }).buttonStyle(BooleanGradientButtonStyle())
+                .padding(.vertical, 25)
+                .disabled(!canProceed())
+            })
         }).background(Color.white)
     }
 
