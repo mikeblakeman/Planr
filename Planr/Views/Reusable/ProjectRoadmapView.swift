@@ -27,11 +27,9 @@ struct ProjectRoadmapView: View {
                 getPlaceholderMonthView()
                 ScrollView(.horizontal) {
                     VStack {
-                        PlannedSprintView(platform: Platform(value: PlatformType.ios),
-                                          sprints: roadmap.sprints)
+                        PlannedSprintView(platform: Platform.ios, sprints: roadmap.sprints)
                         Spacer().frame(height: 50)
-                        PlannedSprintView(platform: Platform(value: PlatformType.android),
-                                          sprints: roadmap.sprints)
+                        PlannedSprintView(platform: Platform.android, sprints: roadmap.sprints)
                     }
                 }
             }.background(Color.white)

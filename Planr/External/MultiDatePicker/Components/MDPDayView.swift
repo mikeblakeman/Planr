@@ -42,7 +42,7 @@ struct MDPDayView: View {
     }
 
     var body: some View {
-        Button( action: { handleSelection() }) {
+        Button(action: { handleSelection() }, label: {
             Text("\(dayOfMonth.day)")
                 .font(.headline)
                 .fontWeight(.medium)
@@ -54,7 +54,7 @@ struct MDPDayView: View {
                         .background(Circle().foregroundColor(fillColor))
                         .frame(width: cellSize, height: cellSize)
                 )
-        }.foregroundColor(.black)
+        }).foregroundColor(.black)
         .buttonStyle(PlainButtonStyle())
     }
 }

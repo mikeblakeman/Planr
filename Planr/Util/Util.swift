@@ -15,19 +15,36 @@ func randomColor() -> Color {
                  blue: .random(in: 0...1))
 }
 
-func getDemoRoadmap() -> Roadmap {
-    var project = Project(name: "Test Project 1", startDate: Date())
+func getDemoProject() -> Project {
+    let demoProject = Project(name: "Demo project", startDate: Date())
 
     // swiftlint:disable line_length
-    let collin = Engineer(firstName: "Collin", lastName: "Engineer", platform: [.android], unavailableDates: [])
+    demoProject.addEngineers(getDemoEngineerList())
+    demoProject.addFeatures(getDemoUnplannedFeatureList())
+
+    return demoProject
+}
+
+func getDemoRoadmap() -> Roadmap {
+    let planningCoordinator = PlanningCoordinator(project: getDemoProject())
+
+    let roadmap = planningCoordinator.plan()
+    roadmap.printRoadmap()
+    return roadmap
+}
+
+func getDemoEngineerList() -> [Engineer] {
+    let collin = Engineer(firstName: "Collin", lastName: "Engineer", platform: [.android], unavailableDates: [Date(), Date().addingTimeInterval(170000)])
     let ellen = Engineer(firstName: "Ellen", lastName: "Engineer", platform: [.ios, .android], unavailableDates: [])
     let ashley = Engineer(firstName: "Ashley", lastName: "Engineer", platform: [.ios, .android], unavailableDates: [])
     let logan = Engineer(firstName: "Logan", lastName: "Engineer", platform: [.ios, .android], unavailableDates: [])
     let pat = Engineer(firstName: "Pat", lastName: "Engineer", platform: [.ios], unavailableDates: [])
 
-    project.addEngineers([collin, ellen, ashley, logan, pat])
+    return [collin, ellen, ashley, logan, pat]
+}
 
-    let feature1 = UnplannedFeature(name: "OAuth 2.0", nil, platform: [.ios, .android], effortEstimate: 16, priority: 300)
+func getDemoUnplannedFeatureList() -> [UnplannedFeature] {
+    let feature1 = UnplannedFeature(name: "OAuth 2.0", "This is a summary", platform: [.ios, .android], effortEstimate: 16, priority: 300)
     let feature2 = UnplannedFeature(name: "Device Setup", nil, platform: [.ios, .android], effortEstimate: 3, priority: 900)
     let feature3 = UnplannedFeature(name: "Family Roles", nil, platform: [.ios, .android], effortEstimate: 16, priority: 1000)
     let feature4 = UnplannedFeature(name: "Device Communication", nil, platform: [.ios, .android], effortEstimate: 12, priority: 250)
@@ -37,14 +54,7 @@ func getDemoRoadmap() -> Roadmap {
     let feature8 = UnplannedFeature(name: "Emojis", nil, platform: [.ios, .android], effortEstimate: 14, priority: 200)
     let feature9 = UnplannedFeature(name: "WiFi Improvments", nil, platform: [.ios, .android], effortEstimate: 7, priority: 1000)
 
-    project.addFeatures([feature1, feature2, feature3, feature4, feature5, feature6, feature7, feature8, feature9])
-    // swiftlint:enable line_length
-
-    let planningCoordinator = PlanningCoordinator(project: project)
-
-    let roadmap = planningCoordinator.plan()
-    roadmap.printRoadmap()
-    return roadmap
+    return [feature1, feature2, feature3, feature4, feature5, feature6, feature7, feature8, feature9]
 }
 
 func getDemoSprint() -> Sprint {
@@ -60,15 +70,15 @@ func getDemoSprint() -> Sprint {
 func getDemoWorkBlocks() -> [WorkBlock] {
     let workBlock1 = WorkBlock(name: "Family Accounts",
                                summary: "Cool family feature.",
-                               platform: Platform(value: PlatformType.ios),
+                               platform: Platform.ios,
                                pointValue: 8,
-                               color: RealmColor(withColor: randomColor()))
+                               color: randomColor())
 
     let workBlock2 = WorkBlock(name: "Device Setup",
                                summary: "Device setup feature.",
-                               platform: Platform(value: PlatformType.android),
+                               platform: Platform.android,
                                pointValue: 4,
-                               color: RealmColor(withColor: randomColor()))
+                               color: randomColor())
     workBlock2.isFinalSprint = true
     return [workBlock1, workBlock2]
 }

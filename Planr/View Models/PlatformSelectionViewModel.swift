@@ -23,10 +23,10 @@ class PlatformSelectionViewModel: ObservableObject {
 
 struct PlatformSelectionModel: Hashable {
     let modelId: Int
-    let platformType: PlatformType
+    let platformType: Platform
     let isActive: Bool
 
-    init(modelId: Int, platformType: PlatformType, isActive: Bool) {
+    init(modelId: Int, platformType: Platform, isActive: Bool) {
         self.modelId = modelId
         self.platformType = platformType
         self.isActive = isActive

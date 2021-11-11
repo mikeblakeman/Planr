@@ -8,7 +8,7 @@
 import Foundation
 
 /// A representation of an unplanned body of work containing engineers and unplanned features.
-struct Project {
+class Project: ObservableObject {
     public private(set) var name: String
     public private(set) var projectStartDate: Date
     public private(set) var features: [UnplannedFeature]
@@ -30,14 +30,14 @@ struct Project {
     /// A method to add a single `UnplannedFeature` to the `Project`
     ///
     /// - Parameter feature: The `UnplannedFeature` to add to the project.
-    public mutating func addFeature(_ feature: UnplannedFeature) {
+    public func addFeature(_ feature: UnplannedFeature) {
         addFeatures([feature])
     }
 
     /// A method to add a collection of `UnplannedFeature` to the `Project`
     ///
     /// - Parameter features: The `UnplannedFeature`s to add to the project.
-    public mutating func addFeatures(_ features: [UnplannedFeature]) {
+    public func addFeatures(_ features: [UnplannedFeature]) {
         for feature in features {
             self.features.append(feature)
         }
@@ -46,21 +46,21 @@ struct Project {
     /// A method to remove a single `UnplanedFeature` from the `Project`
     ///
     /// - Parameter feature: The `UnplannedFeature` to remove from the project.
-    public mutating func removeFeature(byId featureId: NSUUID) {
+    public func removeFeature(byId featureId: NSUUID) {
         self.features.removeAll { $0.featureId == featureId }
     }
 
     /// A method to add a single `Engineer` to the `Project`
     ///
     /// - Parameter engineer: The `Engineer` to add to the project.
-    public mutating func addEngineer(_ engineer: Engineer) {
+    public func addEngineer(_ engineer: Engineer) {
         addEngineers([engineer])
     }
 
     /// A method to add a  collection of `Engineer` to the `Project`
     ///
     /// - Parameter engineers: The `Engineer`s to add to the project.
-    public mutating func addEngineers(_ engineers: [Engineer]) {
+    public func addEngineers(_ engineers: [Engineer]) {
         for engineer in engineers {
             self.engineers.append(engineer)
         }
@@ -69,7 +69,7 @@ struct Project {
     /// A method to remove a single `Engineer` from the `Project`
     ///
     /// - Parameter engineerId: The unique identifier for the `Engineer`
-    public mutating func removeEngineer(byId engineerId: NSUUID) {
-        self.engineers.removeAll { $0.engineerId == engineerId }
+    public func removeEngineer(byId engineerId: NSUUID) {
+//        self.engineers.removeAll { $0.engineerId == engineerId }
     }
 }

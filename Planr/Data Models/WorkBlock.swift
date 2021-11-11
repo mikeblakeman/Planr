@@ -16,15 +16,16 @@ enum WorkBlockValidationError: Error {
 }
 
 /// A representation of a block of work inside a given sprint.
-class WorkBlock: Object {
-    @Persisted(primaryKey: true) var workBlockId: ObjectId
-    @Persisted var name: String = ""
-    @Persisted var summary: String?
-    @Persisted var platform: Platform
-    @Persisted var pointValue: Int
-    @Persisted var color: RealmColor
-    @Persisted var isFinalSprint: Bool = false
-    @Persisted var sprintId: ObjectId?
+class WorkBlock: Hashable {
+    public private(set) var workBlockId: ObjectId = ObjectId()
+    public private(set) var name: String = ""
+    public private(set) var summary: String?
+    public private(set) var platform: Platform
+    public private(set) var pointValue: Int
+    public private(set) var color: Color
+
+    var isFinalSprint: Bool = false
+    var sprintId: ObjectId?
 
     /// Initializer
     ///
@@ -56,7 +57,7 @@ class WorkBlock: Object {
           summary: String?,
           platform: Platform,
           pointValue: Int,
-          color: RealmColor,
+          color: Color,
           sprintId: ObjectId? = nil) {
         self.name = name
         self.summary = summary
@@ -64,5 +65,23 @@ class WorkBlock: Object {
         self.pointValue = pointValue
         self.color = color
         self.sprintId = sprintId
+    }
+
+    static func == (lhs: WorkBlock, rhs: WorkBlock) -> Bool {
+        return lhs.name == rhs.name &&
+            lhs.summary == rhs.summary &&
+            lhs.platform == rhs.platform &&
+            lhs.pointValue == rhs.pointValue &&
+            lhs.color == rhs.color &&
+            lhs.sprintId == rhs.sprintId
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(summary)
+        hasher.combine(platform)
+        hasher.combine(pointValue)
+        hasher.combine(color)
+        hasher.combine(sprintId)
     }
 }

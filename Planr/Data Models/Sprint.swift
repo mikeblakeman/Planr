@@ -9,8 +9,8 @@ import Foundation
 import RealmSwift
 
 /// A structure that represents an Agile Sprint
-class Sprint: Object {
-    @Persisted(primaryKey: true) var sprintId: ObjectId
+class Sprint {
+    public private(set) var sprintId: ObjectId = ObjectId()
     public private(set) var workBlockDictionary: [Platform: [WorkBlock]]
     public private(set) var pointsRemaining: Int
     public private(set) var dateRange: DateInterval
@@ -74,14 +74,14 @@ class Sprint: Object {
         print("Sprint Start Date: \(self.dateRange.start)\nSprint End Date:   \(self.dateRange.end)\n")
         print("\nTotal Sprint Points: \(self.initialSprintPoints)")
         for key in self.workBlockDictionary.keys {
-            print(" List of \(key.type.rawValue) features in sprint:")
+            print(" List of \(key.rawValue) features in sprint:")
             guard let collection = self.workBlockDictionary[key] else {
                 return
             }
 
             for workBlock in collection {
                 print("    Title: \(workBlock.name)" +
-                        " - Platform: \(workBlock.platform.type.rawValue)" +
+                        " - Platform: \(workBlock.platform.rawValue)" +
                         " - Points: \(workBlock.pointValue)")
             }
         }

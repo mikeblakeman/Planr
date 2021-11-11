@@ -36,24 +36,23 @@ struct MDPMonthView: View {
             HStack {
                 MDPMonthYearPickerButton(isPresented: self.$showMonthYearPicker)
                 Spacer()
-                Button( action: {showPrevMonth()} ) {
+                Button(action: { showPrevMonth() }, label: {
                     Image(systemName: "chevron.left").font(.title2)
-                }.padding()
+                }).padding()
                 .buttonStyle(PlainButtonStyle())
-                Button( action: {showNextMonth()} ) {
+                Button( action: {showNextMonth() }, label: {
                     Image(systemName: "chevron.right").font(.title2)
-                }.padding()
+                }).padding()
                 .buttonStyle(PlainButtonStyle())
             }
             .padding(.leading, 18)
 
-            GeometryReader { reader in
+            GeometryReader { _ in
                 if showMonthYearPicker {
                     MDPMonthYearPicker(date: monthDataModel.controlDate) { (month, year) in
                         self.monthDataModel.show(month: month, year: year)
                     }
-                }
-                else {
+                } else {
                     MDPContentView()
                 }
             }

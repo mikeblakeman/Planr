@@ -14,6 +14,7 @@
 		55116E97273A1CD600ED01E1 /* AppSettingsGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55116E96273A1CD600ED01E1 /* AppSettingsGroupView.swift */; };
 		551B6CCE27304F68007B21F4 /* WorkBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551B6CCD27304F68007B21F4 /* WorkBlock.swift */; };
 		551B6CCF27304F68007B21F4 /* WorkBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551B6CCD27304F68007B21F4 /* WorkBlock.swift */; };
+		551ED1B0273CE8FF00F10048 /* AddProjectFeaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551ED1AF273CE8FF00F10048 /* AddProjectFeaturesView.swift */; };
 		556F30732728EE9F00CBF42E /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F30722728EE9F00CBF42E /* Feature.swift */; };
 		556F30742728EE9F00CBF42E /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F30722728EE9F00CBF42E /* Feature.swift */; };
 		556F30772729AACE00CBF42E /* PlanningCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F30762729AACE00CBF42E /* PlanningCoordinator.swift */; };
@@ -30,7 +31,6 @@
 		55914E0927356B9A001B1E9A /* NewProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55914E0727356B9A001B1E9A /* NewProjectView.swift */; };
 		55914E0C27361B29001B1E9A /* ReusableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55914E0B27361B29001B1E9A /* ReusableButton.swift */; };
 		55914E0D27361B29001B1E9A /* ReusableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55914E0B27361B29001B1E9A /* ReusableButton.swift */; };
-		55914E102736E4CF001B1E9A /* Steps in Frameworks */ = {isa = PBXBuildFile; productRef = 55914E0F2736E4CF001B1E9A /* Steps */; };
 		559238732736F6C500630726 /* ProjectValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559238722736F6C500630726 /* ProjectValidationTests.swift */; };
 		5598B40F26D6895600FF7A50 /* Engineer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B40E26D6895600FF7A50 /* Engineer.swift */; };
 		5598B41026D6895600FF7A50 /* Engineer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B40E26D6895600FF7A50 /* Engineer.swift */; };
@@ -38,10 +38,6 @@
 		5598B41326D6898000FF7A50 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B41126D6898000FF7A50 /* Project.swift */; };
 		5598B41626D6944600FF7A50 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B41526D6944600FF7A50 /* Constants.swift */; };
 		5598B41726D6944600FF7A50 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B41526D6944600FF7A50 /* Constants.swift */; };
-		5598B41A26D6A42800FF7A50 /* PromisesTestHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = 5598B41926D6A42800FF7A50 /* PromisesTestHelpers */; };
-		5598B41C26D6A42800FF7A50 /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = 5598B41B26D6A42800FF7A50 /* Promises */; };
-		5598B41E26D6A42800FF7A50 /* FBLPromises in Frameworks */ = {isa = PBXBuildFile; productRef = 5598B41D26D6A42800FF7A50 /* FBLPromises */; };
-		5598B42026D6A42800FF7A50 /* FBLPromisesTestHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = 5598B41F26D6A42800FF7A50 /* FBLPromisesTestHelpers */; };
 		5598B42326D6A5B300FF7A50 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5598B42226D6A5B300FF7A50 /* RealmSwift */; };
 		5598B42526D6A5B300FF7A50 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5598B42426D6A5B300FF7A50 /* Realm */; };
 		5598B42C26D6AB0600FF7A50 /* SwiftLintFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 5598B42B26D6AB0600FF7A50 /* SwiftLintFramework */; };
@@ -66,10 +62,16 @@
 		55DFD93A273C1F2A00BB0599 /* NewProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510025B273B656F006E6A94 /* NewProjectViewModel.swift */; };
 		55DFD93B273C23D900BB0599 /* NewProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55914E0727356B9A001B1E9A /* NewProjectView.swift */; };
 		55DFD93C273C243000BB0599 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598B41526D6944600FF7A50 /* Constants.swift */; };
-		55EBD50C273C2713006DFE0D /* AddFeaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD50B273C2713006DFE0D /* AddFeaturesView.swift */; };
-		55EBD50E273C272E006DFE0D /* AddFeaturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD50D273C272E006DFE0D /* AddFeaturesViewModel.swift */; };
-		55EBD510273C2804006DFE0D /* AddEngineersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD50F273C2804006DFE0D /* AddEngineersViewModel.swift */; };
-		55EBD512273C2828006DFE0D /* AddEngineersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD511273C2828006DFE0D /* AddEngineersView.swift */; };
+		55E02A9E273CC02900B1D18B /* FeatureSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E02A9D273CC02900B1D18B /* FeatureSummaryView.swift */; };
+		55E02A9F273CC02900B1D18B /* FeatureSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E02A9D273CC02900B1D18B /* FeatureSummaryView.swift */; };
+		55E02AA1273CCB9900B1D18B /* EngineerSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E02AA0273CCB9900B1D18B /* EngineerSummaryView.swift */; };
+		55E02AA2273CCB9900B1D18B /* EngineerSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E02AA0273CCB9900B1D18B /* EngineerSummaryView.swift */; };
+		55E02AA4273CD72F00B1D18B /* AddProjectEngineersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E02AA3273CD72F00B1D18B /* AddProjectEngineersView.swift */; };
+		55E02AA5273CD72F00B1D18B /* AddProjectEngineersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E02AA3273CD72F00B1D18B /* AddProjectEngineersView.swift */; };
+		55EBD50C273C2713006DFE0D /* AddFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD50B273C2713006DFE0D /* AddFeatureView.swift */; };
+		55EBD50E273C272E006DFE0D /* AddFeatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD50D273C272E006DFE0D /* AddFeatureViewModel.swift */; };
+		55EBD510273C2804006DFE0D /* AddEngineerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD50F273C2804006DFE0D /* AddEngineerViewModel.swift */; };
+		55EBD512273C2828006DFE0D /* AddEngineerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD511273C2828006DFE0D /* AddEngineerView.swift */; };
 		55EBD514273C2EDB006DFE0D /* PlatformSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD513273C2EDB006DFE0D /* PlatformSelectionView.swift */; };
 		55EBD516273C2EF5006DFE0D /* PlatformSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD515273C2EF5006DFE0D /* PlatformSelectionViewModel.swift */; };
 		55EBD518273C4248006DFE0D /* MultiDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBD517273C4248006DFE0D /* MultiDatePickerView.swift */; };
@@ -114,6 +116,7 @@
 		55116E92273A1B4A00ED01E1 /* PlanrSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanrSettingsView.swift; sourceTree = "<group>"; };
 		55116E96273A1CD600ED01E1 /* AppSettingsGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsGroupView.swift; sourceTree = "<group>"; };
 		551B6CCD27304F68007B21F4 /* WorkBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkBlock.swift; sourceTree = "<group>"; };
+		551ED1AF273CE8FF00F10048 /* AddProjectFeaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectFeaturesView.swift; sourceTree = "<group>"; };
 		556F30722728EE9F00CBF42E /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		556F30762729AACE00CBF42E /* PlanningCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningCoordinator.swift; sourceTree = "<group>"; };
 		556F30792729ABCA00CBF42E /* Roadmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roadmap.swift; sourceTree = "<group>"; };
@@ -134,10 +137,13 @@
 		559C74602738711200F55C36 /* ProjectRoadmapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRoadmapView.swift; sourceTree = "<group>"; };
 		55AB6C34272C5E23008AD85B /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		55AB6C37272C9F22008AD85B /* PlanningCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningCoordinatorTests.swift; sourceTree = "<group>"; };
-		55EBD50B273C2713006DFE0D /* AddFeaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeaturesView.swift; sourceTree = "<group>"; };
-		55EBD50D273C272E006DFE0D /* AddFeaturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeaturesViewModel.swift; sourceTree = "<group>"; };
-		55EBD50F273C2804006DFE0D /* AddEngineersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEngineersViewModel.swift; sourceTree = "<group>"; };
-		55EBD511273C2828006DFE0D /* AddEngineersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEngineersView.swift; sourceTree = "<group>"; };
+		55E02A9D273CC02900B1D18B /* FeatureSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureSummaryView.swift; sourceTree = "<group>"; };
+		55E02AA0273CCB9900B1D18B /* EngineerSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineerSummaryView.swift; sourceTree = "<group>"; };
+		55E02AA3273CD72F00B1D18B /* AddProjectEngineersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectEngineersView.swift; sourceTree = "<group>"; };
+		55EBD50B273C2713006DFE0D /* AddFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeatureView.swift; sourceTree = "<group>"; };
+		55EBD50D273C272E006DFE0D /* AddFeatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeatureViewModel.swift; sourceTree = "<group>"; };
+		55EBD50F273C2804006DFE0D /* AddEngineerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEngineerViewModel.swift; sourceTree = "<group>"; };
+		55EBD511273C2828006DFE0D /* AddEngineerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEngineerView.swift; sourceTree = "<group>"; };
 		55EBD513273C2EDB006DFE0D /* PlatformSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformSelectionView.swift; sourceTree = "<group>"; };
 		55EBD515273C2EF5006DFE0D /* PlatformSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformSelectionViewModel.swift; sourceTree = "<group>"; };
 		55EBD517273C4248006DFE0D /* MultiDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiDatePickerView.swift; sourceTree = "<group>"; };
@@ -173,12 +179,7 @@
 				5598B42526D6A5B300FF7A50 /* Realm in Frameworks */,
 				559C745327374A8200F55C36 /* NavigationStack in Frameworks */,
 				5598B42C26D6AB0600FF7A50 /* SwiftLintFramework in Frameworks */,
-				5598B41E26D6A42800FF7A50 /* FBLPromises in Frameworks */,
-				5598B41C26D6A42800FF7A50 /* Promises in Frameworks */,
-				55914E102736E4CF001B1E9A /* Steps in Frameworks */,
-				5598B41A26D6A42800FF7A50 /* PromisesTestHelpers in Frameworks */,
 				5598B42326D6A5B300FF7A50 /* RealmSwift in Frameworks */,
-				5598B42026D6A42800FF7A50 /* FBLPromisesTestHelpers in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,8 +204,8 @@
 			isa = PBXGroup;
 			children = (
 				5510025B273B656F006E6A94 /* NewProjectViewModel.swift */,
-				55EBD50D273C272E006DFE0D /* AddFeaturesViewModel.swift */,
-				55EBD50F273C2804006DFE0D /* AddEngineersViewModel.swift */,
+				55EBD50D273C272E006DFE0D /* AddFeatureViewModel.swift */,
+				55EBD50F273C2804006DFE0D /* AddEngineerViewModel.swift */,
 				55EBD515273C2EF5006DFE0D /* PlatformSelectionViewModel.swift */,
 				55EBD52B273C4B49006DFE0D /* MultiDatePickerViewModel.swift */,
 			);
@@ -233,7 +234,6 @@
 			isa = PBXGroup;
 			children = (
 				55914E032734B829001B1E9A /* Util.swift */,
-				55EBD519273C42A0006DFE0D /* MultiDatePicker */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -246,8 +246,9 @@
 				55914E0727356B9A001B1E9A /* NewProjectView.swift */,
 				559C745427374DB300F55C36 /* RootView.swift */,
 				55116E92273A1B4A00ED01E1 /* PlanrSettingsView.swift */,
-				55EBD50B273C2713006DFE0D /* AddFeaturesView.swift */,
-				55EBD511273C2828006DFE0D /* AddEngineersView.swift */,
+				55EBD50B273C2713006DFE0D /* AddFeatureView.swift */,
+				55EBD511273C2828006DFE0D /* AddEngineerView.swift */,
+				55E02AA3273CD72F00B1D18B /* AddProjectEngineersView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -263,6 +264,9 @@
 				55116E96273A1CD600ED01E1 /* AppSettingsGroupView.swift */,
 				55EBD513273C2EDB006DFE0D /* PlatformSelectionView.swift */,
 				55EBD517273C4248006DFE0D /* MultiDatePickerView.swift */,
+				55E02A9D273CC02900B1D18B /* FeatureSummaryView.swift */,
+				55E02AA0273CCB9900B1D18B /* EngineerSummaryView.swift */,
+				551ED1AF273CE8FF00F10048 /* AddProjectFeaturesView.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -288,6 +292,14 @@
 				5598B41526D6944600FF7A50 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		55E02A9C273CBC2F00B1D18B /* External */ = {
+			isa = PBXGroup;
+			children = (
+				55EBD519273C42A0006DFE0D /* MultiDatePicker */,
+			);
+			path = External;
 			sourceTree = "<group>";
 		};
 		55EBD519273C42A0006DFE0D /* MultiDatePicker */ = {
@@ -336,6 +348,7 @@
 		55ED4FC626D6852E004A21AD /* Planr */ = {
 			isa = PBXGroup;
 			children = (
+				55E02A9C273CBC2F00B1D18B /* External */,
 				5510025A273B655C006E6A94 /* View Models */,
 				55914E0627356B6A001B1E9A /* Views */,
 				55914E022734B816001B1E9A /* Util */,
@@ -398,14 +411,9 @@
 			);
 			name = Planr;
 			packageProductDependencies = (
-				5598B41926D6A42800FF7A50 /* PromisesTestHelpers */,
-				5598B41B26D6A42800FF7A50 /* Promises */,
-				5598B41D26D6A42800FF7A50 /* FBLPromises */,
-				5598B41F26D6A42800FF7A50 /* FBLPromisesTestHelpers */,
 				5598B42226D6A5B300FF7A50 /* RealmSwift */,
 				5598B42426D6A5B300FF7A50 /* Realm */,
 				5598B42B26D6AB0600FF7A50 /* SwiftLintFramework */,
-				55914E0F2736E4CF001B1E9A /* Steps */,
 				559C745227374A8200F55C36 /* NavigationStack */,
 			);
 			productName = Planr;
@@ -480,10 +488,8 @@
 			);
 			mainGroup = 55ED4FBB26D6852E004A21AD;
 			packageReferences = (
-				5598B41826D6A42800FF7A50 /* XCRemoteSwiftPackageReference "promises" */,
 				5598B42126D6A5B300FF7A50 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				5598B42A26D6AB0600FF7A50 /* XCRemoteSwiftPackageReference "SwiftLint" */,
-				55914E0E2736E4CF001B1E9A /* XCRemoteSwiftPackageReference "Steps" */,
 				559C745127374A8200F55C36 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
 			);
 			productRefGroup = 55ED4FC526D6852E004A21AD /* Products */;
@@ -550,7 +556,9 @@
 			files = (
 				55AB6C35272C5E23008AD85B /* Platform.swift in Sources */,
 				55EBD526273C42A0006DFE0D /* MDPMonthView.swift in Sources */,
+				551ED1B0273CE8FF00F10048 /* AddProjectFeaturesView.swift in Sources */,
 				55914E0827356B9A001B1E9A /* NewProjectView.swift in Sources */,
+				55E02AA4273CD72F00B1D18B /* AddProjectEngineersView.swift in Sources */,
 				55914E002734AD5B001B1E9A /* ViewExtensions.swift in Sources */,
 				55116E93273A1B4A00ED01E1 /* PlanrSettingsView.swift in Sources */,
 				55EBD516273C2EF5006DFE0D /* PlatformSelectionViewModel.swift in Sources */,
@@ -563,12 +571,14 @@
 				559C745D2738528E00F55C36 /* PlannedSprintView.swift in Sources */,
 				55116E97273A1CD600ED01E1 /* AppSettingsGroupView.swift in Sources */,
 				556F30772729AACE00CBF42E /* PlanningCoordinator.swift in Sources */,
-				55EBD512273C2828006DFE0D /* AddEngineersView.swift in Sources */,
+				55EBD512273C2828006DFE0D /* AddEngineerView.swift in Sources */,
 				55EBD524273C42A0006DFE0D /* MDPMonthYearPickerButton.swift in Sources */,
+				55E02A9E273CC02900B1D18B /* FeatureSummaryView.swift in Sources */,
+				55E02AA1273CCB9900B1D18B /* EngineerSummaryView.swift in Sources */,
 				55EBD514273C2EDB006DFE0D /* PlatformSelectionView.swift in Sources */,
-				55EBD50C273C2713006DFE0D /* AddFeaturesView.swift in Sources */,
+				55EBD50C273C2713006DFE0D /* AddFeatureView.swift in Sources */,
 				559C745F2738673A00F55C36 /* PlatformSprintBlockView.swift in Sources */,
-				55EBD50E273C272E006DFE0D /* AddFeaturesViewModel.swift in Sources */,
+				55EBD50E273C272E006DFE0D /* AddFeatureViewModel.swift in Sources */,
 				556F30732728EE9F00CBF42E /* Feature.swift in Sources */,
 				551B6CCE27304F68007B21F4 /* WorkBlock.swift in Sources */,
 				55EBD528273C42A0006DFE0D /* MDPMonthYearPicker.swift in Sources */,
@@ -579,7 +589,7 @@
 				556F307A2729ABCA00CBF42E /* Roadmap.swift in Sources */,
 				55ED4FCA26D6852E004A21AD /* WelcomeView.swift in Sources */,
 				55100260273B6F33006E6A94 /* RealmColor.swift in Sources */,
-				55EBD510273C2804006DFE0D /* AddEngineersViewModel.swift in Sources */,
+				55EBD510273C2804006DFE0D /* AddEngineerViewModel.swift in Sources */,
 				55914E0C27361B29001B1E9A /* ReusableButton.swift in Sources */,
 				55ED4FC826D6852E004A21AD /* PlanrApp.swift in Sources */,
 				55EBD523273C42A0006DFE0D /* MultiDatePicker.swift in Sources */,
@@ -597,6 +607,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55E02A9F273CC02900B1D18B /* FeatureSummaryView.swift in Sources */,
 				55AB6C36272C5E23008AD85B /* Platform.swift in Sources */,
 				559C746827387A4900F55C36 /* RootView.swift in Sources */,
 				556F30782729AACE00CBF42E /* PlanningCoordinator.swift in Sources */,
@@ -607,11 +618,13 @@
 				5598B41026D6895600FF7A50 /* Engineer.swift in Sources */,
 				559C746427387A3C00F55C36 /* PlannedSprintView.swift in Sources */,
 				551B6CCF27304F68007B21F4 /* WorkBlock.swift in Sources */,
+				55E02AA5273CD72F00B1D18B /* AddProjectEngineersView.swift in Sources */,
 				559C746527387A3F00F55C36 /* PlatformSprintBlockView.swift in Sources */,
 				55ED4FDB26D68530004A21AD /* EngineerVlidationTests.swift in Sources */,
 				556F307B2729ABCA00CBF42E /* Roadmap.swift in Sources */,
 				55AB6C39272C9F22008AD85B /* PlanningCoordinatorTests.swift in Sources */,
 				5598B41326D6898000FF7A50 /* Project.swift in Sources */,
+				55E02AA2273CCB9900B1D18B /* EngineerSummaryView.swift in Sources */,
 				55914E012734AD5B001B1E9A /* ViewExtensions.swift in Sources */,
 				55914E0927356B9A001B1E9A /* NewProjectView.swift in Sources */,
 				55914E052734B829001B1E9A /* Util.swift in Sources */,
@@ -940,22 +953,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		55914E0E2736E4CF001B1E9A /* XCRemoteSwiftPackageReference "Steps" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/asam139/Steps";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.3.7;
-			};
-		};
-		5598B41826D6A42800FF7A50 /* XCRemoteSwiftPackageReference "promises" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/google/promises";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 		5598B42126D6A5B300FF7A50 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-cocoa";
@@ -983,31 +980,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		55914E0F2736E4CF001B1E9A /* Steps */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 55914E0E2736E4CF001B1E9A /* XCRemoteSwiftPackageReference "Steps" */;
-			productName = Steps;
-		};
-		5598B41926D6A42800FF7A50 /* PromisesTestHelpers */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5598B41826D6A42800FF7A50 /* XCRemoteSwiftPackageReference "promises" */;
-			productName = PromisesTestHelpers;
-		};
-		5598B41B26D6A42800FF7A50 /* Promises */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5598B41826D6A42800FF7A50 /* XCRemoteSwiftPackageReference "promises" */;
-			productName = Promises;
-		};
-		5598B41D26D6A42800FF7A50 /* FBLPromises */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5598B41826D6A42800FF7A50 /* XCRemoteSwiftPackageReference "promises" */;
-			productName = FBLPromises;
-		};
-		5598B41F26D6A42800FF7A50 /* FBLPromisesTestHelpers */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5598B41826D6A42800FF7A50 /* XCRemoteSwiftPackageReference "promises" */;
-			productName = FBLPromisesTestHelpers;
-		};
 		5598B42226D6A5B300FF7A50 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5598B42126D6A5B300FF7A50 /* XCRemoteSwiftPackageReference "realm-cocoa" */;

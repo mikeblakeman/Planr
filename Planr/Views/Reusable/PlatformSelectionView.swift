@@ -10,14 +10,15 @@ import SwiftUI
 struct PlatformSelectionView: View {
     @ObservedObject var platformSelectionViewModel = PlatformSelectionViewModel()
     @State var isActive: Bool = false
+    @State var displayText = ""
 
     var body: some View {
         // Engineer platform view
         VStack(alignment: .leading, spacing: 5, content: {
-            Text("Engineer's platform proficiencies:").font(.system(size: 22))
+            Text($displayText.wrappedValue).font(.system(size: 22))
             HStack {
                 ForEach(self.platformSelectionViewModel.platforms, id: \.self) { platform in
-                    Toggle(platform.platformType.rawValue, isOn: Binding<Bool>(
+                    Toggle(platform.platformType.toString(), isOn: Binding<Bool>(
                         get: { platform.isActive },
                         set: {
                             if let index =

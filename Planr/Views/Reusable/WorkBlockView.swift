@@ -33,7 +33,7 @@ struct WorkBlockView: View {
                     .font(.system(size: 24))
                     .foregroundColor(.white)
             }.padding(.trailing, 10)
-        }.background(self.workBlock.color.toColor())
+        }.background(self.workBlock.color)
         .cornerRadius(10)
     }
 }

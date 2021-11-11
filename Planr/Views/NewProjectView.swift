@@ -12,21 +12,19 @@ import NavigationStack
 struct NewProjectView: View {
 
     @EnvironmentObject private var navigationStack: NavigationStack
+
     @ObservedObject var newProjectViewModel = NewProjectViewModel()
+
     @State var realm: Realm?
 
     var body: some View {
-        VStack(alignment: .center, spacing: 50, content: {
+        VStack(alignment: .center, spacing: nil, content: {
             LinearGradient(gradient: Gradient(colors: [Constants.firstGradientColor,
                                                        Constants.lastGradientColor]),
                            startPoint: .topLeading,
                            endPoint: .bottomTrailing)
-                .mask(
-                    Text("New Project")
-                        .font(.system(size: 37, weight: .semibold))
-                )
-
-            Spacer()
+                .mask(Text("New Project").font(.system(size: 37, weight: .semibold)))
+                .frame(maxHeight: 100)
             VStack(alignment: .leading, spacing: 50, content: {
 
                 // Project name view
@@ -49,7 +47,7 @@ struct NewProjectView: View {
 
                 // App settings shared view
                 AppSettingsGroupView()
-            }).padding(.horizontal, 25)
+            })
             Spacer()
             Button(action: {
                 createNewProject()
@@ -64,15 +62,9 @@ struct NewProjectView: View {
     }
 
     private func createNewProject() {
-        do {
-            try realm?.write {
-                Project(name: $newProjectViewModel.projectName.wrappedValue,
-                        startDate: $newProjectViewModel.projectStartDate.wrappedValue)
-            }
-        } catch let error {
-            print(error.localizedDescription)
-        }
-        self.navigationStack.push(AddEngineersView())
+        let project = Project(name: $newProjectViewModel.projectName.wrappedValue,
+                              startDate: $newProjectViewModel.projectStartDate.wrappedValue)
+        self.navigationStack.push(AddProjectEngineersView(withProject: project))
     }
 }
 

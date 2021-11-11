@@ -13,7 +13,6 @@ struct PlatformSprintBlockView: View, Identifiable {
     private var workBlocks: [WorkBlock]
     private var sprintPointsRemaining: Int
 
-    // swiflint:disable:next identifier_name
     var id = UUID()
 
     init(dateRange: DateInterval,
@@ -61,7 +60,7 @@ struct PlatformSprintBlockView: View, Identifiable {
 struct PlatformSprintBlockView_Previews: PreviewProvider {
     static var previews: some View {
         let sprint = getDemoSprint()
-        let iosWorkBlocks = sprint.workBlocksForPlatform(Platform(value: PlatformType.ios))
+        let iosWorkBlocks = sprint.workBlocksForPlatform(Platform.ios)
         PlatformSprintBlockView(dateRange: sprint.dateRange,
                                 workBlocks: iosWorkBlocks,
                                 sprintPointsRemaining: sprint.pointsRemaining)
@@ -71,8 +70,8 @@ struct PlatformSprintBlockView_Previews: PreviewProvider {
 private func getPointsRemainingView(sprintPointsRemaining: Int) -> some View {
     let workBlock = WorkBlock(name: "Points Remaining",
                               summary: nil,
-                              platform: Platform(value: PlatformType.ios),
+                              platform: Platform.ios,
                               pointValue: sprintPointsRemaining,
-                              color: RealmColor(withColor: Color.gray))
+                              color: Color.gray)
     return WorkBlockView(workBlock: workBlock)
 }

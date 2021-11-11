@@ -2,15 +2,6 @@
   "object": {
     "pins": [
       {
-        "package": "Promises",
-        "repositoryURL": "https://github.com/google/promises",
-        "state": {
-          "branch": null,
-          "revision": "611337c330350c9c1823ad6d671e7f936af5ee13",
-          "version": "2.0.0"
-        }
-      },
-      {
         "package": "Realm",
         "repositoryURL": "https://github.com/realm/realm-cocoa",
         "state": {
@@ -38,30 +29,12 @@
         }
       },
       {
-        "package": "Steps",
-        "repositoryURL": "https://github.com/asam139/Steps",
-        "state": {
-          "branch": null,
-          "revision": "dceb16ce8fe315ab04ea621c02bd94ff7dcba509",
-          "version": "0.3.7"
-        }
-      },
-      {
         "package": "swift-argument-parser",
         "repositoryURL": "https://github.com/apple/swift-argument-parser.git",
         "state": {
           "branch": null,
           "revision": "9564d61b08a5335ae0a36f789a7d71493eacadfc",
           "version": "0.3.2"
-        }
-      },
-      {
-        "package": "SwifterSwiftUI",
-        "repositoryURL": "https://github.com/asam139/SwifterSwiftUI.git",
-        "state": {
-          "branch": null,
-          "revision": "e69419dd7cdf3bb7df315978530d621d69c98b88",
-          "version": "0.5.1"
         }
       },
       {
@@ -98,15 +71,6 @@
           "branch": null,
           "revision": "9183170d20857753d4f331b0ca63f73c60764bf3",
           "version": "5.0.2"
-        }
-      },
-      {
-        "package": "ViewInspector",
-        "repositoryURL": "https://github.com/nalexn/ViewInspector",
-        "state": {
-          "branch": null,
-          "revision": "0d546878902bdde8c4682141f848a9dc44e04ba6",
-          "version": "0.9.0"
         }
       },
       {

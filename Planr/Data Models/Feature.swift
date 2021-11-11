@@ -10,14 +10,14 @@ import RealmSwift
 import SwiftUI
 
 /// Common interface for `UnplannedFeature` and `PlannedFeature` classes
-protocol PlanrFeature: Object {
+protocol PlanrFeature {
     var name: String { get }
     var summary: String? { get }
-    var platform: RealmSwift.List<Platform> { get }
+    var platform: [Platform] { get }
     var effortEstimate: Int { get }
     var priority: Int { get }
     var concurrencyAllowed: Bool { get }
-    var color: RealmColor { get }
+    var color: Color { get }
 }
 
 enum FeatureValidationError: Error {
@@ -31,16 +31,15 @@ enum FeatureValidationError: Error {
 }
 
 /// A class that conforms to the `PlanrFeature` protocol that represents an unplanned feature.
-class UnplannedFeature: Object, PlanrFeature {
-
-    @Persisted(primaryKey: true) var featureId: ObjectId
-    @Persisted var name: String = ""
-    @Persisted var summary: String?
-    @Persisted var platform: RealmSwift.List<Platform> = RealmSwift.List<Platform>()
-    @Persisted var effortEstimate: Int = 0
-    @Persisted var priority: Int = 0
-    @Persisted var concurrencyAllowed: Bool = false
-    @Persisted var color: RealmColor
+class UnplannedFeature: PlanrFeature, Hashable {
+    public private(set) var featureId: ObjectId = ObjectId()
+    public private(set) var name: String = ""
+    public private(set) var summary: String?
+    public private(set) var platform: [Platform] = []
+    public private(set) var effortEstimate: Int = 0
+    public private(set) var priority: Int = 0
+    public private(set) var concurrencyAllowed: Bool = false
+    public private(set) var color: Color
 
     /// Initializer
     ///
@@ -52,26 +51,21 @@ class UnplannedFeature: Object, PlanrFeature {
     /// - Parameter concurrencyAllowed: A `Bool` to determine if the feature can be worked on concurrently.
     init(name: String,
          _ summary: String?,
-         platform: [PlatformType],
+         platform: [Platform],
          effortEstimate estimate: Int,
          priority: Int,
          concurrencyAllowed: Bool = false) {
-        super.init()
         self.name = name
         self.summary = summary
-
-        for type in platform {
-            self.platform.append(Platform(value: type))
-        }
-
+        self.platform = platform
         self.effortEstimate = estimate
         self.priority = priority
         self.concurrencyAllowed = concurrencyAllowed
 
-        self.color = RealmColor(withColor: Color(Color.RGBColorSpace.sRGB,
-                                                 red: .random(in: 0...1),
-                                                 green: .random(in: 0...1),
-                                                 blue: .random(in: 0...1)))
+        self.color = Color(Color.RGBColorSpace.sRGB,
+                           red: .random(in: 0...1),
+                           green: .random(in: 0...1),
+                           blue: .random(in: 0...1))
     }
 
     /// Function to update the name of the feature.
@@ -92,23 +86,38 @@ class UnplannedFeature: Object, PlanrFeature {
             throw FeatureValidationError.priorityValueTooHighError
         }
     }
+
+    static func == (lhs: UnplannedFeature, rhs: UnplannedFeature) -> Bool {
+        return lhs.name == rhs.name &&
+            lhs.summary == rhs.summary &&
+            lhs.platform == rhs.platform &&
+            lhs.effortEstimate == rhs.effortEstimate &&
+            lhs.priority == rhs.priority &&
+            lhs.concurrencyAllowed == rhs.concurrencyAllowed &&
+            lhs.color == rhs.color &&
+            lhs.featureId == rhs.featureId
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(featureId)
+        hasher.combine(color)
+    }
 }
 
 /// A class that conforms to the `PlanrFeature` protocol that represents a planned feature.
-class PlannedFeature: Object, PlanrFeature {
-    @Persisted(primaryKey: true) var featureId: ObjectId
-    @Persisted var name: String = ""
-    @Persisted var summary: String?
-    @Persisted var platform: RealmSwift.List<Platform> = RealmSwift.List<Platform>()
-    @Persisted var effortEstimate: Int = 0
-    @Persisted var priority: Int = 0
-    @Persisted var concurrencyAllowed: Bool = false
-    @Persisted var color: RealmColor
+class PlannedFeature: PlanrFeature {
+    public private(set)  var featureId: ObjectId = ObjectId()
+    public private(set) var name: String = ""
+    public private(set) var summary: String?
+    public private(set) var platform: [Platform] = []
+    public private(set) var effortEstimate: Int = 0
+    public private(set) var priority: Int = 0
+    public private(set) var concurrencyAllowed: Bool = false
+    public private(set) var color: Color
 
     public private(set) var workBlocks: [WorkBlock] = []
 
     init (withUnplannedFeature feature: UnplannedFeature, averageVelocity: Int) {
-        super.init()
         self.name = feature.name
         self.summary = feature.summary
         self.platform = feature.platform
