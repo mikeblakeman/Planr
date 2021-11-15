@@ -7,6 +7,9 @@
 
 import Foundation
 
+/// View Model for the `MultiDatePickerView`
+///
+/// This VM is used to hold data from the `MultiDatePickerView` to bind the values to the UI.
 class MultiDatePickerViewModel: ObservableObject {
     @Published var selectedDates: [Date] = []
 }

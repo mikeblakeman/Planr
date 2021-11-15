@@ -9,6 +9,7 @@ import SwiftUI
 import RealmSwift
 import NavigationStack
 
+/// The container view to create a new `Project`
 struct NewProjectView: View {
 
     @EnvironmentObject private var navigationStack: NavigationStack

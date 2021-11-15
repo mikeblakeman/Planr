@@ -7,6 +7,9 @@
 
 import Foundation
 
+/// View Model for the `PlatformSelectionView`
+///
+/// This VM is used to hold data from the `PlatformSelectionView` to bind the values to the UI.
 class PlatformSelectionViewModel: ObservableObject {
     @Published var platforms: [PlatformSelectionModel] = [
         PlatformSelectionModel(modelId: 0, platformType: .ios, isActive: false),

@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+// Extension to add a underline to 
 extension View {
     func underlineTextField() -> some View {
         self.overlay(Rectangle().frame(height: 2).padding(.top, 35))
@@ -16,6 +17,7 @@ extension View {
     }
 }
 
+// Extension to remove the focus ring on text fields.
 extension NSTextField {
     open override var focusRingType: NSFocusRingType {
         get { .none }

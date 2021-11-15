@@ -8,6 +8,7 @@
 import SwiftUI
 import NavigationStack
 
+/// The root view of the application.
 struct RootView: View {
     var body: some View {
         NavigationStackView {

@@ -241,6 +241,7 @@
 			children = (
 				55914E0A27361B09001B1E9A /* Reusable */,
 				55ED4FC926D6852E004A21AD /* WelcomeView.swift */,
+				551ED1AF273CE8FF00F10048 /* AddProjectFeaturesView.swift */,
 				55914E0727356B9A001B1E9A /* NewProjectView.swift */,
 				559C745427374DB300F55C36 /* RootView.swift */,
 				55116E92273A1B4A00ED01E1 /* PlanrSettingsView.swift */,
@@ -264,7 +265,6 @@
 				55EBD517273C4248006DFE0D /* MultiDatePickerView.swift */,
 				55E02A9D273CC02900B1D18B /* FeatureSummaryView.swift */,
 				55E02AA0273CCB9900B1D18B /* EngineerSummaryView.swift */,
-				551ED1AF273CE8FF00F10048 /* AddProjectFeaturesView.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";

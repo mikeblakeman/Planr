@@ -8,6 +8,9 @@
 import Foundation
 import RealmSwift
 
+/// View Model for the `AddEngineerView`
+///
+/// This VM is used to hold data from the `AddEngineerView` to bind the values to the UI.
 class AddEngineerViewModel: ObservableObject {
     @Published var firstName = "" {
         didSet {
@@ -35,6 +38,14 @@ class AddEngineerViewModel: ObservableObject {
 
     @Published var engineerList: RealmSwift.List<RealmEngineer> = RealmSwift.List<RealmEngineer>()
 
+    /// Method to create and store a `RealmEngineer` object
+    ///
+    /// - Parameter platforms: A collection of `Platform` objects
+    /// - Parameter unavailableDates: A collection of `Date` objects
+    ///
+    /// - Returns: An `Engineer` object to be used in a Project.
+    ///
+    /// - Note: This stores a engineer in the Realm database.
     func createEngineer(platforms: [Platform], unavailableDates: [Date]) -> Engineer {
         let realmEngineer = RealmEngineer()
         realmEngineer.firstName = self.firstName

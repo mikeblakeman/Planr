@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/// A view that represents a planned `Sprint`.
+///
+/// This view contains the work blocks for the `Sprint`, the remaining points work block, and the date of the sprint.
 struct PlatformSprintBlockView: View, Identifiable {
 
     private var dateRange: DateInterval
@@ -47,13 +50,13 @@ struct PlatformSprintBlockView: View, Identifiable {
             .padding(.vertical, 5)
     }
 
-    func getEmptySprintBlockView() -> some View {
-        return VStack(alignment: .leading, spacing: 5) {
-            // Intentionally empty
-        }.frame(minWidth: 300, maxWidth: .infinity, minHeight: 260, maxHeight: .infinity)
-        .padding(5)
-        .border(Color.black)
-        .background(Color.white)
+    private func getPointsRemainingView(sprintPointsRemaining: Int) -> some View {
+        let workBlock = WorkBlock(name: "Points Remaining",
+                                  summary: nil,
+                                  platform: Platform.ios,
+                                  pointValue: sprintPointsRemaining,
+                                  color: Color.gray)
+        return WorkBlockView(workBlock: workBlock)
     }
 }
 
@@ -65,13 +68,4 @@ struct PlatformSprintBlockView_Previews: PreviewProvider {
                                 workBlocks: iosWorkBlocks,
                                 sprintPointsRemaining: sprint.pointsRemaining)
     }
-}
-
-private func getPointsRemainingView(sprintPointsRemaining: Int) -> some View {
-    let workBlock = WorkBlock(name: "Points Remaining",
-                              summary: nil,
-                              platform: Platform.ios,
-                              pointValue: sprintPointsRemaining,
-                              color: Color.gray)
-    return WorkBlockView(workBlock: workBlock)
 }

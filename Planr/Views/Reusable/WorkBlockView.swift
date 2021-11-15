@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/// A view that represents a block of work.
+///
+/// This view has the name of the feature, the remaining sprint points, and an indicator to denote that this is the last
+/// sprint that the feature will be worked on.
 struct WorkBlockView: View {
 
     private var workBlock: WorkBlock

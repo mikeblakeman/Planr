@@ -8,10 +8,14 @@
 import SwiftUI
 import NavigationStack
 
+/// The utility view to fill out all of the information on an `Engineer`
 struct AddEngineerView: View {
 
     private var projectInProgress: Project
 
+    /// Constructor
+    ///
+    /// - Parameter project: This passes in a `Project` object to add the created engineer to said project.
     init(withProjectInProgress project: Project) {
         self.projectInProgress = project
     }
@@ -71,7 +75,8 @@ struct AddEngineerView: View {
                         .filter { $0.isActive }
                         .map { $0.platformType}
                     let dates = $multiDatePickerViewModel.selectedDates.wrappedValue
-                    let engineer = self.addEngineerViewModel.createEngineer(platforms: platforms, unavailableDates: dates)
+                    let engineer = self.addEngineerViewModel.createEngineer(platforms: platforms,
+                                                                            unavailableDates: dates)
 
                     self.projectInProgress.addEngineer(engineer)
 

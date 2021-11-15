@@ -8,6 +8,7 @@
 import SwiftUI
 import NavigationStack
 
+/// Effectively the root view of the application.
 struct WelcomeView: View {
 
     @State private var showContinue = false

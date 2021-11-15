@@ -8,6 +8,7 @@
 import SwiftUI
 import NavigationStack
 
+/// The container view for adding features to a project.
 struct AddProjectFeaturesView: View {
 
     @State private var projectInProgress: Project

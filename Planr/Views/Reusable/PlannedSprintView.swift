@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/// A view that represents a planned `Roadmap` for a platform.
+///
+/// A collection of `PlatformSprintBlockView`s that shows a planned roadmap for a platform.
 struct PlannedSprintView: View {
 
     private var platform: Platform

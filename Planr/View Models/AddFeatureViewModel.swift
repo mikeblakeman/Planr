@@ -7,6 +7,9 @@
 
 import Foundation
 
+/// View Model for the `AddFeatureView`
+///
+/// This VM is used to hold data from the `AddFeatureView` to bind the values to the UI.
 class AddFeatureViewModel: ObservableObject {
 
     @Published var name = "" {

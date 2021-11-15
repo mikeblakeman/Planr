@@ -8,12 +8,16 @@
 import SwiftUI
 import NavigationStack
 
+/// The container view to add and view project engineers.
 struct AddProjectEngineersView: View {
 
     @State private var projectInProgress: Project
 
     @EnvironmentObject private var navigationStack: NavigationStack
 
+    /// Constructor
+    ///
+    /// - Parameter project: This passes in a `Project` object to add the created engineers to said project.
     init(withProject project: Project) {
         self.projectInProgress = project
     }

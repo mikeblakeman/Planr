@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/// A reusable view for selecting `Platform`s.
+///
+/// The associated view model will hold the values and supports validating if any of the items are selected.
 struct PlatformSelectionView: View {
     @ObservedObject var platformSelectionViewModel = PlatformSelectionViewModel()
     @State var isActive: Bool = false

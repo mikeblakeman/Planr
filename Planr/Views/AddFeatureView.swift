@@ -8,10 +8,14 @@
 import SwiftUI
 import NavigationStack
 
+/// The utility view to fill out all of the information on a `UnplannedFeature`
 struct AddFeatureView: View {
 
     private var projectInProgress: Project
 
+    /// Constructor
+    ///
+    /// - Parameter project: This takes in a `Project` object in order to add the created feature to said project.
     init(withProjectInProgress project: Project) {
         self.projectInProgress = project
     }

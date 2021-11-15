@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/// A reusable view to show the created `UnplannedFeature`.
+///
+/// This can be reused in a list to show unplanned features.
 struct FeatureSummaryView: View {
 
     @State private var feature: UnplannedFeature

@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/// A view that represents a planned `Roadmap`.
+///
+/// This is effectively a collection of `PlannedSprintView`s.
 struct ProjectRoadmapView: View {
 
     private var projectName: String
@@ -36,6 +39,13 @@ struct ProjectRoadmapView: View {
         }.background(Color.white)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
+
+    private func getPlaceholderMonthView() -> some View {
+        return HStack {
+            Text("September").font(.system(size: 36, weight: .bold))
+            Text("2021").font(.system(size: 36))
+        }.padding()
+    }
 }
 
 struct ProjectRoadmapView_Previews: PreviewProvider {
@@ -44,11 +54,4 @@ struct ProjectRoadmapView_Previews: PreviewProvider {
                            roadmap: getDemoRoadmap())
             .frame(width: 1400, height: 1000, alignment: .center)
     }
-}
-
-private func getPlaceholderMonthView() -> some View {
-    return HStack {
-        Text("September").font(.system(size: 36, weight: .bold))
-        Text("2021").font(.system(size: 36))
-    }.padding()
 }

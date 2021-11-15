@@ -8,6 +8,9 @@
 import Foundation
 import SwiftUI
 
+/// View Model for the `NewProjectView`
+///
+/// This VM is used to hold data from the `NewProjectView` to bind the values to the UI.
 class NewProjectViewModel: ObservableObject {
     @Published var projectName = "" {
         didSet {

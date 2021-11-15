@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/// A reusable `ButtonStyle` to be used for buttons that should have the same gradient applied.
+///
+/// Use this button style for styled gradient buttons with a disabled state.
 struct BooleanGradientButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         GradientButton(configuration: configuration)
@@ -29,6 +32,9 @@ struct BooleanGradientButtonStyle: ButtonStyle {
     }
 }
 
+/// A reusable `ButtonStyle` to be used for buttons that should have the same gradient applied.
+///
+/// Use this button style for styled gradient buttons that do not have a disabled state.
 struct GradientButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         GradientButton(configuration: configuration)

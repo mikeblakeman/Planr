@@ -8,6 +8,7 @@
 import SwiftUI
 import RealmSwift
 
+// Util method to get a random color
 func randomColor() -> Color {
     return Color(Color.RGBColorSpace.sRGB,
                  red: .random(in: 0...1),
@@ -15,6 +16,7 @@ func randomColor() -> Color {
                  blue: .random(in: 0...1))
 }
 
+// Util method to get a demo project
 func getDemoProject() -> Project {
     let demoProject = Project(name: "Demo project", startDate: Date())
 
@@ -25,6 +27,7 @@ func getDemoProject() -> Project {
     return demoProject
 }
 
+// Util method to get a demo roadmap
 func getDemoRoadmap() -> Roadmap {
     let planningCoordinator = PlanningCoordinator(project: getDemoProject())
 
@@ -33,6 +36,7 @@ func getDemoRoadmap() -> Roadmap {
     return roadmap
 }
 
+// Util method to get a list of Engineers
 func getDemoEngineerList() -> [Engineer] {
     let collin = Engineer(firstName: "Collin", lastName: "Engineer", platform: [.android], unavailableDates: [Date(), Date().addingTimeInterval(170000)])
     let ellen = Engineer(firstName: "Ellen", lastName: "Engineer", platform: [.ios, .android], unavailableDates: [])
@@ -43,6 +47,7 @@ func getDemoEngineerList() -> [Engineer] {
     return [collin, ellen, ashley, logan, pat]
 }
 
+// Util method to get a list of unplanned feature
 func getDemoUnplannedFeatureList() -> [UnplannedFeature] {
     let feature1 = UnplannedFeature(name: "OAuth 2.0", "This is a summary", platform: [.ios, .android], effortEstimate: 16, priority: 300)
     let feature2 = UnplannedFeature(name: "Device Setup", nil, platform: [.ios, .android], effortEstimate: 3, priority: 900)
@@ -57,6 +62,7 @@ func getDemoUnplannedFeatureList() -> [UnplannedFeature] {
     return [feature1, feature2, feature3, feature4, feature5, feature6, feature7, feature8, feature9]
 }
 
+// Util method to get a filled out Sprint
 func getDemoSprint() -> Sprint {
 
     let now = Date()
@@ -67,6 +73,7 @@ func getDemoSprint() -> Sprint {
     return sprint
 }
 
+// Util method to get a filled out list of work blocks
 func getDemoWorkBlocks() -> [WorkBlock] {
     let workBlock1 = WorkBlock(name: "Family Accounts",
                                summary: "Cool family feature.",

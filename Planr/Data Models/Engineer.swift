@@ -58,7 +58,8 @@ class Engineer: Hashable {
     }
 
     static func == (lhs: Engineer, rhs: Engineer) -> Bool {
-        return lhs.firstName == rhs.firstName &&
+        return lhs.engineerId == rhs.engineerId &&
+            lhs.firstName == rhs.firstName &&
             lhs.lastName == rhs.lastName &&
             lhs.platform == rhs.platform &&
             lhs.unavailableDates == rhs.unavailableDates

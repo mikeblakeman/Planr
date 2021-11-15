@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/// A container view for the reusable settings view.
+///
+/// This is launched from the menu bar `Preferences` option.
 struct PlanrSettingsView: View {
 
     private let appSettingsGroupView = AppSettingsGroupView()

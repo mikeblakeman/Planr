@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 /// A representation of an unplanned body of work containing engineers and unplanned features.
 class Project: ObservableObject {
@@ -46,7 +47,7 @@ class Project: ObservableObject {
     /// A method to remove a single `UnplanedFeature` from the `Project`
     ///
     /// - Parameter feature: The `UnplannedFeature` to remove from the project.
-    public func removeFeature(byId featureId: NSUUID) {
+    public func removeFeature(byId featureId: ObjectId) {
         self.features.removeAll { $0.featureId == featureId }
     }
 
@@ -69,7 +70,7 @@ class Project: ObservableObject {
     /// A method to remove a single `Engineer` from the `Project`
     ///
     /// - Parameter engineerId: The unique identifier for the `Engineer`
-    public func removeEngineer(byId engineerId: NSUUID) {
-//        self.engineers.removeAll { $0.engineerId == engineerId }
+    public func removeEngineer(byId engineerId: ObjectId) {
+        self.engineers.removeAll { $0.engineerId == engineerId }
     }
 }

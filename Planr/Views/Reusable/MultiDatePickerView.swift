@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+/// A view to hold the `MultiDatePicker` and its respective View Model.
 struct MultiDatePickerView: View {
 
     @ObservedObject var multiDatePickerViewModel = MultiDatePickerViewModel()

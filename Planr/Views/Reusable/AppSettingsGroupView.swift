@@ -8,6 +8,7 @@
 import SwiftUI
 import RealmSwift
 
+/// A reusable view for the app's settings.
 struct AppSettingsGroupView: View {
 
     @AppStorage(Constants.averageVelocityKey) var velocity = 8

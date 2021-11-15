@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/// A reusable view to show the created `Engineer`.
+///
+/// This can be reused in a list to show created engineers.
 struct EngineerSummaryView: View {
     @State private var engineer: Engineer
 
